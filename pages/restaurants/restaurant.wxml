@@ -34,8 +34,8 @@
   </view>
   <view class="price_button">
     <view class="empty"></view>
-    <view class="type_button_text"></view>
-    <view class="type_button_icon"></view>
+    <view class="price_button_text"></view>
+    <view class="price_button_icon"></view>
   </view>
 </view>
 
