@@ -1,8 +1,9 @@
 {
   "pages":[
+    "pages/restaurants/restaurant",
     "pages/index/index",
-    "pages/logs/logs", 
-    "pages/restaurants/restaurant"
+    "pages/logs/logs"
+    
   ],
   "window":{
     "backgroundTextStyle":"light",
