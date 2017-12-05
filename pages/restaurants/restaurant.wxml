@@ -1,0 +1,48 @@
+<!--pages/restaurants/restaurant.wxml-->
+<text>pages/restaurants/restaurant.wxml</text>
+
+<!-- Restaurant images/scroll -->
+<view class="restaurant_banner">
+  <scroll-view class="scroll_pics" scroll-x="true" style="width:100%">
+    <view class="main_photo">
+      <image src="{{main-photo}}" class="slide-image" width="100%" height="377px"/>
+    </view>
+    <view class="photo_1"></view>
+    <view class="photo_2"></view>
+  </scroll-view>
+</view>
+
+<!-- Restaurant Profile Details Subheader -->
+<view class="restaurant_details">
+  <view class="top_row">
+    <view class="type"></view>
+    <view class="rating"></view>
+    <view class="price"></view>
+  </view>
+  <view class="bottom_row">
+    <view class="address"></view>
+    <view class="phone"></view>
+  </view>
+</view>
+
+<!-- Restaurant Parameters -->
+<view class="parameter_choices">
+  <view class="type_button">
+    <view class="empty"></view>
+    <view class="type_button_text"></view>
+    <view class="type_button_icon"></view>
+  </view>
+  <view class="price_button">
+    <view class="empty"></view>
+    <view class="type_button_text"></view>
+    <view class="type_button_icon"></view>
+  </view>
+</view>
+
+<!-- No good? Shake again -->
+
+<view class="shake_again">
+  <view class="left_icon"></view>
+  <view class="shake_text"></view>
+  <view class="right_icon"></view>>
+</view>
