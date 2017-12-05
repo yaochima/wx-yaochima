@@ -1,18 +1,13 @@
+
+<template is="../components/restaurant_profile" data="{{...RESTAURANTDATA}}"/>
+
 <view class="restaurant_wrapper">
   <view class="profile_wrapper">
     <!-- Restaurant images/scroll -->
     <view class="restaurant_banner">
-      <swiper indicator-dots="{{indicatorDots}}"
-      autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
-        <block wx:for="{{imgUrls}}">
-          <swiper-item>
-            <image src="{{main_photo}}" class="image"/>
-            <image src="{{photo}}" class="image"/>
-            <image src="{{photo}}" class="image"/>
-          </swiper-item>
-        </block>
-      </swiper>
 
+            <image src="{{main_photo}}" class="image"/>
+        
     </view>
 
     <!-- Restaurant Profile Details Subheader -->
@@ -39,7 +34,7 @@
 
 
 
-<view class="temp_wrap">
+<view class="button_wrap">
     <!-- Restaurant Parameters -->
     <view class="button row h2">
       <view class="empty"></view>

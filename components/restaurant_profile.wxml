@@ -1,0 +1,65 @@
+<template name="restaurant-profile">
+  <view class="restaurant_wrapper">
+
+    <view class="profile_wrapper">
+      <!-- Restaurant images/scroll -->
+      <view class="restaurant_banner">
+              <image src="{{RESTAURANT.MAIN_PHOTO}}" class="image"/>
+      </view>
+
+      <!-- Restaurant Profile Details Subheader -->
+      <view class="restaurant_details white_text text_size">
+
+        <view class="row">
+          <view class="type"> {{RESTAURANT.TYPE}} </view> 
+          <view class="rating">* * * * * <img src="#" class="4_star_rating"/></view>
+          </view>
+          <view class="price_field">
+            <text class="price orange_text"> {{RESTAURANT.PRICE}} </text> 
+            <text class="per person"> 人均</text>
+          </view>
+        </view>
+
+        <view class="row">
+          <view class="address">
+            <text> {{RESTAURANT.ADDRESS}} </text>
+          </view>
+          <view class="phone">
+            <text> {{RESTAURANT.PHONE}} </text>
+          </view>
+        </view>
+
+      </view>
+
+    </view>
+
+  <view class="button_wrap">
+      <!-- Restaurant Parameters -->
+      <view class="button row h2">
+        <view class="empty"></view>
+        <view class="type_button_text white_text">
+          <text>{{RESTAURANT.TYPE}}</text>
+        </view>
+        <view class="type_button_icon"></view>
+      </view>
+      <view class="button row h2">
+        <view class="empty"></view>
+        <view class="price_button_text">
+          <text class="price orange_text">{{RESTAURANT.PRICE}}</text> 
+          <text class="per person white_text">人均</text>
+        </view>
+        <view class="price_button_icon"></view>
+    </view>
+
+      <!-- No good? Shake again -->
+
+      <view class="button row" id="shake">
+        <view class="left_icon"></view>
+        <view class="shake_text text-size">
+          <text class="white_text">Not Your Flavor?</text>
+          <text class="orange_text"> Shake Again</text>
+        </view>
+        <view class="right_icon"></view>
+      </view>
+  </view>
+</template>

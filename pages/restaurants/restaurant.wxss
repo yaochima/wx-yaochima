@@ -1,7 +1,8 @@
 /* pages/restaurants/restaurant.wxss */
 
 .image {
-
+  zoom: aspectFill;
+  crop: topLeft;
 }
 
 /* .profile_wrapper {
@@ -26,7 +27,7 @@
 }
 
 .restaurant_details {
-   padding: 10px; 
+  padding: 10px; 
   background-color: black;
   color: white;
 }
@@ -45,7 +46,7 @@
 
 } */ 
 
-.temp_wrap {
+.button_wrap {
   display: flex;
   flex-direction: column;
   align-content: stretch;

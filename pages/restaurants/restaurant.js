@@ -5,18 +5,11 @@ Page({
    * 页面的初始数据
    */
   data: {
-    imgUrls: [
-      '#'
-      '#'
-      '#'
-    ]
-    indicatorDots: true,
-    indicator-color: rgba(245, 166, 35, 100;
-    indicator-active - color: rgba(235, 122, 39, 40); 
-    autoplay: false,
-    interval: 5000,
-    duration: 1000,
-  },
+
+    restaurant_type_locked: false;
+    restaurant_price_locked: false;
+
+}
 
   /**
    * 生命周期函数--监听页面加载
@@ -74,6 +67,7 @@ Page({
    * 用户点击右上角分享
    */
   onShareAppMessage: function () {
-  
+   
   }
+
 })
