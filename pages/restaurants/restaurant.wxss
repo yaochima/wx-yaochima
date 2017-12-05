@@ -4,6 +4,10 @@
 
 }
 
+/* .profile_wrapper {
+   flex: 1; 
+} */
+
 .restaurant_banner {
   width: 100%;
   height: 50vh;
@@ -13,36 +17,56 @@
 .row {
   display: flex;
   align-items: center;
-  justify-content: space-around;
-  padding: 10px;
+  justify-content: space-around; 
+   padding: 5px;  
   text-align: center;
+  flex: auto;
+  flex-grow: 1;
+  /* background-color: aqua; */
 }
 
 .restaurant_details {
-  padding: 10px;
+   padding: 10px; 
   background-color: black;
   color: white;
 }
 
-.restaurant_container {
+#shake {
   background-color: black;
-  display: flex;
-  align-items: center;
-  text-align: center;
-  height: 8vh;
 }
 
+/* .shake_container {
+  background-color: black;
+   display: flex;
+  align-items: stretch; 
+  text-align: center;
+  /* padding: 20px; */
+  /* flex-direction: column; 
+
+} */ 
+
+.temp_wrap {
+  display: flex;
+  flex-direction: column;
+  align-content: stretch;
+  flex: auto;
+  flex-grow: 1;
+}
  .restaurant_wrapper {
   display: flex;
   flex-direction: column;
   text-align: center;
-  flex: 1 100%;
+   height: 100vh; 
+  min-height: 100vh;
+  max-height: 100vh;
+  align-content: stretch;
 } 
 
 .button {
   background-color: #4A4A4A;
-  margin: 0;
-  padding: 15px 10px;
+  flex: auto;
+  flex-grow: 1;
+  /* padding: 15px 10px;  */
 }
 
 .orange_text {
