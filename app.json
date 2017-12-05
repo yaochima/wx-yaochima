@@ -7,8 +7,9 @@
   ],
   "window":{
     "backgroundTextStyle":"light",
-    "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "WeChat",
-    "navigationBarTextStyle":"black"
+    "navigationBarBackgroundColor": "#D03232",
+    "navigationBarTitleText": "摇吃嘛",
+    "navigationBarTextStyle":"white",
+    "enablePullDownRefresh": true
   }
 }
