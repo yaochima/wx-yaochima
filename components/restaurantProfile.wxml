@@ -1,4 +1,4 @@
-<template name="restaurant-profile">
+<template name="restaurantProfile">
 
   <view class="restaurant_wrapper">
     <view class="profile_wrapper">
