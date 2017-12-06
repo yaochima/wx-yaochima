@@ -1,12 +1,14 @@
 <!--index.wxml-->
 <view class="container">
   <view class="userinfo">
-      <text class="userinfo-nickname">Alina</text>
+      <text class="userinfo-nickname">Awesome User</text>
   </view>
   <view class="Hello">
     <text class="user-motto">{{motto}}</text>
   </view>
   <button type="warn" bindtap="listenerBtnGetLocation">Get location</button>
 </view>
+
+
 
 <!-- <button bindtap='bindLocationTap'>Your Location </button> -->
