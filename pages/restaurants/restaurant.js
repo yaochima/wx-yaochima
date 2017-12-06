@@ -4,25 +4,25 @@ Page({
   }
 })
 
-// pages/restaurants/restaurant.js
-// Page({
+// // pages/restaurants/restaurant.js
+// // Page({
 
-  /**
-   * 页面的初始数据
-   */
-//   data: {
-//     imgUrls: [
-//       '#'
-//       '#'
-//       '#'
-//     ]
-//     indicatorDots: true,
-//     indicator-color: rgba(245, 166, 35, 100;
-//     indicator-active - color: rgba(235, 122, 39, 40); 
-//     autoplay: false,
-//     interval: 5000,
-//     duration: 1000,
-//   },
+//   /**
+//    * 页面的初始数据
+//    */
+// //   data: {
+// //     imgUrls: [
+// //       '#'
+// //       '#'
+// //       '#'
+// //     ]
+// //     indicatorDots: true,
+// //     indicator-color: rgba(245, 166, 35, 100;
+// //     indicator-active - color: rgba(235, 122, 39, 40); 
+// //     autoplay: false,
+// //     interval: 5000,
+// //     duration: 1000,
+// //   },
 
 //   /**
 //    * 生命周期函数--监听页面加载
