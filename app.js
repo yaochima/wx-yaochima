@@ -13,16 +13,19 @@ App({
   },
 
   signInAsGuest: function () {
+    console.log("HELLO!")
+    const uuid = this.globalData.uuid
+    console.log(uuid)
     wx.request({
       url: 'https://yaochima.herokuapp.com/api/v1/guests',
       method: 'post',
       data: {
-        'client_uuid': 'userUuid'
+        'uuid': uuid
       },
       success: function(res) {
       console.log(res)
       console.log("Patch success")
-      console.log(res.data)
+            console.log(res.data)
       }
     })
   },
