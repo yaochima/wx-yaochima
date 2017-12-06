@@ -42,7 +42,7 @@
         <view class="empty"></view>
         <view class="price_button_text">
           <text class="price orange_text">{{price}}</text>
-          <text class="per person white_text">人均</text>
+          <text class="per person white_text"> 人均</text>
         </view>
         <view class="price_button_icon"></view>
       </view>
