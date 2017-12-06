@@ -1,20 +1,25 @@
 // pages/restaurants/restaurant.js
 Page({
+
   toggleType: function (event) {
-    console.log(event)
+    // console.log(event)
+    this.setData({
+      typeLocked: !this.data.typeLocked
+    });
   },
 
   togglePrice: function (event) {
-    console.log(event)
+    // console.log(event)
+    this.setData({
+      priceLocked: !this.data.priceLocked
+    })
   },
   /**
    * 页面的初始数据
    */
   data: {
-
-    // restaurant_type_locked: false;
-    // restaurant_price_locked: false;
-
+    typeLocked: false,
+    priceLocked: false
 }, 
 
   /**
