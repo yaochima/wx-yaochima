@@ -1,38 +1,57 @@
 // pages/restaurants/restaurant.js
 Page({
 
+  toggleType: function (event) {
+    // console.log(event)
+    this.setData({
+      typeLocked: !this.data.typeLocked
+    });
+  },
+
+  togglePrice: function (event) {
+    // console.log(event)
+    this.setData({
+      priceLocked: !this.data.priceLocked
+    })
+  },
   /**
    * 页面的初始数据
    */
   data: {
-    imgUrls: [
-      '#'
-      '#'
-      '#'
-    ]
-    indicatorDots: true,
-    indicator-color: rgba(245, 166, 35, 100;
-    indicator-active - color: rgba(235, 122, 39, 40); 
-    autoplay: false,
-    interval: 5000,
-    duration: 1000,
-  },
+    typeLocked: false,
+    priceLocked: false,
+    restaurant: {
+      name: 'haha'
+    },
+    name: 'nnname',
+    price: 'ppprice', 
+    type: 'tttttype',
+}, 
+
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    this.loadData();
+  },
   
+  loadData: function () {
+    wx.request ({
+      url: 'https://yaochima.herokuapp.com/api/v1/restaurants/1',
+      method: 'get',
+      header: { },
+      success: function (res) {
 
-
-
-
+      }
+    })
+  },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-  
+
   },
 
   /**
@@ -74,6 +93,7 @@ Page({
    * 用户点击右上角分享
    */
   onShareAppMessage: function () {
-  
+   
   }
+
 })
