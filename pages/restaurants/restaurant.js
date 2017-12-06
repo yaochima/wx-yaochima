@@ -20,12 +20,6 @@ Page({
   data: {
     typeLocked: false,
     priceLocked: false,
-    restaurant: {
-      name: 'haha'
-    },
-    name: 'nnname',
-    price: 'ppprice', 
-    type: 'tttttype',
 }, 
 
 
@@ -41,8 +35,9 @@ Page({
       url: 'https://yaochima.herokuapp.com/api/v1/restaurants/1',
       method: 'get',
       header: { },
-      success: function (res) {
-
+      success:  (res) => {
+        console.log(res.data),
+        this.setData({ name: res.data.name, type: res.data.category, mainPhoto: res.data.profile_photo, rating: res.rating, price: res.data.price_range, phone: res.data.phone_number, address: res.data.address });
       }
     })
   },
