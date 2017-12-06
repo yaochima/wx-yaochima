@@ -19,7 +19,13 @@ Page({
    */
   data: {
     typeLocked: false,
-    priceLocked: false
+    priceLocked: false,
+    restaurant: {
+      name: 'haha'
+    },
+    name: 'nnname',
+    price: 'ppprice', 
+    type: 'tttttype',
 }, 
 
   /**
