@@ -114,12 +114,11 @@
   font-size: 18px;
 }
 
-.status_unlocked {
-  background-color: #4A4A4A;
+.unlock {
+  background-color: #4A4A4A!important;
 }
 
-.status_locked {
-  background-color: #000000;
+.lock {
+  background-color: #000000!important;
   font-weight: bold;
 }
-

@@ -1,4 +1,5 @@
 <template name="restaurant-profile">
+
   <view class="restaurant_wrapper">
     <view class="profile_wrapper">
       <view class="restaurant_banner" style="background-image: linear-gradient(-180deg, rgba(255,255,255,0.00) 0%, rgba(35,35,35,0.86)  86%, #000000 100%), url('../../assets/images/meatmarket.jpg')">
@@ -28,7 +29,7 @@
     </view>
       <!-- Lock Restaurant Parameters -->
   <view class="button_wrap">
-      <view class="button row h2">
+      <view class="restaurant_type button row h2 {{typeLocked ? 'lock' : 'unlock' }}" bindtap='toggleType'>
         <view class="empty"></view>
         <view class="type_text white_text">
           <text>{{RESTAURANT.TYPE}}</text>
@@ -37,7 +38,7 @@
           <img class="type_icon_img" src="#"/>
         </view>
       </view>
-      <view class="button row h2">
+      <view class="restaurant_price button row h2 {{priceLocked ? 'lock' : 'unlock' }}" bindtap='togglePrice'>
         <view class="empty"></view>
         <view class="price_button_text">
           <text class="price orange_text">{{RESTAURANT.PRICE}}</text> 
@@ -55,4 +56,6 @@
       </view>
     </view>
   </view>
+
+
 </template>
