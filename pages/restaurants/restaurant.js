@@ -47,7 +47,7 @@ Page({
   
   loadData: function () {
     wx.request ({
-      url: 'https://yaochima.herokuapp.com/api/v1/restaurants/1',
+      url: app.globalData.restaurantUrl + 'app.globalData.restaurantId',
       method: 'get',
       header: { },
       success:  (res) => {

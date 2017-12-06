@@ -4,7 +4,11 @@ App({
     uuid: null,
     auth_token: null, 
     lat: null,
-    lng: null
+    lng: null, 
+    restaurantUrl: 'https://yaochima.herokuapp.com/api/v1/restaurants/',
+    restaurantID: null, 
+    guestUrl: 'https://yaochima.herokuapp.com/api/v1/guests',
+    guestId: null,
   },
 
   onLaunch: function() {
