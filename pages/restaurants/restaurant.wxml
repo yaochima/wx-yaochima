@@ -1,5 +1,5 @@
 <import src="../components/restaurant_profile.wxml"/>
-<template is="restaurant_profile" data="{{...RESTAURANT.DATA}}"/>  
+<template is="restaurantProfile" data="{{...RESTAURANT.DATA}}"/>  
 
 <view class="restaurant_wrapper">
   <view class="profile_wrapper">
