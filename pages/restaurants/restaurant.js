@@ -1,19 +1,17 @@
 // pages/restaurants/restaurant.js
 Page({
-
   toggleType: function (event) {
     // console.log(event)
     this.setData({
       typeLocked: !this.data.typeLocked
-      
     });
     console.log(this.data.typeLocked);
-    wx.setStorage({
-      key: "toggleType",
-      data: {
-        typeLocked: this.data.typeLocked,
-      }
-    })
+    // wx.setStorage({
+    //   key: "toggleType",
+    //   data: {
+    //     typeLocked: this.data.typeLocked,
+    //   }
+    // })
   },
 
   togglePrice: function (event) {
@@ -22,12 +20,12 @@ Page({
       priceLocked: !this.data.priceLocked
     })
     console.log(this.data.priceLocked);
-    wx.setStorage({
-      key: "togglePrice",
-      data: {
-        priceLocked: this.data.priceLocked,
-      }
-    })
+    // wx.setStorage({
+    //   key: "togglePrice",
+    //   data: {
+    //     priceLocked: this.data.priceLocked,
+    //   }
+    // })
   },
   /**
    * 页面的初始数据
@@ -35,6 +33,8 @@ Page({
   data: {
     typeLocked: false,
     priceLocked: false,
+    currentType: null, 
+    currentPrice: null,
 }, 
 
 
@@ -52,9 +52,21 @@ Page({
       header: { },
       success:  (res) => {
         console.log(res.data),
-        this.setData({ name: res.data.name, type: res.data.category, mainPhoto: res.data.profile_photo, rating: res.rating, price: res.data.price_range, phone: res.data.phone_number, address: res.data.address });
+        this.setData({
+          name: res.data.name,
+          type: res.data.category,
+          mainPhoto: res.data.profile_photo, 
+          rating: res.rating, 
+          price: res.data.price_range, 
+          phone: res.data.phone_number, 
+          address: res.data.address,
+          currentType: res.data.category,
+          currentPrice: res.data.price_range 
+        });  
+        
       }
     })
+    
   },
 
   /**
@@ -63,7 +75,6 @@ Page({
   onReady: function () {
 
   },
-
   /**
    * 生命周期函数--监听页面显示
    */
