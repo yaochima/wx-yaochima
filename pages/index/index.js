@@ -25,9 +25,23 @@ Page({
         app.globalData.lng = longitude
       }
     })
-  }
+  },
+
+  wx.request({
+    url: 'https://yaochima.herokuapp.com/api/v1/shakes',
+      method: 'post',
+      data: {
+          "latitude": latitude,
+          "longitude": longitude,
+          "uuid" :uuid
+      },
+      success: function(res) {
+      console.log(res)
+      console.log("Patch success")
+            console.log(res.data)
+      }
+    })
   // onPullDownRefresh: function () {
   //   wx.stopPullDownRefresh()
   // },
-  
 })
