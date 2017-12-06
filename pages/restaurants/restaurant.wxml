@@ -1,22 +1,20 @@
-
-<template is="../components/restaurant_profile" data="{{...RESTAURANTDATA}}"/>
+<!-- <import src="../components/restaurant_profile.wxml"/>
+<template is="restaurant_profile" data="{{...RESTAURANT.DATA}}"/>  -->
 
 <view class="restaurant_wrapper">
   <view class="profile_wrapper">
-    <!-- Restaurant images/scroll -->
-    <view class="restaurant_banner">
-
-            <image src="{{main_photo}}" class="image"/>
-        
+    <view class="restaurant_banner" style="background-image: linear-gradient(-180deg, rgba(255,255,255,0.00) 0%, rgba(35,35,35,0.86)  86%, #000000 100%), url('../../assets/images/meatmarket.jpg')">
+       <view class="empty"></view> 
+      <text class="h1 white_text">Vinegar Hill</text>
     </view>
-
+   
     <!-- Restaurant Profile Details Subheader -->
     <view class="restaurant_details white_text text_size">
       <view class="row">
         <view class="type">烧烤 BBQ</view>
         <view class="rating">* * * * *</view>
-        <view class="price_field">
-          <text class="price orange_text">¥85</text> 
+        <view class="price">
+          <text class="price-text orange_text">¥85</text> 
           <text class="per person"> 人均</text>
         </view>
       </view>
@@ -30,20 +28,18 @@
       </view>
     </view>
   </view>
-
-
-
-
+    <!-- Lock Restaurant Parameters -->
 <view class="button_wrap">
-    <!-- Restaurant Parameters -->
-    <view class="button row h2">
+    <view class="restaurant_type button row h2 {{restaurant_type_locked ? '.status_locked' : '' }}" bindtap='toggleType'>
       <view class="empty"></view>
-      <view class="type_button_text white_text">
+      <view class="type_text white_text">
         <text>烧烤 BBQ</text>
       </view>
-      <view class="type_button_icon"></view>
+      <view class="type_icon">
+        <img class="type_icon_img" src="#"/>
+      </view>
     </view>
-    <view class="button row h2">
+    <view class="restaurant_price button row h2 {{restaurant_price_locked ? '.status_locked' : '' }}" bindtap='togglePrice'>
       <view class="empty"></view>
       <view class="price_button_text">
         <text class="price orange_text">¥85</text> 
@@ -51,16 +47,13 @@
       </view>
       <view class="price_button_icon"></view>
     </view>
-
-    <!-- No good? Shake again -->
-
     <view class="button row" id="shake">
-      <view class="left_icon"></view>
+      <view class="shake_icon"></view>
       <view class="shake_text text-size">
         <text class="white_text">Not Your Flavor?</text>
         <text class="orange_text"> Shake Again</text>
       </view>
-      <view class="right_icon"></view>
+      <view class="shake_icon"></view>
     </view>
   </view>
 </view>

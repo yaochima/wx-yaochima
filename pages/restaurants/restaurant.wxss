@@ -1,19 +1,40 @@
 /* pages/restaurants/restaurant.wxss */
 
-.image {
+.main-image {
   zoom: aspectFill;
   crop: topLeft;
+  z-index: 1;
 }
+
+  /* .image::before {
+  /* content: 'Vinegar Hill'; */
+  /* color: white; */
+  /* align-self: flex-end;    */
+/* } */
 
 /* .profile_wrapper {
    flex: 1; 
 } */
+/* .restaurant_wrapper {
+   background-color: orangered;
+  position: relative;
+} */
 
 .restaurant_banner {
-  width: 100%;
+  width: 100vw;
+  max-width: 100vw;
   height: 50vh;
-  background-image: linear-gradient(-180deg, rgba(255,255,255,0.00) 0%, rgba(35,35,35,0.86)   86%, #000000 100%);
+  display: flex; 
+  flex-direction: column;
+  justify-content: space-between;
+
 }
+
+/* .restaurant_name {
+   background-color: ; 
+   z-index: 9999; 
+  padding-bottom: 50px;
+} */
 
 .row {
   display: flex;
@@ -23,7 +44,6 @@
   text-align: center;
   flex: auto;
   flex-grow: 1;
-  /* background-color: aqua; */
 }
 
 .restaurant_details {
@@ -34,6 +54,7 @@
 
 #shake {
   background-color: black;
+  padding: 10px;
 }
 
 /* .shake_container {
@@ -61,6 +82,7 @@
   min-height: 100vh;
   max-height: 100vh;
   align-content: stretch;
+
 } 
 
 .button {
@@ -80,6 +102,8 @@
 
 .h1 {
   font-size: 45px;
+  z-index: 2;
+  text-shadow: 2px 2px .5
 }
 
 .h2 {
@@ -96,5 +120,6 @@
 
 .status_locked {
   background-color: #000000;
+  font-weight: bold;
 }
 
