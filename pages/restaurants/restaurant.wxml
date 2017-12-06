@@ -1,5 +1,5 @@
-<import src="../components/restaurant_profile.wxml"/>
-<template is="restaurantProfile" data="{{...RESTAURANT.DATA}}"/>  
+<!-- <import src="../../components/restaurantProfile.wxml"/>
+<template is="restaurantProfile" data="{{...RESTAURANT.DATA}}"/>   -->
 
 <view class="restaurant_wrapper">
   <view class="profile_wrapper">
@@ -7,9 +7,9 @@
        <view class="empty"></view> 
       <text class="h1 white_text">Vinegar Hill</text>
     </view>
-   
+    
     <!-- Restaurant Profile Details Subheader -->
-    <view class="restaurant_details white_text text_size">
+     <view class="restaurant_details white_text text_size">
       <view class="row">
         <view class="type">烧烤 BBQ</view>
         <view class="rating">* * * * *</view>
@@ -27,9 +27,9 @@
         </view>
       </view>
     </view>
-  </view>
+  </view> 
     <!-- Lock Restaurant Parameters -->
-<view class="button_wrap">
+ <view class="button_wrap">
     <view class="restaurant_type button row h2 {{typeLocked ? 'lock' : 'unlock' }}" bindtap='toggleType'>
       <view class="empty"></view>
       <view class="type_text white_text">
@@ -56,4 +56,4 @@
       <view class="shake_icon"></view>
     </view>
   </view>
-</view>
+</view> 
