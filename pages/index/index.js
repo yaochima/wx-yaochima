@@ -10,6 +10,7 @@ Page({
 
   onLoad: function(options) {
   },
+
   listenerBtnGetLocation: function () {
     wx.getLocation({
       success: function (res) {
@@ -21,15 +22,5 @@ Page({
       }
     })
   }
-  // bindLocationTap: function() {
-  //   console.log('It finally works');
-  //   wx.getLocation({
-  //     success: function(res) {
-  //       var latitude = res.latitude
-  //       var longitude = res.longitude
-  //       console.log(longitude)
-  //       console.log(latitude);
-  //     },
-  //   })
-  // },
+  
 })

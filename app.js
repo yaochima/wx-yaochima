@@ -3,32 +3,54 @@ App({
   globalData: {
     uuid: null,
     lat: null,
-    lng: null
-  }
-onLaunch: function () {
-const that = this
-// 展示本地存储能力
-  const userUuid = wx.getStorageSync('uuid') || ""
+    lng: null,
+    auth_token: null
+  },
+
+  onLaunch: function() {
+    this.ensureUUID();
+    this.loadData();
+  },
+
+  loadData: function () {
+    wx.request({
+      url: 'https://yaochima.herokuapp.com/api/v1/users',
+      method: 'post',
+      header: {},
+      success: function(res) {
+      console.log("Yo!")
+      }
+    })
+  },
+
+  ensureUUID: function() {
+    const that = this
+    // 展示本地存储能力
+    const userUuid = wx.getStorageSync('uuid') || ""
     if (userUuid === "") {
       that.globalData.uuid = that.createUUID()
       wx.setStorageSync('uuid', that.globalData.uuid)
     } else {
       that.globalData.uuid = userUuid
-    },
-    createUUID: function() {
-      let s = [];
-      const hexDigits = "0123456789abcdef";
-      for ( let i = 0; i < 36; i++) {
-        s[i] = hexDigits.substr(Math.floor(Math.random() * 0x10), 1);
-      }
-      s[14] = "4"; // bits 12-15 of the time_hi_and_version field to 0010
-      s[19] = hexDigits.substr((s[19] & 0x3) | 0x8, 1); 
-    s[8] = s[13] = s[18] = s[23] = "-";
-
-      const uuid = s.join("");
-      return uuid;
     }
-   }   // wx.checkSession interface test whether the current user login status is valid.
+  },
+
+  createUUID: function () {
+    let s = [];
+    const hexDigits = "0123456789abcdef";
+    for (let i = 0; i < 36; i++) {
+      s[i] = hexDigits.substr(Math.floor(Math.random() * 0x10), 1);
+    }
+    s[14] = "4"; // bits 12-15 of the time_hi_and_version field to 0010
+    s[19] = hexDigits.substr((s[19] & 0x3) | 0x8, 1);
+    s[8] = s[13] = s[18] = s[23] = "-";
+    const uuid = s.join("");
+
+    return uuid;
+  } 
+})  
+    
+    // wx.checkSession interface test whether the current user login status is valid.
     // wx.checkSession({
     //   success: function () {    //登录态未过期
     //   },
@@ -63,4 +85,4 @@ const that = this
     //     }
     //   }
     // })
-  })
+  
