@@ -2,23 +2,27 @@
 App({
   globalData: {
     uuid: null,
+    auth_token: null, 
     lat: null,
-    lng: null,
-    auth_token: null
+    lng: null
   },
 
   onLaunch: function() {
     this.ensureUUID();
-    this.loadData();
+    this.signInAsGuest();
   },
 
-  loadData: function () {
+  signInAsGuest: function () {
     wx.request({
-      url: 'https://yaochima.herokuapp.com/api/v1/users',
+      url: 'https://yaochima.herokuapp.com/api/v1/guests',
       method: 'post',
-      header: {},
+      data: {
+        'client_uuid': 'userUuid'
+      },
       success: function(res) {
-      console.log("Yo!")
+      console.log(res)
+      console.log("Patch success")
+      console.log(res.data)
       }
     })
   },
