@@ -13,7 +13,7 @@
           <view class="type">{{type}}</view>
           <view class="rating">* * * * *</view>
           <view class="price">
-            <text class="price-text orange_text">{{price}}</text>
+            <text class="price-text orange_text">￥{{price}}</text>
             <text class="per person"> 人均</text>
           </view>
         </view>
@@ -41,7 +41,7 @@
       <view class="restaurant_price button row h2 {{priceLocked ? 'lock' : 'unlock' }}" bindtap='togglePrice'>
         <view class="empty"></view>
         <view class="price_button_text">
-          <text class="price orange_text">{{price}}</text>
+          <text class="price orange_text">￥{{price}}</text>
           <text class="per person white_text"> 人均</text>
         </view>
         <view class="price_button_icon"></view>
