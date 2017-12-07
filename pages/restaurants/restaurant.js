@@ -34,26 +34,34 @@ Page({
     let that = this;
 
     if (this.data.categoryLocked == true && this.data.priceLocked == false) {
-      console.log("category locked"),
       this.setData({
         lockedcategory: this.data.currentCategory,
       })
+      console.log("category locked");
+      console.log(this.data.lockedcategory);
+      console.log(this.data.lockedprice);
     } else if (this.data.categoryLocked == true && this.data.priceLocked == true) {
-      console.log("both locked"),
+      
       this.setData({
         lockedcategory: this.data.currentCategory,
         lockedprice: this.data.currentPrice,
-        
       });
+      console.log("both locked");
+      console.log(this.data.lockedcategory);
+      console.log(this.data.lockedprice);
     } else if (this.data.categoryLocked == false && this.data.priceLocked == true) {
-      console.log("price locked"),
       this.setData({
         lockedprice: this.data.currentPrice,
       });
       this.data.exclusions.push(this.data.currentCategory);
+      console.log("price locked");
+      console.log(this.data.lockedcategory);
+      console.log(this.data.lockedprice);
     } else if (this.data.categoryLocked == false && this.data.priceLocked == false) {
-      console.log("none locked"),
         this.data.exclusions.push(this.data.currentCategory)
+        console.log("none locked");
+        console.log(this.data.lockedcategory);
+        console.log(this.data.lockedprice);
     }
 
     wx.request({
@@ -92,8 +100,8 @@ Page({
         "lat": app.globalData.lat,
         "lng": app.globalData.lng,
         "exclusions": this.data.exclusions,
-        "lockedcategory": this.data.currentCategory,
-        "lockedprice": this.data.currentPrice
+        "lockedcategory": this.data.lockedcategory,
+        "lockedprice": this.data.lockedprice,
       },
       success:  (res) => {
         console.log(res.data),
@@ -106,7 +114,7 @@ Page({
           phone: res.data.phone_number, 
           address: res.data.address,
           currentCategory: res.data.category,
-          currentPrice: res.data.price_range 
+          currentPrice: res.data.price_per_person 
         });  
         
       }
