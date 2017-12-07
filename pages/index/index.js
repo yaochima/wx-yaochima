@@ -38,8 +38,9 @@ Page({
         // 'uuid': app.globalData.uuid
       },
       success: function (res) {
-        console.log(res)
-        console.log("Patch success")
+        // console.log(res)
+        // console.log("Patch success")
+        // res.data = '1';
         console.log(res.data)
         console.log(app.globalData.lat.toString())
         console.log(app.globalData.lng.toString())
@@ -51,6 +52,9 @@ Page({
         // })
         console.log("res")
         console.log(res)
+      },
+      fail: function(res) {
+        console.log(res);
       }
     })
   }
