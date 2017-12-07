@@ -30,38 +30,51 @@ Page({
   },
   
   shakeTest: function (event) {
+    console.log("restart shake")
+    // this.setData({
+    //   lockedcategory: null,
+    //   lockedprice: null,
+    // });
+
     console.log(event);
     let that = this;
 
-    if (this.data.categoryLocked == true && this.data.priceLocked == false) {
+    if (this.data.categoryLocked && !this.data.priceLocked) {
       this.setData({
         lockedcategory: this.data.currentCategory,
-      })
-      console.log("category locked");
-      console.log(this.data.lockedcategory);
-      console.log(this.data.lockedprice);
-    } else if (this.data.categoryLocked == true && this.data.priceLocked == true) {
+        lockedprice: null
+      });
+
+      // console.log("category locked");
+      // console.log(this.data.lockedcategory);
+      // console.log(this.data.lockedprice);
+    } else if (this.data.categoryLocked && this.data.priceLocked) {
       
       this.setData({
         lockedcategory: this.data.currentCategory,
         lockedprice: this.data.currentPrice,
       });
-      console.log("both locked");
-      console.log(this.data.lockedcategory);
-      console.log(this.data.lockedprice);
-    } else if (this.data.categoryLocked == false && this.data.priceLocked == true) {
+
+      // console.log("both locked");
+      // console.log(this.data.lockedcategory);
+      // console.log(this.data.lockedprice);
+
+    } else if (!this.data.categoryLocked && this.data.priceLocked) {
       this.setData({
+        lockedcategory: null,
         lockedprice: this.data.currentPrice,
       });
       this.data.exclusions.push(this.data.currentCategory);
-      console.log("price locked");
-      console.log(this.data.lockedcategory);
-      console.log(this.data.lockedprice);
-    } else if (this.data.categoryLocked == false && this.data.priceLocked == false) {
+
+      // console.log("price locked");
+      // console.log(this.data.lockedcategory);
+      // console.log(this.data.lockedprice);
+
+    } else {
         this.data.exclusions.push(this.data.currentCategory)
-        console.log("none locked");
-        console.log(this.data.lockedcategory);
-        console.log(this.data.lockedprice);
+        // console.log("none locked");
+        // console.log(this.data.lockedcategory);
+        // console.log(this.data.lockedprice);
     }
 
     wx.request({
@@ -75,6 +88,7 @@ Page({
         "lockedprice": this.data.lockedprice
       },
       success: function (res) {
+        // res.data = '1';
         that.loadData(res.data);
         console.log("important")
         console.log(res.data)
