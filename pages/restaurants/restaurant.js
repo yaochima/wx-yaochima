@@ -31,10 +31,10 @@ Page({
   
   shakeTest: function (event) {
     console.log("restart shake")
-    // this.setData({
-    //   lockedcategory: null,
-    //   lockedprice: null,
-    // });
+    this.setData({
+      lockedcategory: null,
+      lockedprice: null,
+    });
 
     console.log(event);
     let that = this;
