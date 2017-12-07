@@ -76,8 +76,8 @@ Page({
   
   loadData: function (restaurantId) {
     wx.request ({
-      url: 'https://yaochima.herokuapp.com/api/v1/restaurants/1',
-      // url: app.globalData.restaurantUrl + restaurantId',
+      // url: 'https://yaochima.herokuapp.com/api/v1/restaurants/1',
+      url: app.globalData.restaurantUrl + restaurantId,
       method: 'get',
       header: { },
       data: {
@@ -94,7 +94,7 @@ Page({
           category: res.data.category,
           mainPhoto: res.data.profile_photo, 
           rating: res.rating, 
-          price: res.data.price_range, 
+          price: res.data.price_per_person, 
           phone: res.data.phone_number, 
           address: res.data.address,
           currentCategory: res.data.category,
