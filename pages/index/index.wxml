@@ -6,6 +6,6 @@
     <text class="user-motto">{{motto}}</text>
   </view>
   <button type="warn" bindtap="listenerBtnGetLocation">Get location</button>
-  <button bindtap="ontap" type="listenerBtnGetShake">SHAKE</button>
+  <button bindtap="listenerBtnGetShake">SHAKE</button>
 </view>
 
