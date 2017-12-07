@@ -45,9 +45,10 @@ Page({
         lockedprice: null
       });
 
-      // console.log("category locked");
-      // console.log(this.data.lockedcategory);
-      // console.log(this.data.lockedprice);
+      console.log("category locked");
+      console.log(this.data.lockedcategory);
+      console.log(this.data.lockedprice);
+
     } else if (this.data.categoryLocked && this.data.priceLocked) {
       
       this.setData({
@@ -55,9 +56,9 @@ Page({
         lockedprice: this.data.currentPrice,
       });
 
-      // console.log("both locked");
-      // console.log(this.data.lockedcategory);
-      // console.log(this.data.lockedprice);
+      console.log("both locked");
+      console.log(this.data.lockedcategory);
+      console.log(this.data.lockedprice);
 
     } else if (!this.data.categoryLocked && this.data.priceLocked) {
       this.setData({
@@ -66,15 +67,15 @@ Page({
       });
       this.data.exclusions.push(this.data.currentCategory);
 
-      // console.log("price locked");
-      // console.log(this.data.lockedcategory);
-      // console.log(this.data.lockedprice);
+      console.log("price locked");
+      console.log(this.data.lockedcategory);
+      console.log(this.data.lockedprice);
 
     } else {
         this.data.exclusions.push(this.data.currentCategory)
-        // console.log("none locked");
-        // console.log(this.data.lockedcategory);
-        // console.log(this.data.lockedprice);
+        console.log("none locked");
+        console.log(this.data.lockedcategory);
+        console.log(this.data.lockedprice);
     }
 
     wx.request({
