@@ -1,4 +1,5 @@
 // pages/restaurants/restaurant.js
+var app = getApp()
 Page({
   data: {
     categoryLocked: false,
@@ -27,39 +28,41 @@ Page({
   shakeTest: function (event) {
     console.log(event);
 
-    if (categoryLocked == true && priceLocked == false) {
+    if (this.data.categoryLocked == true && this.data.priceLocked == false) {
       this.setData({
-        lockedcategory: currentCategory
+        lockedcategory: this.data.currentCategory
       })
-    } else if (categoryLocked == true && priceLocked == true) {
+    } else if (this.data.categoryLocked == true && this.data.priceLocked == true) {
       this.setData({
-        lockedcategory: currentCategory,
-        lockedprice: currentPrice
+        lockedcategory: this.data.currentCategory,
+        lockedprice: this.data.currentPrice
       });
-    } else if (categoryLocked == false && priceLocked == true) {
+    } else if (this.data.categoryLocked == false && this.data.priceLocked == true) {
       this.setData({
-        lockedprice: currentPrice,
+        lockedprice: this.data.currentPrice,
       });
-      exclusions.push(currentCategory);
-    } else if (categoryLocked == false && priceLocked == false) {
+      this.data.exclusions.push(this.data.currentCategory);
+    } else if (this.data.categoryLocked == false && this.data.priceLocked == false) {
       console.log("none locked"),
-      exclusions.push(currentCategory)
+        this.data.exclusions.push(this.data.currentCategory)
     }
 
     wx.request({
       url: 'https://yaochima.herokuapp.com/api/v1/shakes',
       method: 'post',
       data: {
-        "exclusions": exclusions,
-        "lockedcategory": currentCategory,
-        "lockedprice": currentPrice
+        "lat": app.globalData.lat, 
+        "lng": app.globalData.lng,
+        "exclusions": this.data.exclusions,
+        "lockedcategory": this.data.currentCategory,
+        "lockedprice": this.data.currentPrice
       },
       success: function (res) {
         console.log("Parameter Post Success")
+        this.loadData();
       }
     })
   },
-
 
   onLoad: function (options) {
     this.loadData();
