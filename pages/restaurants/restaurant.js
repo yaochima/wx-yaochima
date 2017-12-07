@@ -90,11 +90,12 @@ Page({
       },
       success: function (res) {
         // res.data = '1';
-        that.loadData(res.data);
+        that.loadData(res.data.id);
         console.log("important")
-        console.log(res.data)
+        console.log(res.data.id)
+        console.log(res.data.error_message)
         that.setData ({
-          restaurantId: res.data
+          restaurantId: res.data.id
         })
         console.log("Parameter Post Success")
       }
@@ -102,13 +103,14 @@ Page({
   },
 
   onLoad: function (options) {
+    console.log(options.id)
     this.loadData(options.id);
   },
   
   loadData: function (restaurantId) {
     wx.request ({
       // url: 'https://yaochima.herokuapp.com/api/v1/restaurants/1',
-      url: app.globalData.restaurantUrl + restaurantId,
+      url: "https://yaochima.herokuapp.com/api/v1/restaurants/" + restaurantId,
       method: 'get',
       header: { },
       data: {
