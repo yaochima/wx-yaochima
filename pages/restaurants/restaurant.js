@@ -1,7 +1,9 @@
 // pages/restaurants/restaurant.js
 var app = getApp()
+
 Page({
   data: {
+    restaurantId: null,
     categoryLocked: false,
     priceLocked: false,
     currentCategory: null,
@@ -59,22 +61,26 @@ Page({
       },
       success: function (res) {
         console.log("Parameter Post Success")
-        this.loadData();
+        this.loadData(res.data);
       }
     })
   },
 
   onLoad: function (options) {
-    this.loadData();
+    this.loadData(options.id);
   },
   
-  loadData: function () {
+  loadData: function (restaurantId) {
     wx.request ({
       url: 'https://yaochima.herokuapp.com/api/v1/restaurants/1',
       // url: app.globalData.restaurantUrl + '1',
       // 'app.globalData.restaurantId',
       method: 'get',
       header: { },
+      data: {
+        "lat": app.globalData.lat,
+        "lng": app.globalData.lng
+      }
       success:  (res) => {
         console.log(res.data),
         this.setData({
