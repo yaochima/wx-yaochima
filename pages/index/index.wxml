@@ -1,4 +1,4 @@
-<view class="container">
+<!-- <view class="container">
   <view class="userinfo">
       <text class="userinfo-nickname">Awesome User</text>
   </view>
@@ -7,5 +7,19 @@
   </view>
   <button type="warn" bindtap="listenerBtnGetLocation">Get location</button>
   <button bindtap="listenerBtnGetShake">SHAKE</button>
-</view>
+</view> -->
 
+<view class="wrapper">
+  <view class="container">
+    <view class="greeting">
+      <view class="greetingText">
+        <text> Who's Hungry, Bitches? </text>
+      </view>
+      <view class="greetingImage"></view>
+      <view class="button-location-view">
+        <button class="button-location" type="warn" bindtap="listenerBtnGetLocation">Find Me Food</button>
+      </view>
+    </view>
+  </view>
+   <button bindtap="listenerBtnGetShake">SHAKE</button>
+</view>
