@@ -1,11 +1,11 @@
 // pages/restaurants/restaurant.js
 Page({
-  toggleType: function (event) {
+  toggleCategory: function (event) {
     // console.log(event)
     this.setData({
-      typeLocked: !this.data.typeLocked
+      categoryLocked: !this.data.categoryLocked
     });
-    console.log(this.data.typeLocked);
+    console.log(this.data.categoryLocked);
     // wx.setStorage({
     //   key: "toggleType",
     //   data: {
@@ -31,9 +31,9 @@ Page({
    * 页面的初始数据
    */
   data: {
-    typeLocked: false,
+    categoryLocked: false,
     priceLocked: false,
-    currentType: null, 
+    currentCategory: null, 
     currentPrice: null,
 }, 
 
@@ -56,13 +56,13 @@ Page({
         console.log(res.data),
         this.setData({
           name: res.data.name,
-          type: res.data.category,
+          category: res.data.category,
           mainPhoto: res.data.profile_photo, 
           rating: res.rating, 
           price: res.data.price_range, 
           phone: res.data.phone_number, 
           address: res.data.address,
-          currentType: res.data.category,
+          currentCategory: res.data.category,
           currentPrice: res.data.price_range 
         });  
         
