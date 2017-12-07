@@ -12,10 +12,24 @@
   border-radius: 50%;
 } */
 
+
 .userinfo-nickname {
   color: #aaa;
 }
 
 .usermotto {
   margin-top: 200px;
+}
+
+.greetingText {
+  font-size: 25px;
+  color: #F5A623;
+}
+
+.greetingImage {
+  height: 40vh;
+}
+
+button.button-location {
+  background-color: #F5A623;
 }
