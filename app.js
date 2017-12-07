@@ -9,6 +9,7 @@ App({
     restaurantID: null, 
     guestUrl: 'https://yaochima.herokuapp.com/api/v1/guests',
     guestId: null,
+    
   },
 
   onLaunch: function() {

@@ -12,6 +12,7 @@ Page({
   },
 
   listenerBtnGetLocation: function () {
+    console.log('haha');
     wx.getLocation({
       success: function (res) {
         var latitude = res.latitude
@@ -26,29 +27,40 @@ Page({
       }
     })
   },
-  
 
-    listenerBtnGetShake: function () {
-      wx.request({
-        url: 'https://yaochima.herokuapp.com/api/v1/shakes',
-        method: 'post',
-        data: {
-          "lat": app.globalData.lat.toString(),
-          "lng": app.globalData.lng.toString()
-        },
-        success: function (res) {
-          console.log(res)
-          console.log("Patch success")
-          console.log(res.data)
-          console.log("lat")
-          console.log(app.globalData.lat.toString())
-          
-          console.log(app.globalData.lng.toString())
-        }
-      })
-  },  
+  listenerBtnGetShake: function () {
+    app.globalData.lat = 30.57;
+    app.globalData.lng = 104.06;
+    wx.request({
+      url: 'https://yaochima.herokuapp.com/api/v1/shakes',
+      method: 'post',
+      data: {
+        "lat": app.globalData.lat.toString(),
+        "lng": app.globalData.lng.toString(),
+        // 'uuid': app.globalData.uuid
+      },
+      success: function (res) {
+        console.log(res)
+        console.log("Patch success")
+        console.log(res.data)
+        console.log(app.globalData.lat.toString())
+        console.log(app.globalData.lng.toString())
+        wx.navigateTo({
+          url: "../restaurants/restaurant?id=" + res.data
+        })
+        // this.setData({
+        //   app.globalData.restaurantID: res
+        // })
+        console.log("res")
+        console.log(res)
+      }
+    })
+  }
 
-  // onPullDownRefresh: function () {
-  //   wx.stopPullDownRefresh()
-  // },
+    // viewRestaurant: function(e) {
+    //   let data = e.currentRestaurant.dataset;
+    //     wx.navigateTo({
+    //     url: "../restaurants/restaurant"
+    //     })
+    // },
 })
