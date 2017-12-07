@@ -40,7 +40,7 @@ Page({
       console.log("Patch success")
             console.log(res.data)
       }
-    })
+    }),
   // onPullDownRefresh: function () {
   //   wx.stopPullDownRefresh()
   // },
