@@ -1,46 +1,69 @@
 // pages/restaurants/restaurant.js
+var app = getApp()
 Page({
+  data: {
+    categoryLocked: false,
+    priceLocked: false,
+    currentCategory: null,
+    currentPrice: null,
+    exclusions: [],
+  }, 
+
   toggleCategory: function (event) {
     // console.log(event)
     this.setData({
       categoryLocked: !this.data.categoryLocked
     });
     console.log(this.data.categoryLocked);
-    // wx.setStorage({
-    //   key: "toggleType",
-    //   data: {
-    //     typeLocked: this.data.typeLocked,
-    //   }
-    // })
   },
 
   togglePrice: function (event) {
     // console.log(event)
     this.setData({
       priceLocked: !this.data.priceLocked
-    })
+    });
     console.log(this.data.priceLocked);
-    // wx.setStorage({
-    //   key: "togglePrice",
-    //   data: {
-    //     priceLocked: this.data.priceLocked,
-    //   }
-    // })
   },
-  /**
-   * 页面的初始数据
-   */
-  data: {
-    categoryLocked: false,
-    priceLocked: false,
-    currentCategory: null, 
-    currentPrice: null,
-}, 
+  
+  shakeTest: function (event) {
+    console.log(event);
 
+    if (this.data.categoryLocked == true && this.data.priceLocked == false) {
+      this.setData({
+        lockedcategory: this.data.currentCategory
+      })
+    } else if (this.data.categoryLocked == true && this.data.priceLocked == true) {
+      this.setData({
+        lockedcategory: this.data.currentCategory,
+        lockedprice: this.data.currentPrice
+      });
+    } else if (this.data.categoryLocked == false && this.data.priceLocked == true) {
+      this.setData({
+        lockedprice: this.data.currentPrice,
+      });
+      this.data.exclusions.push(this.data.currentCategory);
+    } else if (this.data.categoryLocked == false && this.data.priceLocked == false) {
+      console.log("none locked"),
+        this.data.exclusions.push(this.data.currentCategory)
+    }
 
-  /**
-   * 生命周期函数--监听页面加载
-   */
+    wx.request({
+      url: 'https://yaochima.herokuapp.com/api/v1/shakes',
+      method: 'post',
+      data: {
+        "lat": app.globalData.lat, 
+        "lng": app.globalData.lng,
+        "exclusions": this.data.exclusions,
+        "lockedcategory": this.data.currentCategory,
+        "lockedprice": this.data.currentPrice
+      },
+      success: function (res) {
+        console.log("Parameter Post Success")
+        this.loadData();
+      }
+    })
+  },
+
   onLoad: function (options) {
     this.loadData();
   },
