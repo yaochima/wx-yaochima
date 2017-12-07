@@ -12,7 +12,6 @@ Page({
   },
 
   listenerBtnGetLocation: function () {
-    console.log('haha');
     wx.getLocation({
       success: function (res) {
         var latitude = res.latitude
@@ -29,8 +28,6 @@ Page({
   },
 
   listenerBtnGetShake: function () {
-    app.globalData.lat = 30.57;
-    app.globalData.lng = 104.06;
     wx.request({
       url: 'https://yaochima.herokuapp.com/api/v1/shakes',
       method: 'post',

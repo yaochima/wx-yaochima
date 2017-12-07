@@ -29,6 +29,7 @@ Page({
   
   shakeTest: function (event) {
     console.log(event);
+    let that = this;
 
     if (this.data.categoryLocked == true && this.data.priceLocked == false) {
       this.setData({
@@ -60,8 +61,11 @@ Page({
         "lockedprice": this.data.currentPrice
       },
       success: function (res) {
+        that.loadData(res.data);
+        that.setData ({
+          restaurantId: res.data
+        })
         console.log("Parameter Post Success")
-        this.loadData(res.data);
       }
     })
   },
@@ -73,14 +77,16 @@ Page({
   loadData: function (restaurantId) {
     wx.request ({
       url: 'https://yaochima.herokuapp.com/api/v1/restaurants/1',
-      // url: app.globalData.restaurantUrl + '1',
-      // 'app.globalData.restaurantId',
+      // url: app.globalData.restaurantUrl + restaurantId',
       method: 'get',
       header: { },
       data: {
         "lat": app.globalData.lat,
-        "lng": app.globalData.lng
-      }
+        "lng": app.globalData.lng,
+        "exclusions": this.data.exclusions,
+        "lockedcategory": this.data.currentCategory,
+        "lockedprice": this.data.currentPrice
+      },
       success:  (res) => {
         console.log(res.data),
         this.setData({
