@@ -33,14 +33,17 @@ Page({
         url: 'https://yaochima.herokuapp.com/api/v1/shakes',
         method: 'post',
         data: {
-          "latitude": latitude,
-          "longitude": longitude,
-          "uuid": uuid
+          "lat": app.globalData.lat.toString(),
+          "lng": app.globalData.lng.toString()
         },
         success: function (res) {
           console.log(res)
           console.log("Patch success")
           console.log(res.data)
+          console.log("lat")
+          console.log(app.globalData.lat.toString())
+          
+          console.log(app.globalData.lng.toString())
         }
       })
   },  
