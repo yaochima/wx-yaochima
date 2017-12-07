@@ -34,6 +34,7 @@ Page({
       data: {
         "lat": app.globalData.lat.toString(),
         "lng": app.globalData.lng.toString(),
+        "exclusions": "[]"
         // 'uuid': app.globalData.uuid
       },
       success: function (res) {
