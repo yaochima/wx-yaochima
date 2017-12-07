@@ -48,9 +48,10 @@
       </view>
       <view class="button row" id="shake">
         <view class="shake_icon"></view>
+
         <view class="shake_text text-size">
           <text class="white_text">Not Your Flavor?</text>
-          <text class="orange_text"> Shake Again</text>
+          <text class="orange_text" bindtap="shakeTest"> Shake Again</text>
         </view>
         <view class="shake_icon"></view>
       </view>
