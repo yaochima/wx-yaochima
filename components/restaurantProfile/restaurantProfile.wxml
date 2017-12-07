@@ -2,7 +2,7 @@
   
   <view class="restaurant_wrapper">
     <view class="profile_wrapper">
-      <view class="restaurant_banner" style="background-image: linear-gradient(-180deg, rgba(255,255,255,0.00) 0%, rgba(35,35,35,0.86)  86%, #000000 100%), url('../../assets/images/meatmarket.jpg')">
+      <view class="restaurant_banner" style="background-image: linear-gradient(-180deg, rgba(255,255,255,0.00) 0%, rgba(35,35,35,0.86)  86%, #000000 100%), url({{mainPhoto}})">
         <view class="empty"></view>
         <text class="h1 white_text">{{name}}</text>
       </view>
