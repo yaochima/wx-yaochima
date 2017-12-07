@@ -1,46 +1,66 @@
 // pages/restaurants/restaurant.js
 Page({
+  data: {
+    categoryLocked: false,
+    priceLocked: false,
+    currentCategory: null,
+    currentPrice: null,
+    exclusions: [],
+  }, 
+
   toggleCategory: function (event) {
     // console.log(event)
     this.setData({
       categoryLocked: !this.data.categoryLocked
     });
     console.log(this.data.categoryLocked);
-    // wx.setStorage({
-    //   key: "toggleType",
-    //   data: {
-    //     typeLocked: this.data.typeLocked,
-    //   }
-    // })
   },
 
   togglePrice: function (event) {
     // console.log(event)
     this.setData({
       priceLocked: !this.data.priceLocked
-    })
+    });
     console.log(this.data.priceLocked);
-    // wx.setStorage({
-    //   key: "togglePrice",
-    //   data: {
-    //     priceLocked: this.data.priceLocked,
-    //   }
-    // })
   },
-  /**
-   * 页面的初始数据
-   */
-  data: {
-    categoryLocked: false,
-    priceLocked: false,
-    currentCategory: null, 
-    currentPrice: null,
-}, 
+  
+  shakeTest: function (event) {
+    console.log(event);
+
+    if (categoryLocked == true && priceLocked == false) {
+      this.setData({
+        lockedcategory: currentCategory
+      })
+    } else if (categoryLocked == true && priceLocked == true) {
+      this.setData({
+        lockedcategory: currentCategory,
+        lockedprice: currentPrice
+      });
+    } else if (categoryLocked == false && priceLocked == true) {
+      this.setData({
+        lockedprice: currentPrice,
+      });
+      exclusions.push(currentCategory);
+    } else if (categoryLocked == false && priceLocked == false) {
+      console.log("none locked"),
+      exclusions.push(currentCategory)
+    }
+
+    wx.request({
+      url: 'https://yaochima.herokuapp.com/api/v1/shakes',
+      method: 'post',
+      data: {
+        "exclusions": exclusions,
+        "lockedcategory": currentCategory,
+        "lockedprice": currentPrice
+      },
+      success: function (res) {
+        console.log("Parameter Post Success")
+      }
+    })
+  },
 
 
-  /**
-   * 生命周期函数--监听页面加载
-   */
   onLoad: function (options) {
     this.loadData();
   },

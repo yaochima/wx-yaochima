@@ -1,9 +1,10 @@
 {
   
   "pages":[
-    "pages/index/index",
-    "pages/restaurants/restaurant"
+    "pages/restaurants/restaurant",
+    "pages/index/index"
   ],
+
   "window":{
     "backgroundTextStyle":"light",
     "navigationBarBackgroundColor": "#D03232",
