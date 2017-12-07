@@ -1,4 +1,3 @@
-<!--index.wxml-->
 <view class="container">
   <view class="userinfo">
       <text class="userinfo-nickname">Awesome User</text>
@@ -7,8 +6,6 @@
     <text class="user-motto">{{motto}}</text>
   </view>
   <button type="warn" bindtap="listenerBtnGetLocation">Get location</button>
+  <button bindtap="ontap" type="listenerBtnGetShake">SHAKE</button>
 </view>
 
-
-
-<!-- <button bindtap='bindLocationTap'>Your Location </button> -->
