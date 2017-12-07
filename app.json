@@ -1,12 +1,12 @@
 {
   "pages":[
-    "pages/restaurants/restaurant",
-    "pages/index/index"
+    "pages/index/index",
+    "pages/restaurants/restaurant"
   ],
 
   "window":{
     "backgroundTextStyle":"light",
-    "navigationBarBackgroundColor": "#D03232",
+    "navigationBarBackgroundColor": "#000000",
     "navigationBarTitleText": "摇吃嘛",
     "navigationBarTextStyle":"white",
     "enablePullDownRefresh": true
