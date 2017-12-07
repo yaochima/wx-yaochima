@@ -9,6 +9,8 @@ Page({
     currentCategory: null,
     currentPrice: null,
     exclusions: [],
+    lockedcategory: null, 
+    lockedprice: null, 
   }, 
 
   toggleCategory: function (event) {
@@ -32,15 +34,19 @@ Page({
     let that = this;
 
     if (this.data.categoryLocked == true && this.data.priceLocked == false) {
-      this.setData({
-        lockedcategory: this.data.currentCategory
-      })
-    } else if (this.data.categoryLocked == true && this.data.priceLocked == true) {
+      console.log("category locked"),
       this.setData({
         lockedcategory: this.data.currentCategory,
-        lockedprice: this.data.currentPrice
+      })
+    } else if (this.data.categoryLocked == true && this.data.priceLocked == true) {
+      console.log("both locked"),
+      this.setData({
+        lockedcategory: this.data.currentCategory,
+        lockedprice: this.data.currentPrice,
+        
       });
     } else if (this.data.categoryLocked == false && this.data.priceLocked == true) {
+      console.log("price locked"),
       this.setData({
         lockedprice: this.data.currentPrice,
       });
@@ -57,11 +63,13 @@ Page({
         "lat": app.globalData.lat, 
         "lng": app.globalData.lng,
         "exclusions": this.data.exclusions,
-        "lockedcategory": this.data.currentCategory,
-        "lockedprice": this.data.currentPrice
+        "lockedcategory": this.data.lockedcategory,
+        "lockedprice": this.data.lockedprice
       },
       success: function (res) {
         that.loadData(res.data);
+        console.log("important")
+        console.log(res.data)
         that.setData ({
           restaurantId: res.data
         })
