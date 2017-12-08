@@ -7,11 +7,11 @@
       <view class="greetingImage"></view>
       <view class="button-location-view">
       
-        <button class="button-location" type="warn" bindtap="listenerBtnGetLocation">Get My Location</button>
+        <button class="button-location {{gotLocation ? 'hidden' : '' }}" type="warn" bindtap="listenerBtnGetLocation">Get My Location</button>
       </view>
     </view>
   </view>
-  <view class="shakeButton {{gotLocation ? 'show_this' : '' }}">
+  <view class="hidden {{gotLocation ? 'show_this' : '' }}">
    <button bindtap="listenerBtnGetShake">SHAKE</button>
   </view>
 </view>

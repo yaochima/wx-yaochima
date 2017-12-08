@@ -34,10 +34,11 @@ button.button-location {
   background-color: #F5A623;
 }
 
-.shakeButton {
+.hidden {
   display: none;
 }
 
 .show_this {
   display: block;
 }
+
