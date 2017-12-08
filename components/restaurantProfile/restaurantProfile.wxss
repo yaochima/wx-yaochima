@@ -124,3 +124,7 @@
   background-color: #000000!important;
   font-weight: bold;
 }
+
+/* #restaurant_category, #restaurant_price {
+  background-color: red;
+} */

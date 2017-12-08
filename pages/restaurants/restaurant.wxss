@@ -115,7 +115,7 @@
 }
 
 .text_size {
-  font-size: 18px;
+  font-size: 16px;
 }
 
 .unlock {
@@ -126,3 +126,7 @@
   background-color: #000000!important;
   font-weight: bold;
 }
+
+/* #restaurant_category, #restaurant_price {
+  background-color: red;
+} */
