@@ -60,8 +60,7 @@ Page({
         console.log(app.globalData.lng.toString())
         if (res.data.status == "ok") {
           wx.navigateTo({
-            url: "../restaurants/restaurant?id=" + res.data.restaurants.id// + res.data.status
-            // + "error" + res.data.error_message
+            url: "../restaurants/restaurant?id=" + res.data.restaurants.id
           })
           console.log("res")
           console.log(res.data)
