@@ -58,14 +58,24 @@ Page({
         console.log(res.data)
         console.log(app.globalData.lat.toString())
         console.log(app.globalData.lng.toString())
-        wx.navigateTo({
-          url: "../restaurants/restaurant?id=" + res.data.id + "error" + res.data.error_message
-        })
-        // this.setData({
-        //   app.globalData.restaurantID: res
-        // })
-        console.log("res")
-        console.log(res.data)
+        if (res.data.status == "ok") {
+          wx.navigateTo({
+            url: "../restaurants/restaurant?id=" + res.data.restaurants.id// + res.data.status
+            // + "error" + res.data.error_message
+          })
+          console.log("res")
+          console.log(res.data)
+        } else if (res.data.status == "error") {
+          wx.showModal({
+            title: 'Whoops!',
+            content: "No restaurants near you: shake again!",
+            confirmText: "Ok",
+            showCancel: false,
+            success: function (res) {
+              console.log('success modal')
+            }
+          })
+        }
       },
       fail: function(res) {
         console.log(res);
