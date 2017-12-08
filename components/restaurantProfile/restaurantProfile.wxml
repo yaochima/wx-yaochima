@@ -11,7 +11,7 @@
       <view class="restaurant_details white_text text_size">
         <view class="row">
           <view class="category">{{category}}</view>
-          <view class="rating">* * * * *</view>
+          <view class="rating">{{rating}}/5 stars</view>
           <view class="price">
             <text class="price-text orange_text">￥{{price}}</text>
             <text class="per person"> 人均</text>

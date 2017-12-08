@@ -158,7 +158,7 @@ Page({
             name: res.data.name,
             category: res.data.category,
             mainPhoto: res.data.profile_photo, 
-            rating: res.rating, 
+            rating: res.data.rating, 
             price: res.data.price_per_person, 
             phone: res.data.phone_number, 
             address: res.data.address,
@@ -176,6 +176,7 @@ Page({
       duration: 1500
     });
   },
+
 
   /**
    * 生命周期函数--监听页面初次渲染完成
