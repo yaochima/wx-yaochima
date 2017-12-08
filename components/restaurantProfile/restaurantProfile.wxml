@@ -19,7 +19,7 @@
         </view>
         <view class="row">
           <view class="address">
-            <text>{{address}}</text>
+            <text>123 Lane Street</text>
           </view>
           <view class="phone">
             <text>{{phone}}</text>
@@ -31,7 +31,7 @@
   <view class="button_wrap">
       <view id="restaurant_category " class="button row h2 {{categoryLocked ? 'lock' : 'unlock' }}" bindtap='toggleCategory'>
         <view class="empty"></view>
-        <view class="category_text white_text">
+        <view class="category_text orange_text">
           <text>{{category}}</text>
         </view>
         <view class="category_icon">
@@ -42,7 +42,7 @@
         <view class="empty"></view>
         <view class="price_button_text">
           <text class="price orange_text">￥{{price}}</text>
-          <text class="per person white_text"> 人均</text>
+          <text class="per person orange_text"> 人均</text>
         </view>
         <view class="price_button_icon"></view>
       </view>
