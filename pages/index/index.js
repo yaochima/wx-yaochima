@@ -45,13 +45,13 @@ Page({
         console.log(app.globalData.lat.toString())
         console.log(app.globalData.lng.toString())
         wx.navigateTo({
-          url: "../restaurants/restaurant?id=" + res.data
+          url: "../restaurants/restaurant?id=" + res.data.id + "error" + res.data.error_message
         })
         // this.setData({
         //   app.globalData.restaurantID: res
         // })
         console.log("res")
-        console.log(res)
+        console.log(res.data)
       },
       fail: function(res) {
         console.log(res);
