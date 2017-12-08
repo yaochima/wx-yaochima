@@ -65,7 +65,7 @@
 }
 
 .white_text {
-  color: white;
+  color: #F5F5F5;
 }
 
 .h1 {
@@ -85,14 +85,21 @@
 }
 
 .unlock {
-  background-color: #4A4A4A!important;
+  background-color: #D8D8D8!important;
 }
+
+/* .unlock ::after {
+  content: "unlocked"
+} */
 
 .lock {
   background-color: #000000!important;
   font-weight: bold;
 }
-
-/* #restaurant_category, #restaurant_price {
-  background-color: red;
+/* .lock ::after {
+  content: "locked"
 } */
+
+ /* #restaurant_category.unlock {
+  border-bottom: 1px solid #F5A623;
+}  */
