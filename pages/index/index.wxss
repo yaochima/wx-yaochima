@@ -33,3 +33,12 @@
 button.button-location {
   background-color: #F5A623;
 }
+
+.hidden {
+  display: none;
+}
+
+.show_this {
+  display: block;
+}
+

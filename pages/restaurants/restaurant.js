@@ -11,6 +11,7 @@ Page({
     exclusions: [],
     lockedcategory: null, 
     lockedprice: null, 
+    errorMessage: null,
   }, 
 
   toggleCategory: function (event) {
@@ -91,7 +92,9 @@ Page({
       success: function (res) {
         // res.data = '1';
         that.loadData(res.data.id);
-        console.log("important")
+
+        console.log("important: subsequent shake response")
+        console.log(res.data)
         console.log(res.data.id)
         console.log(res.data.error_message)
         that.setData ({
@@ -122,21 +125,35 @@ Page({
       },
       success:  (res) => {
         console.log(res.data),
-        this.setData({
-          name: res.data.name,
-          category: res.data.category,
-          mainPhoto: res.data.profile_photo, 
-          rating: res.rating, 
-          price: res.data.price_per_person, 
-          phone: res.data.phone_number, 
-          address: res.data.address,
-          currentCategory: res.data.category,
-          currentPrice: res.data.price_per_person 
-        });  
-        
+
+        if (res.data.status == "ok") {
+          this.setData({
+            name: res.data.name,
+            category: res.data.category,
+            mainPhoto: res.data.profile_photo, 
+            rating: res.rating, 
+            price: res.data.price_per_person, 
+            phone: res.data.phone_number, 
+            address: res.data.address,
+            currentCategory: res.data.category,
+            currentPrice: res.data.price_per_person, 
+            
+          }); 
+        } else if (res.data.status == "error") {
+          errorMessage: res.data.error.message
+          this.errorMessageToast();
+        }
       }
     })
     
+  },
+
+  errorMessageToast: function () {
+    wx.showToast({
+      title: errorMessage,
+      icon: 'loading',
+      duration: 1500
+    });
   },
 
   /**
