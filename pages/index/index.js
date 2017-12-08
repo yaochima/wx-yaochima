@@ -5,7 +5,8 @@ Page({
   data: {
     motto: '饿了！受不了',
     hasUserInfo: false,
-    canIUse: wx.canIUse('button.open-type.getUserInfo')
+    canIUse: wx.canIUse('button.open-type.getUserInfo'),
+    gotLocation: false,
   },
 
   onLoad: function(options) {
@@ -18,16 +19,29 @@ Page({
         var longitude = res.longitude
         var speed = res.speed
         var accuracy = res.accuracy
-        // wx.setStorageSync('lat', latitude)
-        // wx.setStorageSync('lng', longitude)
         console.log(res)
         app.globalData.lat = latitude
         app.globalData.lng = longitude
       }
     })
+    this.setData ({
+      gotLocation: true,
+    })
   },
 
   listenerBtnGetShake: function () {
+    if (this.data.gotLocation == false){
+      wx.showModal({
+        title: 'We Need Your Location',
+        content: 'to find places to eat near you!',
+        confirmText: "Ok",
+        showCancel: false,
+        success: function (res) {
+          console.log('success modal')
+        }
+      })
+    }
+
     wx.request({
       url: 'https://yaochima.herokuapp.com/api/v1/shakes',
       method: 'post',
