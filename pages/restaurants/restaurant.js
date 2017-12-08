@@ -116,16 +116,17 @@ Page({
           wx.showModal({
             title: 'Whoops!',
             content: that.data.errorMessage,
-            confirmText: "Ok",
+            confirmText: "OK",
             showCancel: false,
             success: function (res) {
               console.log('success modal')
+              console.log("going back to beginning")
+              wx.navigateTo({
+                url: '../index/index'
+              })
             }
           });
-          console.log("going back to beginning")
-          wx.navigateTo({
-            url: '../index/index'
-          })
+          
           
         }
       }
