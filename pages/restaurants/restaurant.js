@@ -12,6 +12,7 @@ Page({
     lockedcategory: null, 
     lockedprice: null, 
     errorMessage: null,
+    status: null,
   }, 
 
   toggleCategory: function (event) {
@@ -91,42 +92,82 @@ Page({
       },
       success: function (res) {
         // res.data = '1';
-        that.loadData(res.data.id);
+        
 
         console.log("important: subsequent shake response")
         console.log(res.data)
-        console.log(res.data.id)
-        console.log(res.data.error_message)
-        that.setData ({
-          restaurantId: res.data.id
-        })
+        
+        // console.log("status:")
+        // console.log(res.data.status)
+        // console.log("id:")
+        // console.log(res.data.restaurants.id)
+
+        // that.setData ({
+        //   restaurantId: res.data.restaurants.id,
+        //   status: res.data.status, 
+        // })
+
+        if (res.data.status == "ok" ){
+
+          console.log("status:")
+          console.log(res.data.status)
+          console.log("id:")
+          console.log(res.data.restaurants.id)
+
+          that.setData({
+            restaurantId: res.data.restaurants.id,
+            status: res.data.status,
+          });
+          that.loadRestaurantData();
+        } else if (res.data.status == "error" ) {
+
+          console.log("status:")
+          console.log(res.data.status)
+          console.log("error")
+          console.log(res.data.error.error_message)
+
+          that.setData({
+            errorMessage: res.data.error.error_message,
+            exclusions: []
+          });
+
+          wx.showModal({
+            title: 'Whoops!',
+            content: that.data.errorMessage,
+            confirmText: "Ok",
+            showCancel: false,
+            success: function (res) {
+              console.log('success modal')
+            }
+          });
+        }
         console.log("Parameter Post Success")
       }
     })
   },
 
   onLoad: function (options) {
+    console.log(options)
+    console.log("restaurantoptions")
     console.log(options.id)
-    this.loadData(options.id);
+    this.setData({
+      restaurantId: options.id
+    });
+    this.loadRestaurantData();
   },
   
-  loadData: function (restaurantId) {
+  loadRestaurantData: function () {
+    let restaurantId = this.data.restaurantId;
+
     wx.request ({
       // url: 'https://yaochima.herokuapp.com/api/v1/restaurants/1',
       url: "https://yaochima.herokuapp.com/api/v1/restaurants/" + restaurantId,
       method: 'get',
       header: { },
-      data: {
-        "lat": app.globalData.lat,
-        "lng": app.globalData.lng,
-        "exclusions": this.data.exclusions,
-        "lockedcategory": this.data.lockedcategory,
-        "lockedprice": this.data.lockedprice,
-      },
       success:  (res) => {
-        console.log(res.data),
-
-        if (res.data.status == "ok") {
+        console.log('successful!')
+        console.log(res)
+        console.log()
           this.setData({
             name: res.data.name,
             category: res.data.category,
@@ -136,16 +177,10 @@ Page({
             phone: res.data.phone_number, 
             address: res.data.address,
             currentCategory: res.data.category,
-            currentPrice: res.data.price_per_person, 
-            
+            currentPrice: res.data.price_per_person
           }); 
-        } else if (res.data.status == "error") {
-          errorMessage: res.data.error.message
-          this.errorMessageToast();
-        }
-      }
+        },
     })
-    
   },
 
   errorMessageToast: function () {
