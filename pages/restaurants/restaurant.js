@@ -97,18 +97,50 @@ Page({
         console.log("important: subsequent shake response")
         console.log(res.data)
         
-        console.log("status:")
-        console.log(res.data.status)
-        console.log("id:")
-        console.log(res.data.restaurants.id)
+        // console.log("status:")
+        // console.log(res.data.status)
+        // console.log("id:")
+        // console.log(res.data.restaurants.id)
 
-        that.setData ({
-          restaurantId: res.data.restaurants.id,
-          status: res.data.status, 
-        })
+        // that.setData ({
+        //   restaurantId: res.data.restaurants.id,
+        //   status: res.data.status, 
+        // })
 
-        that.loadRestaurantData();
+        if (res.data.status == "ok" ){
 
+          console.log("status:")
+          console.log(res.data.status)
+          console.log("id:")
+          console.log(res.data.restaurants.id)
+
+          that.setData({
+            restaurantId: res.data.restaurants.id,
+            status: res.data.status,
+          });
+          that.loadRestaurantData();
+        } else if (res.data.status == "error" ) {
+
+          console.log("status:")
+          console.log(res.data.status)
+          console.log("error")
+          console.log(res.data.error.error_message)
+
+          that.setData({
+            errorMessage: res.data.error.error_message,
+            exclusions: []
+          });
+
+          wx.showModal({
+            title: 'Whoops!',
+            content: that.data.errorMessage,
+            confirmText: "Ok",
+            showCancel: false,
+            success: function (res) {
+              console.log('success modal')
+            }
+          });
+        }
         console.log("Parameter Post Success")
       }
     })
