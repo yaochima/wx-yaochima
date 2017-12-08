@@ -20,7 +20,7 @@ Page({
     this.setData({
       categoryLocked: !this.data.categoryLocked
     });
-    console.log(this.data.categoryLocked);
+    // console.log(this.data.categoryLocked);
   },
 
   togglePrice: function (event) {
@@ -28,16 +28,15 @@ Page({
     this.setData({
       priceLocked: !this.data.priceLocked
     });
-    console.log(this.data.priceLocked);
+    // console.log(this.data.priceLocked);
   },
   
   shakeTest: function (event) {
-    console.log("restart shake")
+    // console.log("restart shake")
     this.setData({
       lockedcategory: null,
       lockedprice: null,
     });
-
     console.log(event);
     let that = this;
 
@@ -46,21 +45,18 @@ Page({
         lockedcategory: this.data.currentCategory,
         lockedprice: null
       });
-
-      console.log("category locked");
-      console.log(this.data.lockedcategory);
-      console.log(this.data.lockedprice);
+      // console.log("category locked");
+      // console.log(this.data.lockedcategory);
+      // console.log(this.data.lockedprice);
 
     } else if (this.data.categoryLocked && this.data.priceLocked) {
-      
       this.setData({
         lockedcategory: this.data.currentCategory,
         lockedprice: this.data.currentPrice,
       });
-
-      console.log("both locked");
-      console.log(this.data.lockedcategory);
-      console.log(this.data.lockedprice);
+      // console.log("both locked");
+      // console.log(this.data.lockedcategory);
+      // console.log(this.data.lockedprice);
 
     } else if (!this.data.categoryLocked && this.data.priceLocked) {
       this.setData({
@@ -68,16 +64,17 @@ Page({
         lockedprice: this.data.currentPrice,
       });
       this.data.exclusions.push(this.data.currentCategory);
-
-      console.log("price locked");
-      console.log(this.data.lockedcategory);
-      console.log(this.data.lockedprice);
+      // console.log("price locked");
+      // console.log(this.data.lockedcategory);
+      // console.log(this.data.lockedprice);
+      // console.log(this.data.exclusions)
 
     } else {
-        this.data.exclusions.push(this.data.currentCategory)
-        console.log("none locked");
-        console.log(this.data.lockedcategory);
-        console.log(this.data.lockedprice);
+        this.data.exclusions.push(this.data.currentCategory);
+        // console.log("none locked");
+        // console.log(this.data.lockedcategory);
+        // console.log(this.data.lockedprice);
+        // console.log(this.data.exclusions)
     }
 
     wx.request({
@@ -91,22 +88,8 @@ Page({
         "lockedprice": this.data.lockedprice
       },
       success: function (res) {
-        // res.data = '1';
-        
-
-        console.log("important: subsequent shake response")
-        console.log(res.data)
-        
-        // console.log("status:")
-        // console.log(res.data.status)
-        // console.log("id:")
-        // console.log(res.data.restaurants.id)
-
-        // that.setData ({
-        //   restaurantId: res.data.restaurants.id,
-        //   status: res.data.status, 
-        // })
-
+        // console.log("important: subsequent shake response")
+        // console.log(res.data)
         if (res.data.status == "ok" ){
 
           console.log("status:")
@@ -120,17 +103,16 @@ Page({
           });
           that.loadRestaurantData();
         } else if (res.data.status == "error" ) {
-
-          console.log("status:")
-          console.log(res.data.status)
-          console.log("error")
-          console.log(res.data.error.error_message)
-
+          // console.log("printing exclusions")
+          // console.log(this.data.exclusions)
+          // console.log("status:")
+          // console.log(res.data.status)
+          // console.log("error")
+          // console.log(res.data.error.error_message)
           that.setData({
             errorMessage: res.data.error.error_message,
             exclusions: []
           });
-
           wx.showModal({
             title: 'Whoops!',
             content: that.data.errorMessage,
@@ -140,8 +122,12 @@ Page({
               console.log('success modal')
             }
           });
+          console.log("going back to beginning")
+          wx.navigateTo({
+            url: '../index/index'
+          })
+          
         }
-        console.log("Parameter Post Success")
       }
     })
   },
