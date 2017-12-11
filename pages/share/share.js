@@ -24,7 +24,7 @@ Page({
     console.log(restaurantId)
     wx.request({
       // url: 'https://yaochima.herokuapp.com/api/v1/restaurants/1',
-      url: "https://yaochima.herokuapp.com/api/v1/restaurants/" + restaurantId,
+      url: "https://yaochima.shanghaiwogeng.com/api/v1/restaurants/" + restaurantId,
       method: 'get',
       header: {},
       success: (res) => {
