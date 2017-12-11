@@ -70,26 +70,34 @@
   <view class="button_wrap">
       <view id="restaurant_category " class="button row h2 {{categoryLocked ? 'lock' : 'unlock' }}" bindtap='toggleCategory'>
           <view class="category_icon">
-            <image class="icon-category icon" src='../../assets/images/icons/svg/icon_category.svg'/>
+            <image class="button-icon" src='../../assets/images/icons/svg/icon_category.svg'/>
           </view>
           <text>{{category}}</text>
+          <view >
+            <!-- <image class="button-unlock" "src='../../assets/images/icons/svg/icon_unlock.svg'/> -->
+            <image class="button-lock" style="{{categoryLocked ? 'display: inline' : 'display: none' }}" src='../../assets/images/icons/svg/icon_lock.svg'/>
+            <image class="button-lock" style="{{categoryLocked ? 'display: none' : 'display: inline' }}" src='../../assets/images/icons/svg/icon_unlock.svg'/>
+          </view>
       </view>
+
+
       <view id="restaurant_price" class="button row h2 {{priceLocked ? 'lock' : 'unlock' }}" bindtap="togglePrice">
-          <view class="price_button_icon">
-            <image class="icon-price" src='../../assets/images/icons/svg/icon_price.svg'/>
+          <view class="price_icon">
+            <image class="price-button-icon" src='../../assets/images/icons/svg/icon_price.svg'/>
           </view>
           <view class="price_button_text">
             <text class="price ">￥{{price}}</text>
             <text class="per person "> 人均</text>
+            <image class="button-lock" style="{{priceLocked ? 'display: inline' : 'display: none' }}" src='../../assets/images/icons/svg/icon_lock.svg'/>
+            <image class="button-lock" style="{{priceLocked ? 'display: none' : 'display: inline' }}" src='../../assets/images/icons/svg/icon_unlock.svg'/>
           </view>
+          
       </view>
       
     </view>
   <view class="footer">
     <image class="peek" src="../../assets/images/peek.svg"/>
   </view>
-  <view class="butt"></view>
-
   </view>
 
  
