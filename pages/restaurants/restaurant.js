@@ -9,6 +9,7 @@ Page({
     currentCategory: null,
     currentPrice: null,
     exclusions: [],
+    rest_exclusions: [],
     lockedcategory: null, 
     lockedprice: null, 
     errorMessage: null,
@@ -39,6 +40,12 @@ Page({
     });
     console.log(event);
     let that = this;
+    
+    this.data.rest_exclusions.push(this.data.restaurantId);
+    console.log("this work")
+    console.log(this.data.exclusions)
+    console.log(this.data.rest_exclusions)
+
 
     if (this.data.categoryLocked && !this.data.priceLocked) {
       this.setData({
@@ -83,9 +90,11 @@ Page({
       data: {
         "lat": app.globalData.lat, 
         "lng": app.globalData.lng,
+        "rest_exclusions": this.data.rest_exclusions,
         "exclusions": this.data.exclusions,
         "lockedcategory": this.data.lockedcategory,
-        "lockedprice": this.data.lockedprice
+        "lockedprice": this.data.lockedprice,
+        
       },
       success: function (res) {
         // console.log("important: subsequent shake response")
@@ -138,7 +147,7 @@ Page({
     console.log("restaurantoptions")
     console.log(options.id)
     this.setData({
-      restaurantId: options.id
+      restaurantId: Number(options.id)
     });
     this.loadRestaurantData();
   },
