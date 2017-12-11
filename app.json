@@ -1,9 +1,7 @@
 {
   "pages": [
     "pages/index/index",
-    "pages/restaurants/restaurant",
-    "pages/shake",
-    "pages/shake/shake"
+    "pages/restaurants/restaurant"
   ],
   "window": {
     "backgroundTextStyle": "light",
