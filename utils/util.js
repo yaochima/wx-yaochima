@@ -14,6 +14,22 @@ const formatNumber = n => {
   return n[1] ? n : '0' + n
 }
 
+function getDate() {
+  var time = new Date()
+  var year = time.getFullYear()
+  var month = time.getMonth()
+  month = month < 10 ? '0' + month : month
+  var day = time.getDay()
+  day = day < 10 ? '0' + day : day
+  return [year, month, day].join('-')
+}
+
+function register() {
+  
+}
+
+
+
 module.exports = {
   formatTime: formatTime
 }

@@ -1,4 +1,6 @@
 //app.js
+const shake = require('./utils/shake');
+
 App({
   globalData: {
     uuid: null,
@@ -8,13 +10,14 @@ App({
     restaurantUrl: 'https://yaochima.herokuapp.com/api/v1/restaurants/',
     restaurantID: null, 
     guestUrl: 'https://yaochima.herokuapp.com/api/v1/guests',
-    guestId: null,
-    
+    guestId: null
   },
 
   onLaunch: function() {
     this.ensureUUID();
     this.signInAsGuest();
+    wx.startAccelerometer();
+    this.globalData.shakeManager = shake();
   },
 
   signInAsGuest: function () {
@@ -61,7 +64,10 @@ App({
     return uuid;
   } 
 })  
-    
+
+
+
+  
     // wx.checkSession interface test whether the current user login status is valid.
     // wx.checkSession({
     //   success: function () {    //登录态未过期
