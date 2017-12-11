@@ -12,6 +12,6 @@
     </view>
   </view>
   <view class="hidden {{gotLocation ? 'show_this' : '' }}">
-   <button bindtap="listenerBtnGetShake">SHAKE</button>
+   <button bindtap="GetRestaurantShake">SHAKE</button>
   </view>
 </view>
