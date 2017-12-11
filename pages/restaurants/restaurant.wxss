@@ -96,6 +96,7 @@
   border-radius: 30px;
   position: relative;
   color: #888888;
+
   
 }
 
@@ -206,6 +207,46 @@
 
 }
 
+.button-icon {
+  width: 60px;
+  height: 60px;
+  position: absolute;
+  left: -30px;
+  z-index: 999;
+  bottom: 7px;
+
+}
+
+.price-button-icon {
+   width: 52px;
+  height: 52px;
+  position: absolute;
+  left: -13px;
+  z-index: 999;
+  bottom: -2px;
+}
+
+.button-unlock {
+  width: 65px;
+  height: 65px;
+  position: absolute;
+  right: -15px;
+  z-index: 9999;
+  bottom: 2px;
+  transform: rotate(24deg);
+  
+}
+
+.button-lock {
+  width: 65px;
+  height: 65px;
+  position: absolute;
+  right: -15px;
+  z-index: 999;
+  bottom: 2px;
+  transform: rotate(24deg);
+}
+
 .inline {
   display: flex;
   align-items: center;
@@ -217,8 +258,8 @@
 } 
 
 .footer {
-display: flex;
-justify-content: center;
+  display: flex;
+  justify-content: center;
 
 }
 
@@ -226,7 +267,6 @@ justify-content: center;
   width: 150px;
   max-width: 150px;
   height: 90px;
-  z-index: 9999999;
   margin: 0 auto;
   /* background-color: aqua; */
   object-fit: contain;
@@ -238,6 +278,8 @@ justify-content: center;
 .butt {
   background-color: aqua;
 }
+
+
 
 /* Rectangle Copy 2: */
 
