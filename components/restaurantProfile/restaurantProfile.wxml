@@ -8,52 +8,49 @@
       </view>
 
       <!-- Restaurant Profile Details Subheader -->
-      <view class="restaurant_details white_text text_size">
+      <view class="restaurant_details text_size grey-text">
 
-        <view class="row">
-          <view class="rating span">
-            <view class="icon-rating">
-              <image class="icon-rating icon" src='../../assets/images/icons/svg/icon_five_star.svg'/>
+
+         <view class="row">
+            <view class = 'rating span'>
+              <image src="../../assets/images/icons/svg/icon_five_star.svg"/>
             </view>
-            {{rating}}/5 stars
-          </view>
 
-          <view class="category span">
-            <view class="icon-category icon">
-              <image class="icon-category icon" src='../../assets/images/icons/svg/icon_category.svg'/>
+            <view class="category span">
+              <view class="icon-wrap">
+                <image class='icon-category icon' src='../../assets/images/icons/svg/icon_category.svg'/>
+              </view>
+              <text>{{category}}</text>
             </view>
-            {{category}}
-          </view>
 
-          <view class="price span">
-            <image class="icon-price icon" src='../../assets/images/icons/svg/icon_price.svg'/>
-            <text class="price-text orange_text">
-              ￥{{price}}
-              <text class="per person"> 人均</text>
-            </text>
-          </view>
-
+            <view class="phone span">
+              <view class="icon-wrap">
+                <image class="icon-phone icon" src='../../assets/images/icons/svg/icon_price.svg'/>
+              </view>
+              <text>{{price}} 人均</text>
+            </view>
+            
         </view>
 
 
         <view class="row">
 
           <view class="distance span">
-            <view class="icon-distance">
-              <image class="icon-distance icon" src='../../assets/images/icons/svg/icon_phone.svg'/>
+            <view class="icon-wrap">
+              <image class="icon-distance icon" src='../../assets/images/icons/svg/icon_distance.svg'/>
             </view>
             <text>{{distance}}KM</text>
           </view>
 
             <view class="travel-time span">
-              <view class="icon-travel">
-                <image class="icon-travel icon" src='../../assets/images/icons/svg/icon_travel.svg'/>
+              <view class="icon-wrap">
+                <image class="icon-travel icon" src='../../assets/images/icons/svg/icon_walk.svg'/>
               </view>
-              <text>{{travel-time}}分钟</text>
+              <text>5{{travel-time}}分钟</text>
             </view>
 
             <view class="phone span">
-              <view class="icon-phone">
+              <view class="icon-wrap">
                 <image class="icon-phone icon" src='../../assets/images/icons/svg/icon_phone.svg'/>
               </view>
               <text>{{phone}}</text>
@@ -62,7 +59,7 @@
         </view>
 
 
-        <view class="row small-text">
+        <view class="row">
           <view class="address inline span">
               <view class="icon-address">
                 <image class="icon-address icon" src='../../assets/images/icons/svg/icon_map.svg'/>
@@ -76,16 +73,20 @@
 
 
       <!-- Lock Restaurant Parameters -->
+
   <view class="button_wrap">
+
       <view id="restaurant_category " class="button row h2 {{categoryLocked ? 'lock' : 'unlock' }}" bindtap='toggleCategory'>
         <view class="empty"></view>
         <view class="category_text orange_text">
+          <view class="category_icon">
+            <image class="icon-category icon" src='../../assets/images/icons/svg/icon_category.svg'/>
+          </view>
           <text>{{category}}</text>
         </view>
-        <view class="category_icon">
-          <image class="category_icon_img" src="#"/>
-        </view>
+        
       </view>
+
       <view id = "restaurant_price" class="button row h2 {{priceLocked ? 'lock' : 'unlock' }}" bindtap='togglePrice'>
         <view class="empty"></view>
         <view class="price_button_text">
@@ -104,5 +105,8 @@
         <view class="shake_icon"></view>
       </view>
     </view>
+
   </view>
+
+
 </template>
