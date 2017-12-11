@@ -42,10 +42,6 @@ Page({
     let that = this;
     
     this.data.rest_exclusions.push(this.data.restaurantId);
-    console.log("this work")
-    console.log(this.data.exclusions)
-    console.log(this.data.rest_exclusions)
-
 
     if (this.data.categoryLocked && !this.data.priceLocked) {
       this.setData({
@@ -233,7 +229,13 @@ Page({
    * 用户点击右上角分享
    */
   onShareAppMessage: function () {
-   
+    wx.showShareMenu({
+      withShareTicket: true
+    })
+  
+  return {
+    title: '摇来这儿吃嘛 😊',
+    path: 'pages/share/share?id=' + this.data.restaurantId
   }
-
+  }
 })
