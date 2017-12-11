@@ -1,6 +1,6 @@
 //index.js
 //获取应用实例
-var app = getApp()
+const app = getApp()
 Page({
   data: {
     motto: '饿了！受不了',
@@ -29,7 +29,17 @@ Page({
     })
   },
 
-  listenerBtnGetShake: function () {
+  onLoad: function() {
+    app.globalData.shakeManager.register(this, function () {
+      // when shaked
+    });
+  },
+
+  onUnload: function() {
+      app.globalData.shakeManager.unregister(this);
+    },
+
+  GetRestaurantShake: function () {
     if (this.data.gotLocation == false){
       wx.showModal({
         title: 'We Need Your Location',
@@ -40,8 +50,17 @@ Page({
           console.log('success modal')
         }
       })
+    } 
+    else {
+      wx.GoToRestaurant ({
+        success: function (res) {
+          console.log('success')
+      }
+      })
     }
-
+  },
+    
+  GoToRestaurant: function() {
     wx.request({
       url: 'https://yaochima.herokuapp.com/api/v1/shakes',
       method: 'post',
@@ -81,11 +100,4 @@ Page({
       }
     })
   }
-
-    // viewRestaurant: function(e) {
-    //   let data = e.currentRestaurant.dataset;
-    //     wx.navigateTo({
-    //     url: "../restaurants/restaurant"
-    //     })
-    // },
 })
