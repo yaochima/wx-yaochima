@@ -1,5 +1,5 @@
 //app.js
-const shake = require('util/shake');
+const shake = require('./utils/shake');
 
 App({
   globalData: {
@@ -10,13 +10,14 @@ App({
     restaurantUrl: 'https://yaochima.herokuapp.com/api/v1/restaurants/',
     restaurantID: null, 
     guestUrl: 'https://yaochima.herokuapp.com/api/v1/guests',
-    guestId: null,
-    shakeManager: shake();
+    guestId: null
   },
 
   onLaunch: function() {
     this.ensureUUID();
     this.signInAsGuest();
+    wx.startAccelerometer();
+    this.globalData.shakeManager = shake();
   },
 
   signInAsGuest: function () {

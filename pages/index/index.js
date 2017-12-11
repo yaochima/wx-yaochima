@@ -30,14 +30,18 @@ Page({
   },
 
   onLoad: function() {
+    let that = this;
     app.globalData.shakeManager.register(this, function () {
       // when shaked
+      // console.log("Shaked!")
+      that.GetRestaurantShake();
     });
   },
 
   onUnload: function() {
-      app.globalData.shakeManager.unregister(this);
-    },
+    console.log("STOP SHAKE");
+    app.globalData.shakeManager.unregister(this);
+  },
 
   GetRestaurantShake: function () {
     if (this.data.gotLocation == false){
@@ -52,7 +56,7 @@ Page({
       })
     } 
     else {
-      wx.GoToRestaurant ({
+      this.GoToRestaurant ({
         success: function (res) {
           console.log('success')
       }
@@ -61,6 +65,7 @@ Page({
   },
     
   GoToRestaurant: function() {
+    console.log(app.globalData);
     wx.request({
       url: 'https://yaochima.herokuapp.com/api/v1/shakes',
       method: 'post',
