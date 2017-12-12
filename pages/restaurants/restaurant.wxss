@@ -247,20 +247,20 @@
 .footer {
   display: flex;
   justify-content: center;
-
+  position: fixed;
+  height: 400px;
+  bottom: -500rpx;
+  width: 100%;
 }
 
 .peek {
-  width: 150px;
-  max-width: 150px;
-  height: 90px;
-  margin: 0 auto;
-  /* background-color: aqua; */
-  object-fit: contain;
-  vertical-align: bottom;
-  position:fixed;
-  bottom:0px;
+  min-width: 500px;
+  max-width: 800px;
+  height: 468px;
+  position: absolute;
+  top: -29px
 }
+
 
 .butt {
   background-color: aqua;
