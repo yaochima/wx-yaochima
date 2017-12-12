@@ -1,60 +1,106 @@
 <template name="restaurantProfile">
-  
+
+<view class="wrapper">
   <view class="restaurant_wrapper">
     <view class="profile_wrapper">
-      <view class="restaurant_banner" style="background-image: linear-gradient(-180deg, rgba(255,255,255,0.00) 0%, rgba(35,35,35,0.86)  86%, #000000 100%), url({{mainPhoto}})">
+      <view class="restaurant_banner" style="background-image: linear-gradient(-180deg, rgba(255,255,255,0.00) 31%, rgba(35,35,35,0.47) 90%, #000000 100%), url({{mainPhoto}})">
         <view class="empty"></view>
         <text class="h1 white_text">{{name}}</text>
       </view>
 
       <!-- Restaurant Profile Details Subheader -->
-      <view class="restaurant_details white_text text_size">
-        <view class="row">
-          <view class="category">{{category}}</view>
-          <view class="rating">{{rating}}/5 stars</view>
-          <view class="price">
-            <text class="price-text orange_text">￥{{price}}</text>
-            <text class="per person"> 人均</text>
-          </view>
+      <view class="restaurant_details text_size grey-text">
+         <view class="row">
+            <view class = 'rating span'>
+              <image src="../../assets/images/icons/svg/icon_five_star.svg"/>
+            </view>
+
+            <view class="category span">
+              <view class="icon-wrap">
+                <image class='icon-category icon' src='../../assets/images/icons/svg/icon_category.svg'/>
+              </view>
+              <text>{{category}}</text>
+            </view>
+
+            <view class="price span">
+              <view class="icon-wrap">
+                <image class="icon-price icon" src='../../assets/images/icons/svg/icon_price.svg'/>
+              </view>
+              <text>{{price}} 人均</text>
+            </view>
+            
         </view>
         <view class="row">
-          <view class="address">
-            <text>123 Lane Street</text>
+
+          <view class="distance span">
+            <view class="icon-wrap">
+              <image class="icon-distance icon" src='../../assets/images/icons/svg/icon_distance.svg'/>
+            </view>
+            <text>{{distance}}KM</text>
           </view>
-          <view class="phone">
-            <text>{{phone}}</text>
-          </view>
+
+            <view class="travel-time span">
+              <view class="icon-wrap">
+                <image class="icon-travel icon" src='../../assets/images/icons/svg/icon_walk.svg'/>
+              </view>
+              <text>5{{travel-time}}分钟</text>
+            </view>
+
+            <view class="phone span">
+              <view class="icon-wrap">
+                <image class="icon-phone icon" src='../../assets/images/icons/svg/icon_phone.svg'/>
+              </view>
+              <text>{{phone}}</text>
+            </view>
+            
+        </view>
+        <view class="row">
+          <view class="address inline span">
+              <view class="icon-address">
+                <image class="icon-address icon" src='../../assets/images/icons/svg/icon_map.svg'/>
+              </view>
+              <text>{{address}}</text>
+            </view>
+       
         </view>
       </view>
     </view>
+
       <!-- Lock Restaurant Parameters -->
+
   <view class="button_wrap">
       <view id="restaurant_category " class="button row h2 {{categoryLocked ? 'lock' : 'unlock' }}" bindtap='toggleCategory'>
-        <view class="empty"></view>
-        <view class="category_text orange_text">
+          <view class="category_icon">
+            <image class="button-icon" src='../../assets/images/icons/svg/icon_category.svg'/>
+          </view>
           <text>{{category}}</text>
-        </view>
-        <view class="category_icon">
-          <img class="category_icon_img" src="#"/>
-        </view>
+          <view >
+            <!-- <image class="button-unlock" "src='../../assets/images/icons/svg/icon_unlock.svg'/> -->
+            <image class="button-lock" style="{{categoryLocked ? 'display: inline' : 'display: none' }}" src='../../assets/images/icons/svg/icon_lock.svg'/>
+            <image class="button-lock" style="{{categoryLocked ? 'display: none' : 'display: inline' }}" src='../../assets/images/icons/svg/icon_unlock.svg'/>
+          </view>
       </view>
-      <view id = "restaurant_price" class="button row h2 {{priceLocked ? 'lock' : 'unlock' }}" bindtap='togglePrice'>
-        <view class="empty"></view>
-        <view class="price_button_text">
-          <text class="price orange_text">￥{{price}}</text>
-          <text class="per person orange_text"> 人均</text>
-        </view>
-        <view class="price_button_icon"></view>
-      </view>
-      <view class="button row" id="shake">
-        <view class="shake_icon"></view>
 
-        <view class="shake_text text-size">
-          <text class="white_text">Not Your Flavor?</text>
-          <text class="orange_text" bindtap="shakeTest"> Shake Again</text>
-        </view>
-        <view class="shake_icon"></view>
+
+      <view id="restaurant_price" class="button row h2 {{priceLocked ? 'lock' : 'unlock' }}" bindtap="togglePrice">
+          <view class="price_icon">
+            <image class="price-button-icon" src='../../assets/images/icons/svg/icon_price.svg'/>
+          </view>
+          <view class="price_button_text">
+            <text class="price ">￥{{price}}</text>
+            <text class="per person "> 人均</text>
+            <image class="button-lock" style="{{priceLocked ? 'display: inline' : 'display: none' }}" src='../../assets/images/icons/svg/icon_lock.svg'/>
+            <image class="button-lock" style="{{priceLocked ? 'display: none' : 'display: inline' }}" src='../../assets/images/icons/svg/icon_unlock.svg'/>
+          </view>
+          
       </view>
+      
     </view>
+  <view class="footer">
+    <image class="peek" src="../../assets/images/peek.svg"/>
   </view>
+  </view>
+</view>
+ 
+
 </template>

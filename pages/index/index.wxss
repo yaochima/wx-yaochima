@@ -12,6 +12,12 @@
   border-radius: 50%;
 } */
 
+.index-wrapper {
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  z-index: -1;
+}
 
 .userinfo-nickname {
   color: #aaa;
@@ -27,11 +33,11 @@
 }
 
 .greetingImage {
-  height: 40vh;
+  height: 60vh;
 }
 
 button.button-location {
-  background-color: #F5A623;
+  background-image: linear-gradient(-180deg, #FF931E 23%, #F87821 67%,      #F15A24 100%);
 }
 
 .hidden {
@@ -40,5 +46,9 @@ button.button-location {
 
 .show_this {
   display: block;
+  z-index: 99999999;
 }
 
+.shake {
+ 
+}
