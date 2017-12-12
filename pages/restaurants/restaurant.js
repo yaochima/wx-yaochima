@@ -46,6 +46,7 @@ Page({
 
     // console.log(event);
     let that = this;
+
     
     this.data.rest_exclusions.push(this.data.restaurantId);
 
@@ -190,7 +191,9 @@ Page({
           console.log(this.data.iconRatingPath)
           if (successCallback) {
             successCallback();
-
+            this.shakeSound = wx.createAudioContext("shakeSound")
+            console.log("HAHAH")
+            this.shakeSound.play()
           }
         },
     })
