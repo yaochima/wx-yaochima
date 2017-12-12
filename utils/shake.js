@@ -1,7 +1,7 @@
 ////////// shake.js
 
 
-var SHAKE_THRESHOLD = 200
+var SHAKE_THRESHOLD = 100
 var lastUpdate = 0
 var x, y, z, lastX, lastY, lastZ
 var flag = true
@@ -49,7 +49,7 @@ const ShakeManager = function() {
           flag = false
           setTimeout(function () {
             flag = true
-          }, 5000)
+          }, 2000)
         }
       }
       lastX = x
