@@ -31,10 +31,10 @@ Page({
 
   onLoad: function() {
     let that = this;
-    app.globalData.shakeManager.register(this, function () {
+    app.globalData.shakeManager.register(this, function (args) {
       // when shaked
       // console.log("Shaked!")
-      that.GetRestaurantShake();
+      that.GetRestaurantShake(args.done);
     });
   },
 
@@ -43,7 +43,7 @@ Page({
     app.globalData.shakeManager.unregister(this);
   },
 
-  GetRestaurantShake: function () {
+  GetRestaurantShake: function (successCallback) {
     if (this.data.gotLocation == false){
       wx.showModal({
         title: 'We Need Your Location',
@@ -56,8 +56,10 @@ Page({
       })
     } 
     else {
+      
       this.GoToRestaurant ({
         success: function (res) {
+          successCallback();
           console.log('success')
       }
       })

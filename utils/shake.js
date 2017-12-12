@@ -37,7 +37,9 @@ const ShakeManager = function() {
       if (speed > SHAKE_THRESHOLD) {
         // 判断数据是否载入和是否在允许的时间（5秒每次间隔）
         if (flag && that.callback) {
-          that.callback();
+
+          that.showToast(that.callback);
+
           // that.shakeSound.play()
           // // 随机获取电影
           // that.getFilm()
@@ -54,17 +56,25 @@ const ShakeManager = function() {
       lastY = y
       lastZ = z
     }
-
-    // if (movedAlot && that.enabled && that.callback) {
-
-
-
-    //   that.callback(res);
-    //   // that.callbacks.keys().forEach(function(page) {
-    //   //   that.callbacks[page]();
-    //   // });
-    // }
   });
+};
+
+ShakeManager.prototype.showToast = function(callback) {
+  var that = this
+  var start = 0
+  var count = 250
+  wx.showToast({
+    title: '数据加载中',
+    icon: 'loading',
+    duration: 15000
+  })
+  setTimeout(function() {
+    callback({
+      done: function () {
+        wx.hideToast();
+      }
+    });
+  }, 1000);
 };
 
 ShakeManager.prototype.disable = function() {
@@ -81,13 +91,14 @@ ShakeManager.prototype.unregister = function(page) {
   delete this.callback;
 };
 
-
-
-
-
-
-
 module.exports = function() {
   return new ShakeManager();
 };
 
+
+ // if (movedAlot && that.enabled && that.callback) {
+    //   that.callback(res);
+    //   // that.callbacks.keys().forEach(function(page) {
+    //   //   that.callbacks[page]();
+    //   // });
+    // }

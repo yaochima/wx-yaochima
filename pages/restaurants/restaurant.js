@@ -36,14 +36,14 @@ Page({
     this.shakeTest();
   },
   
-  shakeTest: function (event) {
+  shakeTest: function (successCallback) {
 
     // this.setData({
     //   lockedcategory: null,
     //   lockedprice: null,
     // });
 
-    console.log(event);
+    // console.log(event);
     let that = this;
     
     this.data.rest_exclusions.push(this.data.restaurantId);
@@ -111,7 +111,7 @@ Page({
             restaurantId: res.data.restaurants.id,
             status: res.data.status,
           });
-          that.loadRestaurantData();
+          that.loadRestaurantData(successCallback);
         } else if (res.data.status == "error" ) {
           // console.log("printing exclusions")
           // console.log(this.data.exclusions)
@@ -154,15 +154,15 @@ Page({
 
     let that = this;
 
-    app.globalData.shakeManager.register(this, function () {
+    app.globalData.shakeManager.register(this, function (args) {
       // when shaked
       // console.log("Shaked!")
-      that.shakeTest();
+      that.shakeTest(args.done);
     });
 
   },
   
-  loadRestaurantData: function () {
+  loadRestaurantData: function (successCallback) {
     let restaurantId = this.data.restaurantId;
 
     wx.request ({
@@ -185,6 +185,9 @@ Page({
             currentCategory: res.data.category,
             currentPrice: res.data.price_per_person
           }); 
+          if (successCallback) {
+            successCallback();
+          }
         },
     })
   },
