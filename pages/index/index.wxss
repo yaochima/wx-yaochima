@@ -11,11 +11,23 @@
   margin: 20rpx;
   border-radius: 50%;
 } */
+.landingbackground {
+  height: 100vh;
+  width: 100%;
+  
+  display: none;
+}
 
 .index-wrapper {
-  background-size: cover;
-  background-position: center;
+   background-size: cover;
+  background-position: center; 
   height: 100vh;
+  width: 100%;
+   /* display: flex; */
+  align-items: center;
+  justify-content: center; 
+  object-fit: cover;
+  object-position: center;
   z-index: -1;
 }
 
