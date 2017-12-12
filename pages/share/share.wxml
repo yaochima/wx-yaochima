@@ -72,7 +72,7 @@
     </view>
 
   <view class="footer">
-    <image bindtap="openMiniProgram" class="peek" src="https://yaochima.shanghaiwogeng.com/logo-cat.svg"/>
+    <image bindtap="openMiniProgram" class="peek" src="https://yaochima.shanghaiwogeng.com/logo-cat-half.svg"/>
   </view>
   </view>
 </view>

@@ -1,4 +1,4 @@
-<view class="index-wrapper" style="background-image: url('https://yaochima.shanghaiwogeng.com/logo-back-16.png')">
+<view class="index-wrapper">
   <view class="container">
     <view class="greeting">
       <view class="empty"></view>
