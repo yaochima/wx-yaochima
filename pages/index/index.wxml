@@ -1,17 +1,19 @@
-<view class="index-wrapper" style="background-image: url('https://yaochima.shanghaiwogeng.com/landingbackgroundsmall.png')">
+<view class="index-wrapper" style="background-image: url('https://yaochima.shanghaiwogeng.com/logo-back-16.png')">
   <view class="container">
     <view class="greeting">
-      <view class="greetingText">
-      </view>
-      <view class="greetingImage"></view>
-      <view class="button-location-view">
-      
-        <button class="button-location {{gotLocation ? 'hidden' : '' }}" type="warn" bindtap="listenerBtnGetLocation">点击定位当前位置</button>
-      </view>
+      <view class="empty"></view>
+      <image class="logo-cat" src="https://yaochima.shanghaiwogeng.com/logo-cat.svg"/>
+      <image class="logo-rotate" src="https://yaochima.shanghaiwogeng.com/logo-rotate-19.png"/>
+    </view> 
+    <view class="button-location-view">
+      <button class="button-location {{gotLocation ? 'hidden' : '' }}" type="warn" bindtap="listenerBtnGetLocation">点击定位当前位置</button>
     </view>
-      <view class="hidden {{gotLocation ? 'show_this' : '' }}">
-      <view class="shakeNow" bindtap="GetRestaurantShake">要吃吗? 摇一摇!</view>
-    </view>  
   </view>
- 
+  <!-- <view class="button-location-view">
+    <button class="button-location {{gotLocation ? 'hidden' : '' }}" type="warn" bindtap="listenerBtnGetLocation">点击定位当前位置</button>
+  </view> -->
 </view>
+      <!-- <view class="hidden {{gotLocation ? 'show_this' : '' }}">
+      <view class="shakeNow" bindtap="GetRestaurantShake">要吃吗? 摇一摇!</view> -->
+
+ 
