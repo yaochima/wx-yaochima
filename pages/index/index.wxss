@@ -62,7 +62,7 @@ button.button-location {
 }
 
 .shakeNow {
-  font-size: 45px;
+  font-size: 38px;
   color: #F15A24;
   background-color: white;
   border-radius: 5px;
