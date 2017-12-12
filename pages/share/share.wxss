@@ -260,9 +260,9 @@
 .peek {
   min-width: 500px;
   max-width: 800px;
-  height: 468px;
+  height: 400px;
   position: absolute;
-  top: -29px
+  top: -2px
 }
 
 .butt {
