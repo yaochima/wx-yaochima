@@ -190,6 +190,7 @@ Page({
           console.log(this.data.iconRatingPath)
           if (successCallback) {
             successCallback();
+
           }
         },
     })
