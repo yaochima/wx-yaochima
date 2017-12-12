@@ -1,13 +1,12 @@
-<view class="wrapper">
+<view class="index-wrapper" style="background-image: url('../../assets/images/landingbackground.png')">
   <view class="container">
     <view class="greeting">
       <view class="greetingText">
-        <text> Who's Hungry, Bitches? </text>
       </view>
       <view class="greetingImage"></view>
       <view class="button-location-view">
       
-        <button class="button-location {{gotLocation ? 'hidden' : '' }}" type="warn" bindtap="listenerBtnGetLocation">Get My Location</button>
+        <button class="button-location {{gotLocation ? 'hidden' : '' }}" type="warn" bindtap="listenerBtnGetLocation">点击定位当前位置</button>
       </view>
     </view>
   </view>
