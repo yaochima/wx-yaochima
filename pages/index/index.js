@@ -31,6 +31,14 @@ Page({
   },
 
   onLoad: function() {
+    this.registerShake();
+  },
+
+  onShow: function() {
+    this.registerShake();
+  },
+
+  registerShake: function() {
     let that = this;
     app.globalData.shakeManager.register(this, function (args) {
       // when shaked
