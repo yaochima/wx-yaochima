@@ -151,6 +151,15 @@ Page({
       restaurantId: Number(options.id)
     });
     this.loadRestaurantData();
+
+    let that = this;
+
+    app.globalData.shakeManager.register(this, function () {
+      // when shaked
+      // console.log("Shaked!")
+      that.shakeTest();
+    });
+
   },
   
   loadRestaurantData: function () {
