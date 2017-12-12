@@ -1,2 +1,2 @@
 <import src="../../components/restaurantProfile/restaurantProfile.wxml"/>
-<template is="restaurantProfile" data="{{ categoryLocked: categoryLocked, priceLocked: priceLocked, name: name, rating: rating, price: price, category: category, address: address, phone: phone, mainPhoto: mainPhoto, errorMessage: errorMessage}}"/>
+<template is="restaurantProfile" data="{{ categoryLocked: categoryLocked, priceLocked: priceLocked, name: name, rating: rating, price: price, category: category, address: address, phone: phone, mainPhoto: mainPhoto, errorMessage: errorMessage, iconRatingPath: iconRatingPath }}"/>
