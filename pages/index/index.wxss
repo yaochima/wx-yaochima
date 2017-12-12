@@ -61,6 +61,11 @@ button.button-location {
   z-index: 99999999;
 }
 
-.shake {
- 
+.shakeNow {
+  font-size: 38px;
+  color: #F15A24;
+  background-color: white;
+  border-radius: 5px;
+  height: 60px;
+  padding: 10px 30px;
 }
