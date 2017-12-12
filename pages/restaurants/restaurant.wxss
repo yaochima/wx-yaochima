@@ -151,21 +151,10 @@
   font-size: 14px;
 }
 
-/* .small-text {
-  font-size: 12px;
-} */
-
 .unlock {
-  
- 
+
 }
-
-/* .unlock ::after {
-  content: "unlocked"
-} */
-
 .lock {
-  /* HeaderBlur: */
   font-weight: bold;
   background-image: linear-gradient(-245deg, #3023AE 0%, #804AC4 100%)  !important;
   border-radius: 30px;
@@ -173,19 +162,10 @@
 }
 
 
-/* .lock ::after {
-  content: "locked"
-} */
-
- /* #restaurant_category.unlock {
-  border-bottom: 1px solid #F5A623;
-}  */
-
 
 /* - - - - - - - ICONS */
 
 .icon {
-  /* background-image: url("../../assets/images/icons/svg/icon_category.svg"); */
   width: 25px;
   height: 25px;
   padding: 5px 10px;

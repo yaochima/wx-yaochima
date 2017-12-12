@@ -11,6 +11,18 @@
   margin: 20rpx;
   border-radius: 50%;
 } */
+/* 
+.index-container {
+  height:100%;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:space-between;
+  padding:170rpx 0;
+  box-sizing:border-box
+} */
+
+
 .landingbackground {
   height: 100vh;
   width: 100%;
@@ -68,4 +80,25 @@ button.button-location {
   border-radius: 5px;
   height: 60px;
   padding: 10px 30px;
+}
+
+.greeting {
+  position: relative;
+}
+
+.logo-cat {
+  position: relative;
+  bottom: 40px;
+}
+
+
+.logo-rotate {
+  position: absolute;
+  height: 300px;
+  width: 300px;
+  right: 15px;
+  bottom: 18px;
+}
+.empty {
+  height: 100px;
 }
