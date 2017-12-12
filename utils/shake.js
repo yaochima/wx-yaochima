@@ -37,7 +37,11 @@ const ShakeManager = function() {
       if (speed > SHAKE_THRESHOLD) {
         // 判断数据是否载入和是否在允许的时间（5秒每次间隔）
         if (flag && that.callback) {
-
+          wx.vibrateLong()
+          // wx.playVoice({
+          //   filePath: "https://yaochima.shanghaiwogeng.com/yaochima.mp3",
+          //   complete: function () {
+          //   })}
           that.showToast(that.callback);
 
           // that.shakeSound.play()
