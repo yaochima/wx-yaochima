@@ -1,5 +1,6 @@
 <template name="restaurantProfile">
-  
+
+<view class="wrapper">
   <view class="restaurant_wrapper">
     <view class="profile_wrapper">
       <view class="restaurant_banner" style="background-image: linear-gradient(-180deg, rgba(255,255,255,0.00) 31%, rgba(35,35,35,0.47) 90%, #000000 100%), url({{mainPhoto}})">
@@ -99,7 +100,7 @@
     <image class="peek" src="../../assets/images/peek.svg"/>
   </view>
   </view>
-
+</view>
  
 
 </template>
