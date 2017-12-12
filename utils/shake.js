@@ -13,6 +13,10 @@ const ShakeManager = function() {
   const that = this;
   // console.log('lololo');
 
+  
+ 
+
+
   x = y = z = lastX = lastY = lastZ = 0
 
   wx.onAccelerometerChange(function(res) {
@@ -37,7 +41,10 @@ const ShakeManager = function() {
       if (speed > SHAKE_THRESHOLD) {
         // 判断数据是否载入和是否在允许的时间（5秒每次间隔）
         if (flag && that.callback) {
+          
+          wx.vibrateLong()
 
+  
           that.showToast(that.callback);
 
           // that.shakeSound.play()

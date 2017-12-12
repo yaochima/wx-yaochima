@@ -17,3 +17,7 @@
       <view class="shakeNow" bindtap="GetRestaurantShake">要吃吗? 摇一摇!</view> -->
 
  
+
+</view> 
+<audio src= "https://yaochima.shanghaiwogeng.com/yaochima.mp3" id="shakeSound"></audio>
+
