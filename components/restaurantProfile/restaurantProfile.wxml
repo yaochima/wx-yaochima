@@ -59,7 +59,7 @@
               <view class="icon-address">
                 <image class="icon-address icon" src='../../assets/images/icons/svg/icon_map.svg'/>
               </view>
-              <text>{{address}}</text>
+              <text class="address-text">{{address}}</text>
             </view>
        
         </view>
