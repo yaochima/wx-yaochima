@@ -42,10 +42,6 @@ Page({
     let that = this;
     
     this.data.rest_exclusions.push(this.data.restaurantId);
-    console.log("this work")
-    console.log(this.data.exclusions)
-    console.log(this.data.rest_exclusions)
-
 
     if (this.data.categoryLocked && !this.data.priceLocked) {
       this.setData({
@@ -85,7 +81,7 @@ Page({
     }
 
     wx.request({
-      url: 'https://yaochima.herokuapp.com/api/v1/shakes',
+      url: 'https://yaochima.shanghaiwogeng.com/api/v1/shakes',
       method: 'post',
       data: {
         "lat": app.globalData.lat, 
@@ -157,7 +153,7 @@ Page({
 
     wx.request ({
       // url: 'https://yaochima.herokuapp.com/api/v1/restaurants/1',
-      url: "https://yaochima.herokuapp.com/api/v1/restaurants/" + restaurantId,
+      url: "https://yaochima.shanghaiwogeng.com/api/v1/restaurants/" + restaurantId,
       method: 'get',
       header: { },
       success:  (res) => {
@@ -233,7 +229,13 @@ Page({
    * 用户点击右上角分享
    */
   onShareAppMessage: function () {
-   
+    wx.showShareMenu({
+      withShareTicket: true
+    })
+  
+  return {
+    title: '摇来这儿吃嘛 😊',
+    path: 'pages/share/share?id=' + this.data.restaurantId
   }
-
+  }
 })
