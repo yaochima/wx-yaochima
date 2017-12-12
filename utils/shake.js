@@ -1,7 +1,5 @@
-////////// shake.js
 
-
-var SHAKE_THRESHOLD = 100
+var SHAKE_THRESHOLD = 150
 var lastUpdate = 0
 var x, y, z, lastX, lastY, lastZ
 var flag = true
@@ -12,10 +10,6 @@ const ShakeManager = function() {
 
   const that = this;
   // console.log('lololo');
-
-  
- 
-
 
   x = y = z = lastX = lastY = lastZ = 0
 
@@ -44,7 +38,6 @@ const ShakeManager = function() {
           
           wx.vibrateLong()
 
-  
           that.showToast(that.callback);
 
           // that.shakeSound.play()
@@ -101,7 +94,6 @@ ShakeManager.prototype.unregister = function(page) {
 module.exports = function() {
   return new ShakeManager();
 };
-
 
  // if (movedAlot && that.enabled && that.callback) {
     //   that.callback(res);
