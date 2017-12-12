@@ -17,7 +17,6 @@
   border: 0 solid rgba(151,151,151,0.30);
   box-shadow: 1px 2px 5px 0 rgba(0,0,0,0.22);
   align-content: stretch;
-
 } 
 
 .restaurant_banner {
@@ -255,10 +254,15 @@
   align-items: center;
 }
 
- .rating {
+  .rating {
   width: 90px;
   height: 15px;
-} 
+}  
+
+ /* .rating-image {
+  width: 90px;
+  height: 15px; 
+}  */
 
 .footer {
   display: flex;
