@@ -14,6 +14,7 @@ Page({
     lockedprice: null, 
     errorMessage: null,
     status: null,
+    iconRatingPath: null, 
   }, 
 
   toggleCategory: function (event) {
@@ -183,14 +184,28 @@ Page({
             phone: res.data.phone_number, 
             address: res.data.address,
             currentCategory: res.data.category,
-            currentPrice: res.data.price_per_person
+            currentPrice: res.data.price_per_person,
+            iconRatingPath: this.ratingIcon(res.data.rating)
           }); 
+          console.log(this.data.iconRatingPath)
           if (successCallback) {
             successCallback();
 
           }
         },
     })
+  },
+
+  ratingIcon: function (rating){
+    if (rating == 3){
+      return "../../assets/images/icons/svg/icon_three_star.svg"
+    } else if (rating == 4){
+      return "../../assets/images/icons/svg/icon_four_star.svg"
+    } else if (rating == 5) {
+      return "../../assets/images/icons/svg/icon_five_star.svg"
+    } else {
+      return "../../assets/images/icons/svg/icon_three_star.svg"
+    }
   },
 
   errorMessageToast: function () {

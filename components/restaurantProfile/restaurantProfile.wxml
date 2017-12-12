@@ -12,7 +12,7 @@
       <view class="restaurant_details text_size grey-text">
          <view class="row">
             <view class = 'rating span'>
-              <image src="../../assets/images/icons/svg/icon_five_star.svg"/>
+              <image class="rating-image" src="{{iconRatingPath}}"/>
             </view>
 
             <view class="category span">
@@ -36,7 +36,7 @@
             <view class="icon-wrap">
               <image class="icon-distance icon" src='../../assets/images/icons/svg/icon_distance.svg'/>
             </view>
-            <text>{{distance}}> 1 KM</text>
+            <text>{{distance}} 1 KM </text>
           </view>
 
             <view class="travel-time span">
