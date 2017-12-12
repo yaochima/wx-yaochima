@@ -92,13 +92,14 @@
             <image class="button-lock" style="{{priceLocked ? 'display: inline' : 'display: none' }}" src='../../assets/images/icons/svg/icon_lock.svg'/>
             <image class="button-lock" style="{{priceLocked ? 'display: none' : 'display: inline' }}" src='../../assets/images/icons/svg/icon_unlock.svg'/>
           </view>
-          
       </view>
-      
+      <!-- <view class="footer">
+          <image bindtap="openMiniProgram" class="peek" src="https://yaochima.shanghaiwogeng.com/logo-cat-half.png"/>
+        </view> -->
     </view>
-  <view class="footer">
+  <!-- <view class="footer">
     <image bindtap="openMiniProgram" class="peek" src="https://yaochima.shanghaiwogeng.com/logo-cat.svg"/>
-  </view>
+  </view> -->
   </view>
 </view>
  
