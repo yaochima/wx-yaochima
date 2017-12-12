@@ -38,14 +38,14 @@
             <view class="icon-wrap">
               <image class="icon-distance icon" src='../../assets/images/icons/svg/icon_distance.svg'/>
             </view>
-            <text>{{distance}}KM</text>
+            <text>{{distance}}~ 1 KM</text>
           </view>
 
             <view class="travel-time span">
               <view class="icon-wrap">
                 <image class="icon-travel icon" src='../../assets/images/icons/svg/icon_walk.svg'/>
               </view>
-              <text>5{{travel-time}}分钟</text>
+              <text>5 分钟</text>
             </view>
         </view>
         <view class="row">
@@ -72,7 +72,7 @@
     </view>
 
   <view class="footer">
-    <image bindtap="openMiniProgram" class="peek" src="#"/>
+    <image bindtap="openMiniProgram" class="peek" src="https://yaochima.shanghaiwogeng.com/logo-cat.svg"/>
   </view>
   </view>
 </view>
