@@ -1,4 +1,5 @@
 <view class="index-wrapper" style="background-image: url('../../assets/images/landingbackground.png')">
+  <!-- <image class = "landingbackground" src='../../assets/images/landingbackground.png'/> -->
   <view class="container">
     <view class="greeting">
       <view class="greetingText">
