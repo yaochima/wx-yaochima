@@ -64,6 +64,18 @@
   text-align: center;
 }
 
+.address {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis
+}
+
+.address-text {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis
+}
+
 #shake {
   background-color: black;
   padding: 10px;
