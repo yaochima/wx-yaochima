@@ -9,6 +9,7 @@ Page({
     currentCategory: null,
     currentPrice: null,
     exclusions: [],
+    rest_exclusions: [],
     lockedcategory: null, 
     lockedprice: null, 
     errorMessage: null,
@@ -39,6 +40,8 @@ Page({
     });
     console.log(event);
     let that = this;
+    
+    this.data.rest_exclusions.push(this.data.restaurantId);
 
     if (this.data.categoryLocked && !this.data.priceLocked) {
       this.setData({
@@ -78,14 +81,16 @@ Page({
     }
 
     wx.request({
-      url: 'https://yaochima.herokuapp.com/api/v1/shakes',
+      url: 'https://yaochima.shanghaiwogeng.com/api/v1/shakes',
       method: 'post',
       data: {
         "lat": app.globalData.lat, 
         "lng": app.globalData.lng,
+        "rest_exclusions": this.data.rest_exclusions,
         "exclusions": this.data.exclusions,
         "lockedcategory": this.data.lockedcategory,
-        "lockedprice": this.data.lockedprice
+        "lockedprice": this.data.lockedprice,
+        
       },
       success: function (res) {
         // console.log("important: subsequent shake response")
@@ -138,7 +143,7 @@ Page({
     console.log("restaurantoptions")
     console.log(options.id)
     this.setData({
-      restaurantId: options.id
+      restaurantId: Number(options.id)
     });
     this.loadRestaurantData();
   },
@@ -148,7 +153,7 @@ Page({
 
     wx.request ({
       // url: 'https://yaochima.herokuapp.com/api/v1/restaurants/1',
-      url: "https://yaochima.herokuapp.com/api/v1/restaurants/" + restaurantId,
+      url: "https://yaochima.shanghaiwogeng.com/api/v1/restaurants/" + restaurantId,
       method: 'get',
       header: { },
       success:  (res) => {
@@ -224,7 +229,13 @@ Page({
    * 用户点击右上角分享
    */
   onShareAppMessage: function () {
-   
+    wx.showShareMenu({
+      withShareTicket: true
+    })
+  
+  return {
+    title: '摇来这儿吃嘛 😊',
+    path: 'pages/share/share?id=' + this.data.restaurantId
   }
-
+  }
 })

@@ -1,6 +1,7 @@
 {
-  "pages":[
+  "pages": [
     "pages/index/index",
+    "pages/share/share",
     "pages/restaurants/restaurant"
   ],
 
@@ -8,7 +9,7 @@
     "backgroundTextStyle":"light",
     "navigationBarBackgroundColor": "#FF931E",
     "navigationBarTitleText": "摇吃嘛",
-    "navigationBarTextStyle":"white",
+    "navigationBarTextStyle": "white",
     "enablePullDownRefresh": true
   }
 }
