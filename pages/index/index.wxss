@@ -26,7 +26,6 @@
 .landingbackground {
   height: 100vh;
   width: 100%;
-  
   display: none;
 }
 
@@ -89,6 +88,37 @@ button.button-location {
 .logo-cat {
   position: relative;
   bottom: 40px;
+  right: 2px;
+  animation: shake .8s cubic-bezier(.36,.07,.19,.97) both infinite;
+  transform: translate3d(0, 0, 0); 
+}
+
+@keyframes shake {
+  0% {
+    transform: translate3d(0px, 0, 0);
+  }
+  3% {
+    transform: translate3d(3px, 0, 0);
+  }
+  6% {
+    transform: translate3d(-3px, 0, 0);
+  }
+  10% {
+    transform: translate3d(0px, 0, 0);
+  }
+  13% {
+    transform: translate3d(3px, 0, 0);
+  }
+  16% {
+    transform: translate3d(-3px, 0, 0);
+  }
+  20% {
+    transform: translate3d(0px, 0, 0);
+  }
+  100% {
+    transform: translate3d(0px, 0, 0);
+  }
+  
 }
 
 
@@ -96,9 +126,18 @@ button.button-location {
   position: absolute;
   height: 300px;
   width: 300px;
-  right: 15px;
-  bottom: 18px;
+  right: 13px;
+  bottom: 24px;
+  animation: spin 20s infinite linear;
+  transform: translate3d(0, 0, 0);
 }
+
+@keyframes spin {
+    0% { transform: rotate(0deg)}
+    50% { transform: rotate(180deg)}
+    100% { transform: rotate(360deg)}
+}
+
 .empty {
   height: 100px;
 }
