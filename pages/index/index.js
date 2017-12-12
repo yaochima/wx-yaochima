@@ -12,6 +12,7 @@ Page({
   onLoad: function(options) {
   },
 
+
   listenerBtnGetLocation: function () {
     wx.getLocation({
       success: function (res) {
@@ -35,6 +36,7 @@ Page({
       // when shaked
       // console.log("Shaked!")
       that.GetRestaurantShake(args.done);
+
     });
   },
 
@@ -52,6 +54,8 @@ Page({
         showCancel: false,
         success: function (res) {
           console.log('success modal')
+          
+
         }
       })
     } 
@@ -89,6 +93,9 @@ Page({
           wx.navigateTo({
             url: "../restaurants/restaurant?id=" + res.data.restaurants.id
           })
+          this.shakeSound = wx.createAudioContext("shakeSound")
+          console.log("HAHAH")
+          this.shakeSound.play()
           console.log("res")
           console.log(res.data)
         } else if (res.data.status == "error") {

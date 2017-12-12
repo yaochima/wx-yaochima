@@ -12,8 +12,8 @@ const ShakeManager = function() {
 
   const that = this;
   // console.log('lololo');
-  this.shakeSound = wx.createAudioContext("https://yaochima.shanghaiwogeng.com/yaochima.mp3")
-  console.log("HAHAH")
+
+  
  
 
 
@@ -43,7 +43,7 @@ const ShakeManager = function() {
         if (flag && that.callback) {
           
           wx.vibrateLong()
-          that.shakeSound.play()
+
   
           that.showToast(that.callback);
 
