@@ -9,8 +9,9 @@
         <button class="button-location {{gotLocation ? 'hidden' : '' }}" type="warn" bindtap="listenerBtnGetLocation">点击定位当前位置</button>
       </view>
     </view>
+      <view class="hidden {{gotLocation ? 'show_this' : '' }}">
+      <view class="shakeNow" bindtap="GetRestaurantShake">摇一摇!</view>
+    </view>  
   </view>
-  <view class="hidden {{gotLocation ? 'show_this' : '' }}">
-   <button bindtap="GetRestaurantShake">SHAKE</button>
-  </view>
+ 
 </view>
