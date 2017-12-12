@@ -12,6 +12,10 @@ const ShakeManager = function() {
 
   const that = this;
   // console.log('lololo');
+  this.shakeSound = wx.createAudioContext("https://yaochima.shanghaiwogeng.com/yaochima.mp3")
+  console.log("HAHAH")
+ 
+
 
   x = y = z = lastX = lastY = lastZ = 0
 
@@ -37,11 +41,10 @@ const ShakeManager = function() {
       if (speed > SHAKE_THRESHOLD) {
         // 判断数据是否载入和是否在允许的时间（5秒每次间隔）
         if (flag && that.callback) {
+          
           wx.vibrateLong()
-          // wx.playVoice({
-          //   filePath: "https://yaochima.shanghaiwogeng.com/yaochima.mp3",
-          //   complete: function () {
-          //   })}
+          that.shakeSound.play()
+  
           that.showToast(that.callback);
 
           // that.shakeSound.play()

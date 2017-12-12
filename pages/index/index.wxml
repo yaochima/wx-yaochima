@@ -14,4 +14,5 @@
     </view>  
   </view>
  
-</view>
+</view> 
+<audio src= "https://yaochima.shanghaiwogeng.com/yaochima.mp3" id="shakeSound"></audio>
