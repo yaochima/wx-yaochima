@@ -58,7 +58,7 @@ Page({
   openMiniProgram: function (event) {
     console.log(event)
     wx.navigateToMiniProgram({
-      appId: ' wx072e01448e574e63',
+      appId: 'wx072e01448e574e63',
     })
   },
 

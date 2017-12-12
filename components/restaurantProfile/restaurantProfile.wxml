@@ -97,7 +97,7 @@
       
     </view>
   <view class="footer">
-    <image bindtap="testShake" class="peek" src="../../assets/images/peek.svg"/>
+    <image bindtap="openMiniProgram" class="peek" src="https://yaochima.shanghaiwogeng.com/logo-cat.svg"/>
   </view>
   </view>
 </view>

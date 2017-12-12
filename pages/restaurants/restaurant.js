@@ -211,6 +211,13 @@ Page({
     }
   },
 
+  openMiniProgram: function (event) {
+    console.log(event)
+    wx.navigateToMiniProgram({
+      appId: 'wx072e01448e574e63',
+    })
+  },
+
   errorMessageToast: function () {
     wx.showToast({
       title: errorMessage,
