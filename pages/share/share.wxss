@@ -253,14 +253,11 @@
   justify-content: center;
   position: fixed;
   height: 400px;
-  bottom: -500rpx;
+  bottom: -200rpx;
   width: 100%;
 }
 
 .peek {
-  min-width: 500px;
-  max-width: 800px;
-  height: 400px;
   position: absolute;
   top: -2px
 }
