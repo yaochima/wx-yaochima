@@ -10,7 +10,7 @@
       </view>
     </view>
       <view class="hidden {{gotLocation ? 'show_this' : '' }}">
-      <view class="shakeNow" bindtap="GetRestaurantShake">摇一摇!</view>
+      <view class="shakeNow" bindtap="GetRestaurantShake">要吃吗? 摇一摇!</view>
     </view>  
   </view>
  
