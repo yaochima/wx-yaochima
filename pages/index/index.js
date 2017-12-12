@@ -65,6 +65,7 @@ Page({
   },
     
   GoToRestaurant: function() {
+    console.log('GoToRestaurant called');
     console.log(app.globalData);
     wx.request({
       url: 'https://yaochima.shanghaiwogeng.com/api/v1/shakes',
