@@ -23,13 +23,12 @@
   background-position: center; 
   height: 100vh;
   width: 100%;
-  /* display: flex;
+   /* display: flex; */
   align-items: center;
-  justify-content: center; */
+  justify-content: center; 
   object-fit: cover;
   object-position: center;
   z-index: -1;
-
 }
 
 .userinfo-nickname {
