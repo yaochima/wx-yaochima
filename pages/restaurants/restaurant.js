@@ -31,13 +31,18 @@ Page({
     });
     // console.log(this.data.priceLocked);
   },
+
+  testShake: function(event) {
+    this.shakeTest();
+  },
   
   shakeTest: function (event) {
-    // console.log("restart shake")
-    this.setData({
-      lockedcategory: null,
-      lockedprice: null,
-    });
+
+    // this.setData({
+    //   lockedcategory: null,
+    //   lockedprice: null,
+    // });
+
     console.log(event);
     let that = this;
     

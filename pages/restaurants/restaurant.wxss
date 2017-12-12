@@ -225,8 +225,7 @@
   right: -5px;
   z-index: 9999;
   bottom: 2px;
-  transform: rotate(24deg);
-  
+  /* transform: rotate(24deg); */
 }
 
 .button-lock {
@@ -270,8 +269,3 @@
 .butt {
   background-color: aqua;
 }
-
-
-
-/* Rectangle Copy 2: */
-
