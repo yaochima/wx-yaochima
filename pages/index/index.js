@@ -67,7 +67,7 @@ Page({
   GoToRestaurant: function() {
     console.log(app.globalData);
     wx.request({
-      url: 'https://yaochima.herokuapp.com/api/v1/shakes',
+      url: 'https://yaochima.shanghaiwogeng.com/api/v1/shakes',
       method: 'post',
       data: {
         "lat": app.globalData.lat.toString(),
