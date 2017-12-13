@@ -71,9 +71,12 @@
       </view>
     </view>
 
-  <view class="footer">
-    <image bindtap="openMiniProgram" class="peek" src="https://yaochima.shanghaiwogeng.com/logo-cat-half.svg"/>
-  </view>
+  <import src="../../components/footer/footer.wxml"/>
+<template is="footer" data="{{ categoryLocked, priceLocked, name, rating, price, category, address, phone, mainPhoto, errorMessage, iconRatingPath, animationData, phoneNumber, footerShare, footerShake, catOut }}"/>
+
+
+
+
   </view>
 </view>
  
