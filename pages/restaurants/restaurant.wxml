@@ -1,5 +1,4 @@
 <import src="../../components/restaurantProfile/restaurantProfile.wxml"/>
-<template is="restaurantProfile" data="{{ categoryLocked, priceLocked, name, rating, price, category, address, phone, mainPhoto, errorMessage, iconRatingPath, animationData, catOut }}"/>
-
+<template is="restaurantProfile" data="{{ categoryLocked, priceLocked, name, rating, price, category, address, phone, mainPhoto, errorMessage, iconRatingPath, animationData, catOut, priceRange }}"/>
 <audio src= "https://yaochima.shanghaiwogeng.com/yaochima.mp3" id="shakeSound"></audio>
 
