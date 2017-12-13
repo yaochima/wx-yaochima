@@ -93,7 +93,8 @@ Page({
       data: {
         "lat": app.globalData.lat.toString(),
         "lng": app.globalData.lng.toString(),
-        "exclusions": []
+        "exclusions": [],
+        "rest_exclusions": []
         // 'uuid': app.globalData.uuid
       },
       success: function (res) {
