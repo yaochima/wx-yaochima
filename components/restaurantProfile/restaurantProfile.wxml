@@ -1,6 +1,5 @@
 <template name="restaurantProfile">
 
-
   <view class="restaurant_wrapper">
     <view class="profile_wrapper">
       <view class="restaurant_banner" style="background-image: linear-gradient(-180deg, rgba(255,255,255,0.00) 31%, rgba(35,35,35,0.47) 90%, #000000 100%), url({{mainPhoto}})">
@@ -68,14 +67,13 @@
 
       <!-- Lock Restaurant Parameters -->
 
-  <view class="button_wrap">
+    <view class="button_wrap">
       <view id="restaurant_category " class="button row h2 {{categoryLocked ? 'lock' : 'unlock' }}" bindtap='toggleCategory'>
           <view class="category_icon">
             <image class="button-icon" src='../../assets/images/icons/svg/icon_category.svg'/>
           </view>
           <text>{{category}}</text>
-          <view >
-            <!-- <image class="button-unlock" "src='../../assets/images/icons/svg/icon_unlock.svg'/> -->
+          <view>
             <image class="button-lock" style="{{categoryLocked ? 'display: inline' : 'display: none' }}" src='../../assets/images/icons/svg/icon_lock.svg'/>
             <image class="button-lock" style="{{categoryLocked ? 'display: none' : 'display: inline' }}" src='../../assets/images/icons/svg/icon_unlock.svg'/>
           </view>
@@ -91,12 +89,12 @@
             <image class="button-lock" style="{{priceLocked ? 'display: none' : 'display: inline' }}" src='../../assets/images/icons/svg/icon_unlock.svg'/>
           </view>
       </view>
-      <!-- <view class="footer">
-          <image bindtap="openMiniProgram" class="peek" src="https://yaochima.shanghaiwogeng.com/logo-cat.svg"/>
-      </view>  -->
     </view>
+    <view class="footer" style="height:{{footerHeight}}rpx">
+      <image bindtap="openMiniProgram" class="peek" src="https://yaochima.shanghaiwogeng.com/logo-cat.svg"/>
+    </view>  
   </view>
+  
 
- 
 
 </template>
