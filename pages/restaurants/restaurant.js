@@ -182,12 +182,16 @@ Page({
 
     let that = this;
 
-    app.globalData.shakeManager.register(this, function (args) {
-      // when shaked
-      // console.log("Shaked!")
-      that.shakeTest(args.done);
+    app.globalData.shakeManager.register(this, {
+      allow: function() {
+        return app.globalData.gotLocation
+      },
+      success: function (args) {
+        // when shaked
+        // console.log("Shaked!")
+        that.shakeTest(args.done);
+      }
     });
-
   },
   
   loadRestaurantData: function (successCallback) {
