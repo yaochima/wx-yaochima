@@ -10,7 +10,8 @@ App({
     restaurantUrl: 'https://yaochima.herokuapp.com/api/v1/restaurants/',
     restaurantID: null, 
     guestUrl: 'https://yaochima.herokuapp.com/api/v1/guests',
-    guestId: null
+    guestId: null,
+    gotLocation: false
   },
 
   onLaunch: function() {

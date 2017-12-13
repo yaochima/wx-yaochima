@@ -5,8 +5,8 @@ Page({
   data: {
     motto: '饿了！受不了',
     hasUserInfo: false,
-    canIUse: wx.canIUse('button.open-type.getUserInfo'),
-    gotLocation: false,
+    canIUse: wx.canIUse('button.open-type.getUserInfo'), 
+    gotLocation: app.globalData.gotLocation
   },
 
   onLoad: function(options) {
@@ -25,16 +25,23 @@ Page({
         app.globalData.lng = longitude
       }
     })
-    this.setData ({
-      gotLocation: true,
-    })
+    app.globalData.gotLocation = true;
+    this.bindLocation();
+  },
+
+  bindLocation: function() {
+    this.setData({
+      gotLocation: app.globalData.gotLocation
+    });
   },
 
   onLoad: function() {
+    this.bindLocation();
     this.registerShake();
   },
 
   onShow: function() {
+    this.bindLocation();
     this.registerShake();
   },
 
@@ -54,7 +61,7 @@ Page({
   },
 
   GetRestaurantShake: function (successCallback) {
-    if (this.data.gotLocation == false){
+    if (app.globalData.gotLocation == false){
       wx.showModal({
         title: 'We Need Your Location',
         content: 'to find places to eat near you!',
