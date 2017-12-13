@@ -92,9 +92,10 @@
       </view>
     </view>
     
+  
 <!-- - - - - -- - - - - - - MAGICAL FOOTER -->
 
-    <view bindtap="clickFooter" animation="{{animationData}}" class="footer {{catOut ? 'showCat' : 'cropCat' }}" style="height:{{footerHeight}}rpx">
+    <!-- <view bindtap="clickFooter" animation="{{animationData}}" class="footer {{catOut ? 'showCat' : 'cropCat' }}" style="height:{{footerHeight}}rpx">
       <image class="peek" src="https://yaochima.shanghaiwogeng.com/logo-cat.svg"/>
       <view class="catMenu {{catOut ? 'showCatMenu' : 'hideCatMenu' }}">
           <view class="catMenu-thanks-1">
@@ -102,14 +103,14 @@
           </view>
           <view class="catMenu-text">
 
-              <view bindtap="shakeTest" class="footer-shake">
+              <view bindtap="tapShake" class="footer-shake">
                 <image class="icon-footer-shake" src="../../assets/images/footer-shake.svg"/>
                 <text class="footer-shake-text">请尽情用餐</text>
               </view>
 
-              <view bindtap="onShareAppMessage" class="footer-share">
-                <image bindtap="onShareAppMessage" class="icon-footer-share" src="../../assets/images/footer-share.svg"/>
-                <text bindtap="onShareAppMessage" class="footer-share-text">分享这家餐厅给小伙伴！</text>
+              <view bindtap="tapShare" class="footer-share">
+                <image class="icon-footer-share" src="../../assets/images/footer-share.svg"/>
+                <text class="footer-share-text">分享这家餐厅给小伙伴！   </text>
               </view>
           </view>
           <view class="catMenu-thanks-2">
@@ -117,7 +118,7 @@
           </view>
       </view>
 
-    </view>
+    </view> -->
     
   </view>
   

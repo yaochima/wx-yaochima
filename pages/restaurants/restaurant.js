@@ -19,7 +19,9 @@ Page({
     longitud: null, 
     animationData: {}, 
     catOut: false,
-    phoneNumber: null
+    phoneNumber: null,
+    footerShare: false,
+    footerShake: false
 
   }, 
 
@@ -255,6 +257,14 @@ Page({
   },
 
   clickFooter: function (event) {
+
+    // if (this.data.footerShare) {
+    //   this.onShareAppMessage();
+    // } else if (this.data.footerShake) {
+    //   this.shakeTest();
+    // } else {
+    // }
+
     if (this.data.catOut) {
       var animateDown = wx.createAnimation({
         duration: 1000,
@@ -274,7 +284,7 @@ Page({
           catOut: false
         })
       }.bind(this), 1000)
-      
+
     } else {
       var animateUp = wx.createAnimation({
         timingFunction: 'ease',
@@ -294,9 +304,21 @@ Page({
 
 // - - - - - - - - event listeners for footer links
 
-tapShare: function(event){
-  this.onShareAppMessage();
-},
+// tapShare: function(event){
+//   console.log(event)
+//   this.setData({
+//     footerShare: true,
+//   })
+//   console.log(this.data.footerShare)
+// },
+
+// tapShake: function (event){
+//   console.log(event)
+//   this.setData({
+//     footerShake: true,
+//   })
+//   console.log(this.data.footerShake)
+// },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
