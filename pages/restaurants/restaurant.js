@@ -16,7 +16,8 @@ Page({
     status: null,
     iconRatingPath: null,
     latitude: null,
-    longitud: null 
+    longitud: null,
+    phoneNumber: null
   }, 
 
   openLocation: function () {
@@ -29,6 +30,12 @@ Page({
         })
   },
 
+  callRestaurant: function () {
+    let page = this;
+    wx.makePhoneCall({
+      phoneNumber: page.data.phone
+    })
+  },
 
   toggleCategory: function (event) {
     // console.log(event)
