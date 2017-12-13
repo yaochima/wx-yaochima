@@ -255,6 +255,7 @@ audio {
   bottom: 0;
   width: 100%;
   overflow: hidden;
+  
 }
 
 .peek {
@@ -263,5 +264,35 @@ audio {
   position: absolute;
   overflow: hidden;
   bottom: -335rpx;
+  animation: shake .8s cubic-bezier(.36,.07,.19,.97) 15s both infinite;
+  transform: translate3d(0, 0, 0); 
+}
+
+@keyframes shake {
+  0% {
+    transform: translate3d(0px, 0, 0);
+  }
+  3% {
+    transform: translate3d(3px, 0, 0);
+  }
+  6% {
+    transform: translate3d(-3px, 0, 0);
+  }
+  10% {
+    transform: translate3d(0px, 0, 0);
+  }
+  13% {
+    transform: translate3d(3px, 0, 0);
+  }
+  16% {
+    transform: translate3d(-3px, 0, 0);
+  }
+  20% {
+    transform: translate3d(0px, 0, 0);
+  }
+  100% {
+    transform: translate3d(0px, 0, 0);
+  }
+
 }
 
