@@ -18,7 +18,7 @@ App({
     this.ensureUUID();
     this.signInAsGuest();
     wx.startAccelerometer();
-    this.globalData.shakeManager = shake();
+    this.globalData.shakeManager = shake(this);
   },
 
   signInAsGuest: function () {
