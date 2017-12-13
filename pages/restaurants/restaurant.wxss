@@ -26,7 +26,7 @@ audio {
 .restaurant_banner {
   width: 100vw;
   max-width: 100vw;
-  height: 36vh;
+  height: 35vh;
   display: flex; 
   flex-direction: column;
   justify-content: space-between;
@@ -242,10 +242,23 @@ audio {
   height: 27rpx;
 }  
 
+.cropCat {
+  overflow: hidden
+}
+
+.showCat {
+  overflow: visible;
+}
+
+
  /* .rating-image {
   width: 90px;
   height: 15px; 
 }  */
+
+.footer-wrap{
+  overflow:none;
+}
 
 .footer {
   display: flex;
@@ -254,7 +267,7 @@ audio {
   height: 266.8rpx;
   bottom: 0;
   width: 100%;
-  overflow: hidden;
+  z-index: 9999999;
   
 }
 
@@ -266,6 +279,7 @@ audio {
   bottom: -335rpx;
   animation: shake .8s cubic-bezier(.36,.07,.19,.97) 15s both infinite;
   transform: translate3d(0, 0, 0); 
+
 }
 
 @keyframes shake {
