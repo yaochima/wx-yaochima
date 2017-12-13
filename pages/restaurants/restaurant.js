@@ -16,8 +16,11 @@ Page({
     status: null,
     iconRatingPath: null,
     latitude: null,
-    longitud: null,
+    longitud: null, 
+    animationData: {}, 
+    catOut: false,
     phoneNumber: null
+
   }, 
 
   openLocation: function () {
@@ -258,6 +261,43 @@ Page({
     });
   },
 
+  clickFooter: function (event) {
+    if (this.data.catOut) {
+      var animateDown = wx.createAnimation({
+        duration: 1000,
+        timingFunction: 'ease',
+      })
+
+      this.animateDown = animateDown
+
+      animateDown.translate(0, 0).step({ duration: 1000 });
+
+      this.setData({
+        animationData: animateDown.export()
+      })
+
+      setTimeout(function () {
+        this.setData({
+          catOut: false
+        })
+      }.bind(this), 1000)
+      
+    } else {
+      var animateUp = wx.createAnimation({
+        timingFunction: 'ease',
+      })
+
+      this.animateUp = animateUp
+      
+      animateUp.translate(0, -360).step({duration: 1500});
+
+      this.setData({
+        animationData: animateUp.export(),
+        catOut: true 
+      })
+    }
+
+  },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
