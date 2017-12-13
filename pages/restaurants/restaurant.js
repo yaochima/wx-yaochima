@@ -223,7 +223,8 @@ Page({
             currentPrice: res.data.price_per_person,
             priceRange: this.createPriceRange(res.data.price_per_person),
             iconRatingPath: this.ratingIcon(res.data.rating),
-            distance: this.getDistanceFromLatLonInKm(res.data.lat, res.data.lng, app.globalData.lat, app.globalData.lng)
+            distance: this.getDistanceFromLatLonInKm(res.data.lat, res.data.lng, app.globalData.lat, app.globalData.lng),
+            timeToRestaurant: Math.round(this.getDistanceFromLatLonInKm(res.data.lat, res.data.lng, app.globalData.lat, app.globalData.lng) * 60 / 5)
           }); 
           console.log(this.data.distance)
           console.log(this.data.iconRatingPath)
