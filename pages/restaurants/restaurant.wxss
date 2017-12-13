@@ -4,6 +4,9 @@
   z-index: 1;
 }
 
+audio {
+  display: none;
+}
  .restaurant_wrapper {
   display: flex;
   flex-direction: column;
@@ -17,6 +20,7 @@
   border: 0 solid rgba(151,151,151,0.30);
   box-shadow: 1px 2px 5px 0 rgba(0,0,0,0.22);
   align-content: stretch;
+
 } 
 
 .restaurant_banner {
