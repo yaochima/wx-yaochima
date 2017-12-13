@@ -81,6 +81,12 @@ Page({
 
     } else {
         this.data.exclusions.push(this.data.currentCategory);
+        this.setData({
+        lockedcategory: null,
+        lockedprice: null
+        })
+
+
         // console.log("none locked");
         // console.log(this.data.lockedcategory);
         // console.log(this.data.lockedprice);
