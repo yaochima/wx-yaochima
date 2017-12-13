@@ -289,7 +289,7 @@ Page({
 
       this.animateUp = animateUp
       
-      animateUp.translate(0, -360).step({duration: 1500});
+      animateUp.translate(0, -415).step({duration: 1500});
 
       this.setData({
         animationData: animateUp.export(),
