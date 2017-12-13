@@ -14,8 +14,21 @@ Page({
     lockedprice: null, 
     errorMessage: null,
     status: null,
-    iconRatingPath: null, 
+    iconRatingPath: null,
+    latitude: null,
+    longitud: null 
   }, 
+
+  openLocation: function () {
+    let page = this;
+        wx.openLocation({
+          latitude: page.data.latitude,
+          longitude: page.data.longitude,
+          address: page.data.address,
+          scale: 28
+        })
+  },
+
 
   toggleCategory: function (event) {
     // console.log(event)
@@ -185,6 +198,8 @@ Page({
             phone: res.data.phone_number, 
             address: res.data.address,
             currentCategory: res.data.category,
+            latitude: res.data.lat,
+            longitude: res.data.lng,
             currentPrice: res.data.price_per_person,
             iconRatingPath: this.ratingIcon(res.data.rating)
           }); 
