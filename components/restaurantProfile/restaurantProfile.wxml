@@ -35,7 +35,7 @@
             <view class="icon-wrap">
               <image class="icon-distance icon" src='../../assets/images/icons/svg/icon_distance.svg'/>
             </view>
-            <text>{{distance}} 1 KM </text>
+            <text>{{distance}} KM </text>
           </view>
 
             <view class="travel-time span">
