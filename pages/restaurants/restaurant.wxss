@@ -26,13 +26,13 @@ audio {
 .restaurant_banner {
   width: 100vw;
   max-width: 100vw;
-  height: 40vh;
+  height: 36vh;
   display: flex; 
   flex-direction: column;
   justify-content: space-between;
   background-position: center;
   background-size: cover;
-  border-bottom: 8px solid #F5A623;
+  border-bottom: 16rpx solid #F5A623;
 }
 
 .restaurant_details {
@@ -42,7 +42,7 @@ audio {
   display: flex;
   flex-direction: column;
   text-align: center;
-  padding: 10px;
+  padding: 18rpx;
   height: 15vh;
   white-space: nowrap;
   overflow: hidden;
@@ -54,7 +54,7 @@ audio {
   align-items: center;
   justify-content: space-around; 
   text-align: center;
-  padding: 5px;
+  padding: 9rpx;
   vertical-align: center;
   /* flex-grow: 1; */
 }
@@ -63,7 +63,7 @@ audio {
   display: flex;
   align-items: center;
   justify-content: space-around;
-  padding: 5px;
+  padding: 32rpx;
   text-align: center;
 }
 
@@ -81,15 +81,16 @@ audio {
 
 #shake {
   background-color: black;
-  padding: 10px;
+  padding: 18rpx;
 }
 
 .button_wrap {
   display: flex;
   flex-direction: column;
   align-items: center;
+  align-content: stretch;
   justify-content: center;
-  padding: 10px;
+  padding: 18rpx;
 }
 
 .button {
@@ -99,14 +100,16 @@ audio {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 236px;
-  height: 38px;
-  margin: 10px 15px;
-  border: 1px solid #888888;
+  width: 425rpx;
+  min-width: 425rpx;
+  height: 65rpx;
+  min-height: 65rpx;
+  margin: 18rpx 400rpx;
+  border: 1.8rpx solid #888888;
   background: rgba(242,242,242,0.45);
-  border: 1px solid #979797;
-  box-shadow: 0 0 5px 1px #D8D8D8;
-  border-radius: 30px;
+  border: 1.8rpx solid #979797;
+  box-shadow: 0 0 9rpx 1.8rpx #D8D8D8;
+  border-radius: 54rpx;
   position: relative;
   color: #888888;
   z-index: 999;
@@ -139,21 +142,21 @@ audio {
 }
 
 .h1 {
-  font-size: 28px;
+  font-size: 50rpx;
   z-index: 2;
-  text-shadow: 2px 2px .5;
+  text-shadow: 3.6rpx 3.6rpx .5;
   line-height: 1;
-  padding: 5px 15px;
-  margin-bottom: 15px;
-  text-shadow: 2px 2px 3px black;
+  padding: 9rpx 22.5rpx;
+  margin-bottom: 27rpx;
+  text-shadow: 3.6rpx 3.6rpx 5.4rpx black;
 }
 
 .h2 {
-  font-size: 18px;
+  font-size: 32.4rpx;
 }
 
 .text_size {
-  font-size: 14px;
+  font-size: 25.2rpx;
 }
 
 .unlock {
@@ -162,7 +165,7 @@ audio {
 .lock {
   font-weight: bold;
   background-image: linear-gradient(-245deg, #3023AE 0%, #804AC4 100%)  !important;
-  border-radius: 30px;
+  border-radius: 54rpx;
   color: white!important;
 }
 
@@ -171,9 +174,9 @@ audio {
 /* - - - - - - - ICONS */
 
 .icon {
-  width: 25px;
-  height: 25px;
-  padding: 5px 10px;
+  width: 45rpx;
+  height: 45rpx;
+  padding: 9rpx 18rpx;
 }
 /* 
 .icon-phone {
@@ -182,55 +185,48 @@ audio {
   padding: 5px 10px;
 } */
 
-.icon-price {
-  width: 15px;
-  height: 15px;
-  padding: 5px 10px;
-}
-
-.icon-phone {
-  width: 15px;
-  height: 15px;
-  padding: 5px 10px;
-
+.icon-price, .icon-phone {
+  width: 27rpx;
+  height: 27rpx;
+  padding: 9rpx 18rpx;
 }
 
 .button-icon {
-  width: 60px;
-  height: 60px;
+  width: 108rpx;
+  height: 108rpx;
   position: absolute;
-  left: -30px;
+  left: -54rpx;
   z-index: 999;
-  bottom: 7px;
+  bottom: 12.6rpx;
 
 }
 
 .price-button-icon {
-   width: 52px;
-  height: 52px;
+  width: 93.6rpx;
+  height: 93.6rpx;
   position: absolute;
-  left: -13px;
+  left: -23.4rpx;
   z-index: 999;
-  bottom: -2px;
+  bottom: -3.6rpx;
 }
 
 .button-unlock {
-  width: 40px;
-  height: 40px;
+  width: 72rpx;
+  height: 72rpx;
   position: absolute;
-  right: -5px;
+  right: -9rpx;
   z-index: 9999;
-  bottom: 2px;
+  bottom: 3.6rpx;
   /* transform: rotate(24deg); */
 }
 
 .button-lock {
-  width: 40px;
-  height: 40px;
+  width: 72rpx;
+  height: 72rpx;
   position: absolute;
-  right: -5px;
+  right: -9rpx;
   z-index: 999;
-  bottom: 21px;
+  bottom: 37.8rpx;
 
   /* transform: rotate(24deg); */
 }
@@ -241,8 +237,8 @@ audio {
 }
 
   .rating {
-  width: 90px;
-  height: 15px;
+  width: 162rpx;
+  height: 27rpx;
 }  
 
  /* .rating-image {
@@ -253,24 +249,20 @@ audio {
 .footer {
   display: flex;
   justify-content: center;
-  position: fixed;
-  height: 400px;
-  bottom: -500rpx;
+  position: relative;
+  height: 266.8rpx;
+  bottom: 0;
   width: 100%;
+  background-color: aqua;
+  border: 3.6px solid red;
+  overflow: hidden;
 }
 
 .peek {
-  min-width: 500px;
-  max-width: 800px;
-  height: 300px;
-  min-height:300px;
-  max-height: 300px;
+  height: 715rpx;
+  width: 100%;
   position: absolute;
-  top: -2px;
-  z-index: -10;
+  overflow: hidden;
+  bottom: -335rpx;
 }
 
-
-.butt {
-  background-color: aqua;
-}
