@@ -261,7 +261,7 @@ background-image: linear-gradient(54deg, #3023AE 0%, #C86DD7 100%)!important;
   height: 268rpx;
   bottom: 0;
   width: 100%;
-  z-index: 9999;
+  z-index: 999;
   
 }
 
@@ -325,8 +325,8 @@ background-image: linear-gradient(54deg, #3023AE 0%, #C86DD7 100%)!important;
 }
 
 .icon-footer-share, .icon-footer-shake {
-  width: 130rpx;
-  height: 130rpx;
+  width: 140rpx;
+  height: 140rpx;
   display: inline-block;
 }
 
@@ -337,6 +337,8 @@ background-image: linear-gradient(54deg, #3023AE 0%, #C86DD7 100%)!important;
   color: #F5A623;
   margin-bottom: 30rpx;
   font-size: 28rpx;
+  z-index: 999999999999;
+  padding: 20rpx;
 }
 
 .icon-footer-shake, .icon-footer-share {
