@@ -56,6 +56,7 @@ audio {
   text-align: center;
   padding: 9rpx;
   vertical-align: center;
+  margin: 28rpx 0rpx;
   /* flex-grow: 1; */
 }
 
@@ -102,9 +103,9 @@ audio {
   justify-content: center;
   width: 425rpx;
   min-width: 425rpx;
-  height: 65rpx;
+  height: 55rpx;
   min-height: 65rpx;
-  margin: 18rpx 400rpx;
+  margin: 20rpx 0rpx;
   border: 1.8rpx solid #888888;
   background: rgba(242,242,242,0.45);
   border: 1.8rpx solid #979797;
@@ -156,7 +157,7 @@ audio {
 }
 
 .text_size {
-  font-size: 25.2rpx;
+  font-size: 27rpx;
 }
 
 .unlock {
@@ -253,8 +254,6 @@ audio {
   height: 266.8rpx;
   bottom: 0;
   width: 100%;
-  background-color: aqua;
-  border: 3.6px solid red;
   overflow: hidden;
 }
 
