@@ -249,13 +249,13 @@ Page({
 
   createPriceRange: function (price) {
     if (price > 300) {
-      return "300+"
+      return ">300"
     } else if (price > 100) {
-      return "100-200"
+      return "100-300"
     } else if (price > 50 ) {
       return "50-100"
     } else if (price <= 50) {
-      return "50-"
+      return "<50"
     } else {
       return "error"
     }
