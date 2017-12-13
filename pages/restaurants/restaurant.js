@@ -221,6 +221,7 @@ Page({
             latitude: res.data.lat,
             longitude: res.data.lng,
             currentPrice: res.data.price_per_person,
+            priceRange: this.createPriceRange(res.data.price_per_person),
             iconRatingPath: this.ratingIcon(res.data.rating)
           }); 
           console.log(this.data.iconRatingPath)
@@ -243,6 +244,20 @@ Page({
       return "../../assets/images/icons/svg/icon_five_star.svg"
     } else {
       return "../../assets/images/icons/svg/icon_three_star.svg"
+    }
+  },
+
+  createPriceRange: function (price) {
+    if (price > 300) {
+      return "300+"
+    } else if (price > 100) {
+      return "100-200"
+    } else if (price > 50 ) {
+      return "50-100"
+    } else if (price <= 50) {
+      return "50-"
+    } else {
+      return "error"
     }
   },
 
