@@ -12,7 +12,6 @@ Page({
   onLoad: function(options) {
   },
 
-
   listenerBtnGetLocation: function () {
     wx.getLocation({
       success: function (res) {
