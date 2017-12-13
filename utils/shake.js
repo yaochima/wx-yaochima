@@ -6,7 +6,7 @@ var flag = true
 
 const ShakeManager = function() {
   // this.callbacks = {};
-  this.callback = null;
+  this.hooks = null;
 
   const that = this;
   // console.log('lololo');
@@ -34,22 +34,35 @@ const ShakeManager = function() {
       var speed = Math.abs(x + y + z - lastX - lastY - lastZ) / diffTime * 10000
       if (speed > SHAKE_THRESHOLD) {
         // 判断数据是否载入和是否在允许的时间（5秒每次间隔）
-        if (flag && that.callback) {
+        if (flag && that.hooks && that.hooks.success) {
           
-          wx.vibrateLong()
+          if (that.hooks.allow()) {
+            wx.vibrateLong()
 
-          that.showToast(that.callback);
+            that.showToast(that.hooks.success);
 
-          // that.shakeSound.play()
-          // // 随机获取电影
-          // that.getFilm()
-          // setTimeout(function () {
-          //   that.shakeCompleteSound.play()
-          // }, 800)
-          flag = false
-          setTimeout(function () {
-            flag = true
-          }, 2000)
+            // that.shakeSound.play()
+            // // 随机获取电影
+            // that.getFilm()
+            // setTimeout(function () {
+            //   that.shakeCompleteSound.play()
+            // }, 800)
+            flag = false
+            setTimeout(function () {
+              flag = true
+            }, 2000)
+          }
+          else {
+            wx.showModal({
+              title: 'We Need Your Location',
+              content: 'to find places to eat near you!',
+              confirmText: "Ok",
+              showCancel: false,
+              success: function (res) {
+                console.log('success modal')
+              }
+            })
+          }
         }
       }
       lastX = x
@@ -81,14 +94,14 @@ ShakeManager.prototype.disable = function() {
   this.enabled = false;
 };
 
-ShakeManager.prototype.register = function(page, callback) {
+ShakeManager.prototype.register = function(page, hooks) {
   // this.callbacks[page] = callback;
-  this.callback = callback;
+  this.hooks = hooks;
 };
 
 ShakeManager.prototype.unregister = function(page) {
   // delete this.callbacks[page];
-  delete this.callback;
+  delete this.hooks;
 };
 
 module.exports = function() {

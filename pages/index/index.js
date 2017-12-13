@@ -46,11 +46,15 @@ Page({
 
   registerShake: function() {
     let that = this;
-    app.globalData.shakeManager.register(this, function (args) {
-      // when shaked
-      // console.log("Shaked!")
-      that.GetRestaurantShake(args.done);
-
+    app.globalData.shakeManager.register(this, {
+      allow: function() {
+        return app.globalData.gotLocation
+      },
+      success: function (args) {
+        // when shaked
+        // console.log("Shaked!")
+        that.GetRestaurantShake(args.done);
+      }
     });
   },
 
@@ -60,28 +64,12 @@ Page({
   },
 
   GetRestaurantShake: function (successCallback) {
-    if (app.globalData.gotLocation == false){
-      wx.showModal({
-        title: 'We Need Your Location',
-        content: 'to find places to eat near you!',
-        confirmText: "Ok",
-        showCancel: false,
-        success: function (res) {
-          console.log('success modal')
-          
-
-        }
-      })
-    } 
-    else {
-      
-      this.GoToRestaurant ({
-        success: function (res) {
-          successCallback();
-          console.log('success')
+    this.GoToRestaurant({
+      success: function (res) {
+        successCallback();
+        console.log('success')
       }
-      })
-    }
+    })
   },
     
   GoToRestaurant: function() {
@@ -93,7 +81,8 @@ Page({
       data: {
         "lat": app.globalData.lat.toString(),
         "lng": app.globalData.lng.toString(),
-        "exclusions": []
+        "exclusions": [],
+        "rest_exclusions": []
         // 'uuid': app.globalData.uuid
       },
       success: function (res) {
