@@ -258,7 +258,7 @@ audio {
 }
 
 .peek {
-  height: 715rpx;
+  height: 679rpx;
   width: 100%;
   position: absolute;
   overflow: hidden;
