@@ -94,13 +94,25 @@
     
     <view bindtap="clickFooter" animation="{{animationData}}" class="footer {{catOut ? 'showCat' : 'cropCat' }}" style="height:{{footerHeight}}rpx">
       <image class="peek" src="https://yaochima.shanghaiwogeng.com/logo-cat.svg"/>
-      <view class="catMenu {{catOut ? 'showCatMenu' : 'hideCatMenu' }}">    
-        <view class="catMenu-text">
-          <text>Thanks for using our app!</text>
+      <view class="catMenu {{catOut ? 'showCatMenu' : 'hideCatMenu' }}">        <view class="catMenu-thanks-1">
+            <image class="footer-thanks" src="../../assets/images/footer-thanks-1.svg"/>
+          </view>
+          <view class="catMenu-text">
           
-          <text>SHAKE for  more restaurants or SHARE with your friends!</text>
-        </view>
+            <view class="footer-shake">
+              <image class="icon-footer-shake" src="../../assets/images/footer-shake.svg"/>
+              <text class="footer-shake-text">请尽情用餐</text>
+            </view>
+            <view class="footer-share">
+              <image class="icon-footer-share" src="../../assets/images/footer-share.svg"/>
+              <text class="footer-share-text">分享这家餐厅给小伙伴！</text>
+            </view>
+          </view>
+          <view class="catMenu-thanks-2">
+            <image class="footer-thanks" src="../../assets/images/footer-thanks-2.svg"/>
+          </view>
       </view>
+
     </view>
     
   </view>

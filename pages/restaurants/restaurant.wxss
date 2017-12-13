@@ -164,7 +164,9 @@ audio {
 }
 .lock {
   font-weight: bold;
-  background-image: linear-gradient(-245deg, #3023AE 0%, #804AC4 100%)  !important;
+background-image: linear-gradient(54deg, #3023AE 0%, #C86DD7 100%)!important;
+  border: 3rpx solid #FF901E;
+  box-shadow: 0 0 20rpx #FF901E;
   border-radius: 54rpx;
   color: white!important;
 }
@@ -178,12 +180,6 @@ audio {
   height: 45rpx;
   padding: 9rpx 18rpx;
 }
-/* 
-.icon-phone {
-  width: 12px;
-  height: 12px;
-  padding: 5px 10px;
-} */
 
 .icon-price, .icon-phone {
   width: 27rpx;
@@ -217,7 +213,6 @@ audio {
   right: -9rpx;
   z-index: 99;
   bottom: 3.6rpx;
-  /* transform: rotate(24deg); */
 }
 
 .button-lock {
@@ -226,9 +221,7 @@ audio {
   position: absolute;
   right: -9rpx;
   z-index: 99;
-  bottom: 37.8rpx;
-
-  /* transform: rotate(24deg); */
+  bottom: 37.8rpx
 }
 
 .inline {
@@ -257,12 +250,6 @@ audio {
   display: none;
 } */
 
-
- /* .rating-image {
-  width: 90px;
-  height: 15px; 
-}  */
-
 .footer-wrap{
   overflow:none;
 }
@@ -279,22 +266,23 @@ audio {
 }
 
 .catMenu {
-  background-image: linear-gradient(-134deg, #3023AE 0%, #C86DD7 100%);
-  box-shadow: 0 0 5px 1px #D8D8D8;
+  /* background-image: linear-gradient(-134deg, #3023AE 0%, #C86DD7 100%); */
+/* Rectangle 2 Copy 5: */
+  /* Rectangle 2 Copy 5: */
+  background-image: linear-gradient(0deg, #BADEEE 1%, #C7E6F3 50%, rgba(210,236,248,0.83) 74%, rgba(213,238,249,0.00) 92%, rgba(0,0,0,0.00) 100%);
   border-radius: 2rpx;
-  /* position: absolute; */
-  /* bottom: -705rpx; */
   width: 100%;
   z-index: -2;
-  height: 855rpx;
+  height: 947rpx;
   color: white;
-  transform: translate(0, 160rpx)
+  transform: translate(0, 160rpx);
+  display: flex;
+  flex-direction: row;
+  text-shadow: 2px 2px 3px #F0F6F8;
 }
 
 .catMenu-text {
   margin-top: 300rpx;
-  margin-left: 200rpx;
-  margin-right: 200rpx;
 }
 
 .peek {
@@ -336,3 +324,36 @@ audio {
 
 }
 
+.icon-footer-share, .icon-footer-shake {
+  width: 130rpx;
+  height: 130rpx;
+  display: inline-block;
+}
+
+.footer-shake, .footer-share {
+
+  display: flex;
+  flex-direction: column;
+  color: #F5A623;
+  margin-bottom: 30rpx;
+  font-size: 28rpx;
+}
+
+.icon-footer-shake, .icon-footer-share {
+  margin: 0 auto;
+  margin-bottom: 24rpx;
+}
+
+
+.catMenu-header {
+  margin-bottom: 900rpx;
+
+}
+
+.footer-thanks {
+  width: 200rpx;
+  height: 300rpx;
+  display: inline-flex;
+  padding: 30rpx;
+  margin-top: 250rpx;
+}
