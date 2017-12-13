@@ -92,10 +92,16 @@
       </view>
     </view>
     
-      <view bindtap="clickFooter" animation="{{animationData}}" class="footer {{catOut ? 'showCat' : 'cropCat' }}" style="height:{{footerHeight}}rpx">
-        <image class="peek" src="https://yaochima.shanghaiwogeng.com/logo-cat.svg"/>
-      </view>  
+    <view bindtap="clickFooter" animation="{{animationData}}" class="footer {{catOut ? 'showCat' : 'cropCat' }}" style="height:{{footerHeight}}rpx">
+      <image class="peek" src="https://yaochima.shanghaiwogeng.com/logo-cat.svg"/>
+      <view class="catMenu {{catOut ? 'showCatMenu' : 'hideCatMenu' }}">
+        <text>Thanks for using our app!</text>
+        <text>SHAKE for  more restaurants or SHARE with your friends!</text>
+      </view>
+    </view>
+    
   </view>
   
+
 
 </template>

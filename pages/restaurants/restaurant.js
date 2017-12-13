@@ -272,13 +272,12 @@ Page({
       
     } else {
       var animateUp = wx.createAnimation({
-      
         timingFunction: 'ease',
       })
 
       this.animateUp = animateUp
       
-      animateUp.translate(0, -360).step({duration: 2000});
+      animateUp.translate(0, -360).step({duration: 1500});
 
       this.setData({
         animationData: animateUp.export(),

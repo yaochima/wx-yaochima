@@ -8,19 +8,17 @@ audio {
   display: none;
 }
  .restaurant_wrapper {
-  display: flex;
-  flex-direction: column;
   text-align: center;
   height: 100vh; 
   min-height: 100vh;
   max-height: 100vh;
   align-content: stretch;
   background-color: #F7F6F6;
-  /* background-image: linear-gradient(-226deg, #F7F6F6 1%, #EEEEEE 35%, #D8D8D8 100%); */
   border: 0 solid rgba(151,151,151,0.30);
   box-shadow: 1px 2px 5px 0 rgba(0,0,0,0.22);
   align-content: stretch;
-
+  margin-bottom: 0;
+  z-index: -10;
 } 
 
 .restaurant_banner {
@@ -113,7 +111,7 @@ audio {
   border-radius: 54rpx;
   position: relative;
   color: #888888;
-  z-index: 999;
+  z-index: 98;
 }
 
 .category_text, .price_button {
@@ -197,7 +195,7 @@ audio {
   height: 108rpx;
   position: absolute;
   left: -54rpx;
-  z-index: 999;
+  z-index: 99;
   bottom: 12.6rpx;
 
 }
@@ -207,7 +205,7 @@ audio {
   height: 93.6rpx;
   position: absolute;
   left: -23.4rpx;
-  z-index: 999;
+  z-index: 99;
   bottom: -3.6rpx;
 }
 
@@ -216,7 +214,7 @@ audio {
   height: 72rpx;
   position: absolute;
   right: -9rpx;
-  z-index: 9999;
+  z-index: 99;
   bottom: 3.6rpx;
   /* transform: rotate(24deg); */
 }
@@ -226,7 +224,7 @@ audio {
   height: 72rpx;
   position: absolute;
   right: -9rpx;
-  z-index: 999;
+  z-index: 99;
   bottom: 37.8rpx;
 
   /* transform: rotate(24deg); */
@@ -250,6 +248,14 @@ audio {
   overflow: visible;
 }
 
+/* .showCatMenu {
+  display: show
+}
+
+.hideCatMenu {
+  display: none;
+} */
+
 
  /* .rating-image {
   width: 90px;
@@ -263,13 +269,23 @@ audio {
 .footer {
   display: flex;
   justify-content: center;
-  position: relative;
-  height: 266.8rpx;
+  position: fixed;
+  height: 268rpx;
   bottom: 0;
   width: 100%;
-  z-index: 9999999;
+  z-index: 9999;
   
 }
+
+.catMenu {
+  background-color: aqua;
+  position: absolute;
+  bottom: -787rpx;
+  width: 100%;
+  z-index: -2;
+  height: 789rpx;
+}
+
 
 .peek {
   height: 679rpx;
