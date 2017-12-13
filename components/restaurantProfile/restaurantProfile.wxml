@@ -1,6 +1,6 @@
 <template name="restaurantProfile">
 
-<view class="wrapper">
+
   <view class="restaurant_wrapper">
     <view class="profile_wrapper">
       <view class="restaurant_banner" style="background-image: linear-gradient(-180deg, rgba(255,255,255,0.00) 31%, rgba(35,35,35,0.47) 90%, #000000 100%), url({{mainPhoto}})">
@@ -46,7 +46,7 @@
               <text>10分钟</text>
             </view>
 
-            <view class="phone span">
+            <view class="phone span" bindtap='callRestaurant'>
               <view class="icon-wrap">
                 <image class="icon-phone icon" src='../../assets/images/icons/svg/icon_phone.svg'/>
               </view>
@@ -54,7 +54,7 @@
             </view>
             
         </view>
-        <view class="row">
+        <view class="row" bindtap='openLocation'>
           <view class="address inline span">
               <view class="icon-address">
                 <image class="icon-address icon" src='../../assets/images/icons/svg/icon_map.svg'/>
@@ -80,8 +80,6 @@
             <image class="button-lock" style="{{categoryLocked ? 'display: none' : 'display: inline' }}" src='../../assets/images/icons/svg/icon_unlock.svg'/>
           </view>
       </view>
-
-
       <view id="restaurant_price" class="button row h2 {{priceLocked ? 'lock' : 'unlock' }}" bindtap="togglePrice">
           <view class="price_icon">
             <image class="price-button-icon" src='../../assets/images/icons/svg/icon_price.svg'/>
@@ -94,14 +92,11 @@
           </view>
       </view>
       <!-- <view class="footer">
-          <image bindtap="openMiniProgram" class="peek" src="https://yaochima.shanghaiwogeng.com/logo-cat-half.png"/>
-        </view> -->
+          <image bindtap="openMiniProgram" class="peek" src="https://yaochima.shanghaiwogeng.com/logo-cat.svg"/>
+      </view>  -->
     </view>
-  <!-- <view class="footer">
-    <image bindtap="openMiniProgram" class="peek" src="https://yaochima.shanghaiwogeng.com/logo-cat.svg"/>
-  </view> -->
   </view>
-</view>
+
  
 
 </template>
