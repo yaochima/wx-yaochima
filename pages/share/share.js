@@ -16,8 +16,8 @@ Page({
       // Number(options.id)
     });
     this.loadRestaurantData()
-
   },
+  
 
   loadRestaurantData: function () {
     let restaurantId = this.data.restaurantId;
@@ -40,10 +40,30 @@ Page({
           phone: res.data.phone_number,
           address: res.data.address,
           currentCategory: res.data.category,
-          currentPrice: res.data.price_per_person
+          currentPrice: res.data.price_per_person,
+          latitude: res.data.lat,
+          longitude: res.data.lng,
         });
         
       },
+    })
+  },
+
+  openLocation: function () {
+    let page = this;
+    wx.openLocation({
+      latitude: page.data.latitude,
+      longitude: page.data.longitude,
+      address: page.data.address,
+      name: page.data.name,
+      scale: 28
+    })
+  },
+
+  callRestaurant: function () {
+    let page = this;
+    wx.makePhoneCall({
+      phoneNumber: page.data.phone
     })
   },
 
