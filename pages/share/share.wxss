@@ -357,3 +357,8 @@ background-image: linear-gradient(54deg, #3023AE 0%, #C86DD7 100%)!important;
   padding: 30rpx;
   margin-top: 250rpx;
 }
+
+button.footer-share-text {
+  background-color: rgba(255, 255, 255, 0);
+  color:#F5A623;
+}

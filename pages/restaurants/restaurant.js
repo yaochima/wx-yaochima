@@ -20,8 +20,6 @@ Page({
     animationData: {}, 
     catOut: false,
     phoneNumber: null,
-    footerShare: false,
-    footerShake: false
 
   }, 
 
@@ -43,6 +41,16 @@ Page({
   },
 
   toggleCategory: function (event) {
+    // wx.showShareMenu({
+    //   withShareTicket: true,
+    //   success: function () {
+    //     console.log('yay');
+    //   },
+    //   fail: function () {
+    //     console.log('what a shame');
+    //   }
+    // })
+
     // console.log(event)
     this.setData({
       categoryLocked: !this.data.categoryLocked
@@ -258,13 +266,6 @@ Page({
 
   clickFooter: function (event) {
 
-    // if (this.data.footerShare) {
-    //   this.onShareAppMessage();
-    // } else if (this.data.footerShake) {
-    //   this.shakeTest();
-    // } else {
-    // }
-
     if (this.data.catOut) {
       var animateDown = wx.createAnimation({
         duration: 1000,
@@ -301,24 +302,6 @@ Page({
     }
 
   },
-
-// - - - - - - - - event listeners for footer links
-
-// tapShare: function(event){
-//   console.log(event)
-//   this.setData({
-//     footerShare: true,
-//   })
-//   console.log(this.data.footerShare)
-// },
-
-// tapShake: function (event){
-//   console.log(event)
-//   this.setData({
-//     footerShake: true,
-//   })
-//   console.log(this.data.footerShake)
-// },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
@@ -365,9 +348,9 @@ Page({
    * 用户点击右上角分享
    */
   onShareAppMessage: function () {
-    wx.showShareMenu({
-      withShareTicket: true
-    })
+    // wx.showShareMenu({
+    //   withShareTicket: true
+    // })
   
   return {
     title: '摇来这儿吃嘛 😊',
