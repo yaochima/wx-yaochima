@@ -1,4 +1,5 @@
 <import src="../../components/restaurantProfile/restaurantProfile.wxml"/>
+
 <template is="restaurantProfile" data="{{ categoryLocked, priceLocked, name, rating, price, category, address, phone, mainPhoto, errorMessage, iconRatingPath, animationData, phoneNumber, footerShare, footerShake, catOut }}"/>
 
 <import src="../../components/footer/footer.wxml"/>
