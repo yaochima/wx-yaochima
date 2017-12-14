@@ -63,6 +63,10 @@ const ShakeManager = function() {
               }
             })
           }
+          flag = false
+          setTimeout(function () {
+            flag = true
+          }, 2000)
         }
       }
       lastX = x
