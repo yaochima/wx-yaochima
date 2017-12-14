@@ -38,15 +38,7 @@ const ShakeManager = function() {
           
           if (that.hooks.allow()) {
             wx.vibrateLong()
-
             that.showToast(that.hooks.success);
-
-            // that.shakeSound.play()
-            // // 随机获取电影
-            // that.getFilm()
-            // setTimeout(function () {
-            //   that.shakeCompleteSound.play()
-            // }, 800)
             flag = false
             setTimeout(function () {
               flag = true
