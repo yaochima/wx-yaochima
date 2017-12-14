@@ -42,7 +42,7 @@ audio {
   flex-direction: column;
   text-align: center;
   padding: 18rpx;
-  height: 15vh;
+  height: 40vh;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis
@@ -156,7 +156,7 @@ audio {
 }
 
 .text_size {
-  font-size: 27rpx;
+  font-size: 32rpx;
 }
 
 .unlock {
@@ -171,19 +171,17 @@ background-image: linear-gradient(54deg, #3023AE 0%, #C86DD7 100%)!important;
   color: white!important;
 }
 
-
-
 /* - - - - - - - ICONS */
 
 .icon {
-  width: 45rpx;
-  height: 45rpx;
+  width: 60rpx;
+  height: 60rpx;
   padding: 9rpx 18rpx;
 }
 
 .icon-price, .icon-phone {
-  width: 27rpx;
-  height: 27rpx;
+  width: 45rpx;
+  height: 45rpx;
   padding: 9rpx 18rpx;
 }
 
@@ -229,9 +227,9 @@ background-image: linear-gradient(54deg, #3023AE 0%, #C86DD7 100%)!important;
   align-items: center;
 }
 
-  .rating {
-  width: 162rpx;
-  height: 27rpx;
+.rating {
+  width: 185rpx;
+  height: 200rpx;
 }  
 
 .cropCat {
@@ -277,6 +275,7 @@ background-image: linear-gradient(54deg, #3023AE 0%, #C86DD7 100%)!important;
   display: flex;
   flex-direction: row;
   text-shadow: 2px 2px 3px #F0F6F8;
+  justify-content: center;
 }
 
 .catMenu-text {
@@ -359,6 +358,8 @@ background-image: linear-gradient(54deg, #3023AE 0%, #C86DD7 100%)!important;
 }
 
 button.footer-share-text {
-  background-color: rgba(255, 255, 255, 0);
-  color:#F5A623;
+  background-image: linear-gradient(-180deg, #FF931E 23%, #F87821 67%, #F15A24 100%);
+  font-size: 36rpx;
+  color: white;
+  text-shadow: none;
 }

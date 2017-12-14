@@ -277,6 +277,7 @@ background-image: linear-gradient(54deg, #3023AE 0%, #C86DD7 100%)!important;
   display: flex;
   flex-direction: row;
   text-shadow: 2px 2px 3px #F0F6F8;
+  justify-content: center;
 }
 
 .catMenu-text {
@@ -358,8 +359,8 @@ background-image: linear-gradient(54deg, #3023AE 0%, #C86DD7 100%)!important;
 }
 
 button.footer-share-text {
-  background-color: rgba(255, 255, 255, 0);
-  color: #F5A623;
-  border: 1px solid rgba(0,0,0,0);
+  background-image: linear-gradient(-180deg, #FF931E 23%, #F87821 67%, #F15A24 100%);
+  color: white;
+  text-shadow: none;
   font-size: 36rpx;
 }
