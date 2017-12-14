@@ -73,9 +73,9 @@ ShakeManager.prototype.showToast = function(callback) {
   var start = 0
   var count = 250
   wx.showToast({
-    title: '数据加载中',
+    title: '加载中',
     icon: 'loading',
-    duration: 15000
+    duration: 8000
   })
   setTimeout(function() {
     callback({
