@@ -103,8 +103,8 @@ Page({
           console.log(res.data)
         } else if (res.data.status == "error") {
           wx.showModal({
-            title: 'Whoops!',
-            content: "No restaurants near you: shake again!",
+            title: '哎哟妈呀',
+            content: "附近没有餐厅，要不您换个地儿试试？",
             confirmText: "Ok",
             showCancel: false,
             success: function (res) {
