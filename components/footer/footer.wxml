@@ -14,7 +14,7 @@
 
             <view bindtap="tapShare" class="footer-share">
               <image class="icon-footer-share" src="../../assets/images/footer-share.svg"/>
-              <text class="footer-share-text">分享这家餐厅给小伙伴！   </text>
+              <button class="footer-share-text" open-type="share"><text>分享</text></button>
             </view>
         </view>
         <view class="catMenu-thanks-2">

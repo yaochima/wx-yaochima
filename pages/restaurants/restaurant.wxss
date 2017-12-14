@@ -281,6 +281,7 @@ background-image: linear-gradient(54deg, #3023AE 0%, #C86DD7 100%)!important;
 
 .catMenu-text {
   margin-top: 300rpx;
+  width: 400rpx;
 }
 
 .peek {
@@ -329,7 +330,6 @@ background-image: linear-gradient(54deg, #3023AE 0%, #C86DD7 100%)!important;
 }
 
 .footer-shake, .footer-share {
-
   display: flex;
   flex-direction: column;
   color: #F5A623;
@@ -347,7 +347,6 @@ background-image: linear-gradient(54deg, #3023AE 0%, #C86DD7 100%)!important;
 
 .catMenu-header {
   margin-bottom: 900rpx;
-
 }
 
 .footer-thanks {
@@ -356,4 +355,11 @@ background-image: linear-gradient(54deg, #3023AE 0%, #C86DD7 100%)!important;
   display: inline-flex;
   padding: 30rpx;
   margin-top: 250rpx;
+}
+
+button.footer-share-text {
+  background-color: rgba(255, 255, 255, 0);
+  color: #F5A623;
+  border: 1px solid rgba(0,0,0,0);
+  font-size: 36rpx;
 }
