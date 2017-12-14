@@ -28,26 +28,8 @@
               </view>
               <text>{{price}} 人均</text>
             </view>
-            
         </view>
 
-
-        <view class="row">
-
-          <view class="distance span">
-            <view class="icon-wrap">
-              <image class="icon-distance icon" src='../../assets/images/icons/svg/icon_distance.svg'/>
-            </view>
-            <text>{{distance}}~ 1 KM</text>
-          </view>
-
-            <view class="travel-time span">
-              <view class="icon-wrap">
-                <image class="icon-travel icon" src='../../assets/images/icons/svg/icon_walk.svg'/>
-              </view>
-              <text>5 分钟</text>
-            </view>
-        </view>
         <view class="row">
              <view class="phone span">
               <view class="icon-wrap">
@@ -56,8 +38,6 @@
               <text>{{phone}}</text>
             </view>
         </view>
-
-
 
         <view class="row">
           <view class="address inline span">
@@ -71,8 +51,28 @@
       </view>
     </view>
 
-  <import src="../../components/footer/footer.wxml"/>
-<template is="footer" data="{{ categoryLocked, priceLocked, name, rating, price, category, address, phone, mainPhoto, errorMessage, iconRatingPath, animationData, phoneNumber, footerShare, footerShake, catOut }}"/>
+    <!-- - - -- - - - - -- FOOTER -->
+
+   <view bindtap="clickFooter" animation="{{animationData}}" class="footer {{catOut ? 'showCat' : 'cropCat' }}" style="height:{{footerHeight}}rpx">
+    <image class="peek" src="https://yaochima.shanghaiwogeng.com/logo-cat.svg"/>
+    <view class="catMenu {{catOut ? 'showCatMenu' : 'hideCatMenu' }}">
+        <view class="catMenu-thanks-1">
+          <image class="footer-thanks" src="../../assets/images/footer-thanks-1.svg"/>
+        </view>
+        <view class="catMenu-text">
+
+            <view bindtap="tapShare" class="footer-share">
+              <image class="icon-footer-share" src="../../assets/images/footer-share.svg"/>
+              <button opentype="" class="footer-share-text" open-type="share"><text>分享</text></button>
+            </view>
+
+        </view>
+        <view class="catMenu-thanks-2">
+          <image class="footer-thanks" src="../../assets/images/footer-thanks-2.svg"/>
+        </view>
+    </view>
+
+  </view>
 
 
 
