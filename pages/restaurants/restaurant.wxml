@@ -1,8 +1,6 @@
 <import src="../../components/restaurantProfile/restaurantProfile.wxml"/>
 
-<template is="restaurantProfile" data="{{ categoryLocked, priceLocked, name, rating, price, category, address, phone, mainPhoto, errorMessage, iconRatingPath, animationData, catOut, priceRange, distance, timeToRestaurant }}"/>
-
-<template is="restaurantProfile" data="{{ categoryLocked, priceLocked, name, rating, price, category, address, phone, mainPhoto, errorMessage, iconRatingPath, animationData, phoneNumber, footerShare, footerShake, catOut }}"/>
+<template is="restaurantProfile" data="{{ categoryLocked, priceLocked, name, rating, price, category, address, phone, mainPhoto, errorMessage, iconRatingPath, animationData, phoneNumber, footerShare, footerShake, catOut, distance, timeToRestaurant, priceRange }}"/>
 
 <import src="../../components/footer/footer.wxml"/>
 <template is="footer" data="{{ categoryLocked, priceLocked, name, rating, price, category, address, phone, mainPhoto, errorMessage, iconRatingPath, animationData, phoneNumber, footerShare, footerShake, catOut }}"/>
