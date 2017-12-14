@@ -179,10 +179,30 @@ audio {
   padding: 9rpx 18rpx;
 }
 
-.icon-price, .icon-phone {
+.icon-price {
   width: 45rpx;
   height: 45rpx;
   padding: 9rpx 18rpx;
+}
+
+.icon-phone {
+  width: 27rpx;
+  height: 27rpx;
+  padding: 9rpx 18rpx;
+  animation: bounce 1s ease-in-out 3s both infinite;
+}
+
+.icon-address{
+  animation: bounce 1s ease-in-out 4s both infinite;
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-2px);
+  }
 }
 
 .button-icon {
