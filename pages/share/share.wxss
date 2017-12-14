@@ -164,7 +164,7 @@ audio {
 }
 .lock {
   font-weight: bold;
-background-image: linear-gradient(54deg, #3023AE 0%, #C86DD7 100%)!important;
+  background-image: linear-gradient(54deg, #3023AE 0%, #C86DD7 100%)!important;
   border: 3rpx solid #FF901E;
   box-shadow: 0 0 20rpx #FF901E;
   border-radius: 54rpx;
@@ -290,7 +290,6 @@ background-image: linear-gradient(54deg, #3023AE 0%, #C86DD7 100%)!important;
   bottom: -335rpx;
   animation: shake .8s cubic-bezier(.36,.07,.19,.97) 15s both infinite;
   transform: translate3d(0, 0, 0); 
-
 }
 
 @keyframes shake {
