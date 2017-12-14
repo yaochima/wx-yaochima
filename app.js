@@ -19,6 +19,12 @@ App({
     this.signInAsGuest();
     wx.startAccelerometer();
     this.globalData.shakeManager = shake(this);
+
+    setTimeout(function() {
+      wx.navigateTo({
+        url: '/pages/restaurants/restaurant?id=69',
+      }, 1000)
+    })
   },
 
   signInAsGuest: function () {
