@@ -29,6 +29,7 @@ Page({
           latitude: page.data.latitude,
           longitude: page.data.longitude,
           address: page.data.address,
+          name: page.data.address,
           scale: 28
         })
   },
