@@ -19,7 +19,7 @@ Page({
     longitud: null, 
     animationData: {}, 
     catOut: false,
-    phoneNumber: null
+    phoneNumber: null,
 
   }, 
 
@@ -41,6 +41,16 @@ Page({
   },
 
   toggleCategory: function (event) {
+    // wx.showShareMenu({
+    //   withShareTicket: true,
+    //   success: function () {
+    //     console.log('yay');
+    //   },
+    //   fail: function () {
+    //     console.log('what a shame');
+    //   }
+    // })
+
     // console.log(event)
     this.setData({
       categoryLocked: !this.data.categoryLocked
@@ -250,6 +260,7 @@ Page({
     }
   },
 
+
   createPriceRange: function (price) {
     if (price > 300) {
       return ">300"
@@ -263,6 +274,7 @@ Page({
       return "error"
     }
   },
+
 
 getDistanceFromLatLonInKm: function (lat1, lon1, lat2, lon2) {
   var R = 6371; // Radius of the earth in km
@@ -282,13 +294,6 @@ deg2rad: function (deg) {
   return deg * (Math.PI / 180)
 },
 
-  openMiniProgram: function (event) {
-    console.log(event)
-    wx.navigateToMiniProgram({
-      appId: 'wx072e01448e574e63',
-    })
-  },
-
   errorMessageToast: function () {
     wx.showToast({
       title: errorMessage,
@@ -298,6 +303,7 @@ deg2rad: function (deg) {
   },
 
   clickFooter: function (event) {
+
     if (this.data.catOut) {
       var animateDown = wx.createAnimation({
         duration: 1000,
@@ -317,7 +323,7 @@ deg2rad: function (deg) {
           catOut: false
         })
       }.bind(this), 1000)
-      
+
     } else {
       var animateUp = wx.createAnimation({
         timingFunction: 'ease',
@@ -325,7 +331,7 @@ deg2rad: function (deg) {
 
       this.animateUp = animateUp
       
-      animateUp.translate(0, -360).step({duration: 1500});
+      animateUp.translate(0, -415).step({duration: 1500});
 
       this.setData({
         animationData: animateUp.export(),
@@ -380,9 +386,9 @@ deg2rad: function (deg) {
    * 用户点击右上角分享
    */
   onShareAppMessage: function () {
-    wx.showShareMenu({
-      withShareTicket: true
-    })
+    // wx.showShareMenu({
+    //   withShareTicket: true
+    // })
   
   return {
     title: '摇来这儿吃嘛 😊',
