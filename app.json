@@ -2,8 +2,7 @@
   "pages": [
     "pages/share/share",
     "pages/index/index",
-    "pages/restaurants/restaurant",
-  
+    "pages/restaurants/restaurant"
   ],
 
   "window":{
