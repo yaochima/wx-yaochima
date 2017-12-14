@@ -1,9 +1,9 @@
-<view class="index-wrapper">
+<view class="index-wrapper" style="background-image: url('https://yaochima.shanghaiwogeng.com/index-background.png')">
   <view class="container">
     <view class="greeting">
       <view class="empty"></view>
-      <image class="logo-cat" src="https://yaochima.shanghaiwogeng.com/logo-cat.svg"/>
-      <image class="logo-rotate" src="https://yaochima.shanghaiwogeng.com/logo-rotate-19.png"/>
+      <image class="logo-cat" src="https://yaochima.shanghaiwogeng.com/index-cat-logo.svg"/>
+      <image class="logo-rotate" src="https://yaochima.shanghaiwogeng.com/index-text-loop.svg"/>
     </view> 
     <view class="button-location-view">
       <button class="button-location {{gotLocation ? 'hidden' : '' }}" type="warn" bindtap="listenerBtnGetLocation">点击定位当前位置</button>

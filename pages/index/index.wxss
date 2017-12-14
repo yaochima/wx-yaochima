@@ -87,10 +87,11 @@ button.button-location {
 
 .logo-cat {
   position: relative;
-  bottom: 40px;
-  right: 2px;
+  bottom: 107rpx;
+  right: 5rpx;
   animation: shake .8s cubic-bezier(.36,.07,.19,.97) both infinite;
   transform: translate3d(0, 0, 0); 
+  z-index: 9999;
 }
 
 @keyframes shake {
