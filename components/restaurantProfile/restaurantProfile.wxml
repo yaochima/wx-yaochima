@@ -35,14 +35,14 @@
             <view class="icon-wrap">
               <image class="icon-distance icon" src='../../assets/images/icons/svg/icon_distance.svg'/>
             </view>
-            <text>{{distance}} 1 KM </text>
+            <text>{{distance}} KM </text>
           </view>
 
             <view class="travel-time span">
               <view class="icon-wrap">
                 <image class="icon-travel icon" src='../../assets/images/icons/svg/icon_walk.svg'/>
               </view>
-              <text>10分钟</text>
+              <text>{{timeToRestaurant}} min</text>
             </view>
 
 

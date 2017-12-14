@@ -232,8 +232,11 @@ Page({
             longitude: res.data.lng,
             currentPrice: res.data.price_per_person,
             priceRange: this.createPriceRange(res.data.price_per_person),
-            iconRatingPath: this.ratingIcon(res.data.rating)
+            iconRatingPath: this.ratingIcon(res.data.rating),
+            distance: this.getDistanceFromLatLonInKm(res.data.lat, res.data.lng, app.globalData.lat, app.globalData.lng),
+            timeToRestaurant: Math.round(this.getDistanceFromLatLonInKm(res.data.lat, res.data.lng, app.globalData.lat, app.globalData.lng) * 60 / 5)
           }); 
+          console.log(this.data.distance)
           console.log(this.data.iconRatingPath)
           if (successCallback) {
             successCallback();
@@ -260,17 +263,36 @@ Page({
 
   createPriceRange: function (price) {
     if (price > 300) {
-      return "300+"
+      return ">300"
     } else if (price > 100) {
-      return "100-200"
+      return "100-300"
     } else if (price > 50 ) {
       return "50-100"
     } else if (price <= 50) {
-      return "50-"
+      return "<50"
     } else {
       return "error"
     }
   },
+
+
+getDistanceFromLatLonInKm: function (lat1, lon1, lat2, lon2) {
+  var R = 6371; // Radius of the earth in km
+  var dLat = this.deg2rad(lat2 - lat1);  // deg2rad below
+  var dLon = this.deg2rad(lon2 - lon1); 
+  var a =
+  Math.sin(dLat / 2) * Math.sin(dLat / 2) +
+  Math.cos(this.deg2rad(lat1)) * Math.cos(this.deg2rad(lat2)) *
+  Math.sin(dLon / 2) * Math.sin(dLon / 2)
+  ; 
+  var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+  var d = R * c; // Distance in km
+  return Math.round(d * 1000) / 1000;
+},
+
+deg2rad: function (deg) {
+  return deg * (Math.PI / 180)
+},
 
   errorMessageToast: function () {
     wx.showToast({
