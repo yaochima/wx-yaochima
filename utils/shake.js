@@ -38,9 +38,7 @@ const ShakeManager = function() {
           
           if (that.hooks.allow()) {
             wx.vibrateLong()
-
             that.showToast(that.hooks.success);
-
             // that.shakeSound.play()
             // // 随机获取电影
             // that.getFilm()
@@ -60,6 +58,9 @@ const ShakeManager = function() {
               showCancel: false,
               success: function (res) {
                 console.log('success modal')
+              },
+              complete: function (res) {
+                console.log('complete modal')
               }
             })
           }
