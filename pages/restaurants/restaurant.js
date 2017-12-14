@@ -164,6 +164,7 @@ Page({
             errorMessage: res.data.error.error_message,
             exclusions: []
           });
+        
           wx.showModal({
             title: 'Whoops!',
             content: that.data.errorMessage,
@@ -172,13 +173,11 @@ Page({
             success: function (res) {
               console.log('success modal')
               console.log("going back to beginning")
-              wx.navigateTo({
+              wx.reLaunch({
                 url: '../index/index'
               })
             }
           });
-          
-          
         }
       }
     })
