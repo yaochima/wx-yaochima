@@ -234,7 +234,7 @@ Page({
             priceRange: this.createPriceRange(res.data.price_per_person),
             iconRatingPath: this.ratingIcon(res.data.rating),
             distance: this.getDistanceFromLatLonInKm(res.data.lat, res.data.lng, app.globalData.lat, app.globalData.lng),
-            timeToRestaurant: Math.round(this.getDistanceFromLatLonInKm(res.data.lat, res.data.lng, app.globalData.lat, app.globalData.lng) * 60 / 5)
+            timeToRestaurant: Math.round(this.getDistanceFromLatLonInKm(res.data.lat, res.data.lng, app.globalData.lat, app.globalData.lng) * 90 / 5000)
           }); 
           console.log(this.data.distance)
           console.log(this.data.iconRatingPath)
@@ -293,8 +293,8 @@ getDistanceFromLatLonInKm: function (lat1, lon1, lat2, lon2) {
   Math.sin(dLon / 2) * Math.sin(dLon / 2)
   ; 
   var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
-  var d = R * c; // Distance in km
-  return Math.round(d * 1000) / 1000;
+  var d = R * c; // Distance in m
+  return Math.round(d * 1000);
 },
 
 deg2rad: function (deg) {
