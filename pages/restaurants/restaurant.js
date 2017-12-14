@@ -20,7 +20,7 @@ Page({
     animationData: {}, 
     catOut: false,
     phoneNumber: null,
-
+    shakeSoundUrl: "https://yaochima.shanghaiwogeng.com/yaochima" + (Math.floor(Math.random() * 8) + 1) + ".mp3"
   }, 
 
   openLocation: function () {
@@ -239,9 +239,16 @@ Page({
           console.log(this.data.iconRatingPath)
           if (successCallback) {
             successCallback();
-            this.shakeSound = wx.createAudioContext("shakeSound")
-            console.log("HAHAH")
+            console.log(this.data.shakeSoundUrl)
+
+            this.shakeSound = wx.createInnerAudioContext()
+
+            this.shakeSound.src = this.data.shakeSoundUrl
+          
             this.shakeSound.play()
+            this.setData({
+              shakeSoundUrl: "https://yaochima.shanghaiwogeng.com/yaochima" + (Math.floor(Math.random() * 8) + 1) + ".mp3"
+            })
           }
         },
     })
