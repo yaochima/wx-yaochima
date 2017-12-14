@@ -1,8 +1,9 @@
 {
   "pages": [
+    "pages/share/share",
     "pages/index/index",
     "pages/restaurants/restaurant",
-    "pages/share/share"
+  
   ],
 
   "window":{
