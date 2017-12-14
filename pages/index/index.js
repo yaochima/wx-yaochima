@@ -6,7 +6,8 @@ Page({
     motto: '饿了！受不了',
     hasUserInfo: false,
     canIUse: wx.canIUse('button.open-type.getUserInfo'), 
-    gotLocation: app.globalData.gotLocation
+    gotLocation: app.globalData.gotLocation,
+    shakeSoundUrl: "https://yaochima.shanghaiwogeng.com/yaochima" + (Math.floor(Math.random() * 8) + 1) + ".mp3"
   },
 
   onLoad: function(options) {
@@ -73,6 +74,7 @@ Page({
   },
     
   GoToRestaurant: function() {
+    const that = this
     console.log('GoToRestaurant called');
     console.log(app.globalData);
     wx.request({
@@ -96,9 +98,14 @@ Page({
           wx.navigateTo({
             url: "../restaurants/restaurant?id=" + res.data.restaurants.id
           })
-          this.shakeSound = wx.createAudioContext("shakeSound")
-          console.log("HAHAH")
+          this.shakeSound = wx.createInnerAudioContext()
+          console.log("AUDIO")
+          console.log(that.data.shakeSoundUrl)
+          this.shakeSound.src = that.data.shakeSoundUrl
           this.shakeSound.play()
+          that.setData({
+            shakeSoundUrl: "https://yaochima.shanghaiwogeng.com/yaochima" + (Math.floor(Math.random() * 8) + 1) + ".mp3"
+          })
           console.log("res")
           console.log(res.data)
         } else if (res.data.status == "error") {
