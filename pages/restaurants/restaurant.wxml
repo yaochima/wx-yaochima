@@ -6,5 +6,5 @@
 <template is="footer" data="{{ categoryLocked, priceLocked, name, rating, price, category, address, phone, mainPhoto, errorMessage, iconRatingPath, animationData, phoneNumber, footerShare, footerShake, catOut }}"/>
 
 
-<audio src="{{shakeSoundUrl}}" id="shakeSound"></audio>
+<!-- <audio src="{{shakeSoundUrl}}" id="shakeSound"></audio> -->
 
