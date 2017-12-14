@@ -84,7 +84,7 @@
             <image class="price-button-icon" src='../../assets/images/icons/svg/icon_price.svg'/>
           </view>
           <view class="price_button_text">
-            <text class="price ">￥{{price}}</text>
+            <text class="price ">￥{{priceRange}}</text>
             <text class="per person "> 人均</text>
             <image class="button-lock" style="{{priceLocked ? 'display: inline' : 'display: none' }}" src='../../assets/images/icons/svg/icon_lock.svg'/>
             <image class="button-lock" style="{{priceLocked ? 'display: none' : 'display: inline' }}" src='../../assets/images/icons/svg/icon_unlock.svg'/>
