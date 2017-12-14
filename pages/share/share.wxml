@@ -17,7 +17,6 @@
         </view>
 
         <view class="row">
-
             <view class="category span">
               <view class="icon-wrap">
                 <image class='icon-category icon' src='../../assets/images/icons/svg/icon_category.svg'/>

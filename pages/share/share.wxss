@@ -42,7 +42,7 @@ audio {
   flex-direction: column;
   text-align: center;
   padding: 18rpx;
-  height: 40vh;
+  height: 35vh;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis
@@ -68,9 +68,9 @@ audio {
 }
 
 .address {
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis
+  white-space: normal;
+  word-wrap: break-word;
+  max-width: 650rpx;
 }
 
 .address-text {
