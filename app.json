@@ -10,6 +10,6 @@
     "navigationBarBackgroundColor": "#FF931E",
     "navigationBarTitleText": "摇吃嘛",
     "navigationBarTextStyle": "white",
-    "enablePullDownRefresh": false
+    "enablePullDownRefresh": true
   }
 }
