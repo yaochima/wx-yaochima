@@ -55,12 +55,53 @@ Page({
     });
   },
 
-  openMiniProgram: function (event) {
-    console.log(event)
-    wx.navigateToMiniProgram({
-      appId: 'wx072e01448e574e63',
-    })
+  clickFooter: function (event) {
+
+    // if (this.data.footerShare) {
+    //   this.onShareAppMessage();
+    // } else if (this.data.footerShake) {
+    //   this.shakeTest();
+    // } else {
+    // }
+
+    if (this.data.catOut) {
+      var animateDown = wx.createAnimation({
+        duration: 1000,
+        timingFunction: 'ease',
+      })
+
+      this.animateDown = animateDown
+
+      animateDown.translate(0, 0).step({ duration: 1000 });
+
+      this.setData({
+        animationData: animateDown.export()
+      })
+
+      setTimeout(function () {
+        this.setData({
+          catOut: false
+        })
+      }.bind(this), 1000)
+
+    } else {
+      var animateUp = wx.createAnimation({
+        timingFunction: 'ease',
+      })
+
+      this.animateUp = animateUp
+
+      animateUp.translate(0, -415).step({ duration: 1500 });
+
+      this.setData({
+        animationData: animateUp.export(),
+        catOut: true
+      })
+    }
+
   },
+
+
 
   /**
    * 生命周期函数--监听页面加载

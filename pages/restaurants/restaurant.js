@@ -19,7 +19,7 @@ Page({
     longitud: null, 
     animationData: {}, 
     catOut: false,
-    phoneNumber: null
+    phoneNumber: null,
 
   }, 
 
@@ -41,6 +41,16 @@ Page({
   },
 
   toggleCategory: function (event) {
+    // wx.showShareMenu({
+    //   withShareTicket: true,
+    //   success: function () {
+    //     console.log('yay');
+    //   },
+    //   fail: function () {
+    //     console.log('what a shame');
+    //   }
+    // })
+
     // console.log(event)
     this.setData({
       categoryLocked: !this.data.categoryLocked
@@ -247,6 +257,7 @@ Page({
     }
   },
 
+
   createPriceRange: function (price) {
     if (price > 300) {
       return "300+"
@@ -261,13 +272,6 @@ Page({
     }
   },
 
-  openMiniProgram: function (event) {
-    console.log(event)
-    wx.navigateToMiniProgram({
-      appId: 'wx072e01448e574e63',
-    })
-  },
-
   errorMessageToast: function () {
     wx.showToast({
       title: errorMessage,
@@ -277,6 +281,7 @@ Page({
   },
 
   clickFooter: function (event) {
+
     if (this.data.catOut) {
       var animateDown = wx.createAnimation({
         duration: 1000,
@@ -296,7 +301,7 @@ Page({
           catOut: false
         })
       }.bind(this), 1000)
-      
+
     } else {
       var animateUp = wx.createAnimation({
         timingFunction: 'ease',
@@ -304,7 +309,7 @@ Page({
 
       this.animateUp = animateUp
       
-      animateUp.translate(0, -360).step({duration: 1500});
+      animateUp.translate(0, -415).step({duration: 1500});
 
       this.setData({
         animationData: animateUp.export(),
@@ -359,9 +364,9 @@ Page({
    * 用户点击右上角分享
    */
   onShareAppMessage: function () {
-    wx.showShareMenu({
-      withShareTicket: true
-    })
+    // wx.showShareMenu({
+    //   withShareTicket: true
+    // })
   
   return {
     title: '摇来这儿吃嘛 😊',
