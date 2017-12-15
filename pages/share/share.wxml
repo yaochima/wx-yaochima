@@ -45,8 +45,11 @@
               </view>
               <text>{{address}}</text>
             </view>
-       
         </view>
+        <view class="row">
+          <image class="share-text-image" src="../../assets/images/share-text.svg"/>
+        </view>
+
       </view>
     </view>
 
