@@ -46,8 +46,7 @@ const ShakeManager = function() {
           }
           else {
             wx.showModal({
-              title: 'We Need Your Location',
-              content: 'to find places to eat near you!',
+              content: '我们需要你的位置，用来给你推荐附近的餐厅',
               confirmText: "Ok",
               showCancel: false,
               success: function (res) {
