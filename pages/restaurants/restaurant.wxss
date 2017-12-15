@@ -361,6 +361,10 @@ background-image: linear-gradient(54deg, #3023AE 0%, #C86DD7 100%)!important;
   padding: 20rpx;
 }
 
+.footer-shake {
+  animation: shake 1s cubic-bezier(.36,.07,.19,.97) 3s both infinite;
+}
+
 .icon-footer-shake, .icon-footer-share {
   margin: 0 auto;
   margin-bottom: 24rpx;
@@ -371,30 +375,16 @@ background-image: linear-gradient(54deg, #3023AE 0%, #C86DD7 100%)!important;
   margin-bottom: 900rpx;
 }
 
-.footer-thanks-1 {
-  display: inline-flex;
-  padding: 50rpx;
-  width: 200rpx;
-  margin-top: 250rpx;
-}
-
 .catMenu-thanks-1, .catMenu-thanks-2 {
   height: 450rpx
 }
-.footer-thanks-2 {
-  width: 200rpx;
-  display: inline-flex;
-  padding: 50rpx;
-  margin-bottom: 90rpx;
-}
 
-/* .footer-thanks {
+ .footer-thanks {
   width: 200rpx;
-  height: 600rpx;
-  display: inline-flex;
-  padding: 50rpx;
+  height: 420rpx;
+  padding: 30rpx;
   margin-top: 250rpx;
-} */
+} 
 
 button.footer-share-text {
   background-image: linear-gradient(-180deg, #FF931E 23%, #F87821 67%, #F15A24 100%);
