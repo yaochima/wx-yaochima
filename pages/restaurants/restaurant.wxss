@@ -283,8 +283,9 @@ background-image: linear-gradient(54deg, #3023AE 0%, #C86DD7 100%)!important;
   bottom: 0;
   width: 100%;
   z-index: 999;
-  
+ 
 }
+
 
 .catMenu {
   text-align: center;
@@ -312,10 +313,24 @@ background-image: linear-gradient(54deg, #3023AE 0%, #C86DD7 100%)!important;
   position: absolute;
   overflow: hidden;
   bottom: -335rpx;
-  animation: shake .8s cubic-bezier(.36,.07,.19,.97) 15s both infinite;
-  transform: translate3d(0, 0, 0); 
-
+  /* animation: shake .8s cubic-bezier(.36,.07,.19,.97) 15s both infinite;
+  transform: translate3d(0, 0, 0);   */
+   animation: footerBounce 1s ease-in-out 4s both infinite; 
+  transform: translate3d(0,0,0);
 }
+
+
+ @keyframes footerBounce {
+  0%, 100% {
+    /* transform: translateY(0rpx);  */
+  }
+  50% {
+    transform: translateY(50rpx);
+  }
+} 
+
+
+
 
 @keyframes shake {
   0% {
