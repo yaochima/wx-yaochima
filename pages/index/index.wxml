@@ -1,6 +1,6 @@
 <view class="index-wrapper" style="background-image: url('https://yaochima.shanghaiwogeng.com/index-background.png')">
   <view class="container">
-    <view class="greeting">
+    <view class="greeting" bindtap='clickCat'>
       <view class="empty"></view>
       <image class="logo-cat" src="https://yaochima.shanghaiwogeng.com/index-cat-logo.svg"/>
       <image class="logo-rotate" src="https://yaochima.shanghaiwogeng.com/index-text-loop.svg"/>
@@ -8,13 +8,14 @@
     <view class="button-location-view">
       <button class="button-location {{gotLocation ? 'hidden' : '' }}" type="warn" bindtap="listenerBtnGetLocation">点击定位当前位置</button>
     </view>
+      <view class="shakeNow hidden {{shakeDir ? 'show_this' : '' }}" bindtap="GetRestaurantShake">现在摇一摇手机发现附近餐厅</view>
+      </view>
   </view>
   <!-- <view class="button-location-view">
     <button class="button-location {{gotLocation ? 'hidden' : '' }}" type="warn" bindtap="listenerBtnGetLocation">点击定位当前位置</button>
   </view> -->
-</view>
-      <!-- <view class="hidden {{gotLocation ? 'show_this' : '' }}">
-      <view class="shakeNow" bindtap="GetRestaurantShake">要吃吗? 摇一摇!</view> -->
+
+  
 
 
 <!-- <audio src= "https://yaochima.shanghaiwogeng.com/yaochima1.mp3"id="shakeSound"></audio> -->

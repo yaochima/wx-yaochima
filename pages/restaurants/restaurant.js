@@ -310,7 +310,7 @@ deg2rad: function (deg) {
   },
 
   clickFooter: function (event) {
-
+    clearTimeout(this.catAnimationTimerID)
     if (this.data.catOut) {
       var animateDown = wx.createAnimation({
         duration: 1000,
@@ -325,6 +325,7 @@ deg2rad: function (deg) {
         animationData: animateDown.export()
       })
 
+      this.catAnimationTimerID = 
       setTimeout(function () {
         this.setData({
           catOut: false

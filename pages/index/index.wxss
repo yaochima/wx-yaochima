@@ -73,12 +73,15 @@ button.button-location {
 }
 
 .shakeNow {
-  font-size: 38px;
+  font-size: 45rpx;
   color: #F15A24;
-  background-color: white;
   border-radius: 5px;
   height: 60px;
-  padding: 10px 30px;
+  padding: 10rpx 30rpx;
+  text-align: center;
+  vertical-align: center;
+  animation: shake .8s cubic-bezier(.36,.07,.19,.97) both infinite;
+  transform: translate3d(0, 0, 0); 
 }
 
 .greeting {
