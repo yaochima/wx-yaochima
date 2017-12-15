@@ -407,3 +407,8 @@ button.footer-share-text {
   color: white;
   text-shadow: none;
 }
+
+.share-text-image {
+  width: 550rpx;
+
+}
