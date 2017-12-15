@@ -14,28 +14,19 @@
             <view class = 'rating-span'>
               <image class="rating"src="../../assets/images/icons/svg/icon_five_star.svg"/>
             </view>
-        </view>
-
-        <view class="row">
             <view class="category span">
               <view class="icon-wrap">
                 <image class='icon-category icon' src='../../assets/images/icons/svg/icon_category.svg'/>
               </view>
               <text>{{category}}</text>
             </view>
-        </view>
-
-        <view class="row">
             <view class="price span">
               <view class="icon-wrap">
                 <image class="icon-price icon" src='../../assets/images/icons/svg/icon_price.svg'/>
               </view>
               <text>{{price}} 人均</text>
             </view>
-
-
         </view>
-
 
 
         <view class="row" bindtap='callRestaurant'>
@@ -54,15 +45,18 @@
               </view>
               <text>{{address}}</text>
             </view>
-       
         </view>
+        <view class="row">
+          <image class="share-text-image" src="../../assets/images/share-text.svg"/>
+        </view>
+
       </view>
     </view>
 
     <!-- - - -- - - - - -- FOOTER -->
 
    <view bindtap="clickFooter" animation="{{animationData}}" class="footer {{catOut ? 'showCat' : 'cropCat' }}" style="height:{{footerHeight}}rpx">
-    <image class="peek" src="https://yaochima.shanghaiwogeng.com/logo-cat.svg"/>
+    <image class="peek" src="../../assets/images/footer-cat.svg"/>
     <view class="catMenu {{catOut ? 'showCatMenu' : 'hideCatMenu' }}">
         <view class="catMenu-thanks-1">
           <image class="footer-thanks" src="../../assets/images/footer-thanks-1.svg"/>
