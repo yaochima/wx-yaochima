@@ -1,7 +1,9 @@
 <template name="footer">
 
   <view bindtap="clickFooter" animation="{{animationData}}" class="footer {{catOut ? 'showCat' : 'cropCat' }}" style="height:{{footerHeight}}rpx">
-    <image class="peek" src="https://yaochima.shanghaiwogeng.com/logo-cat.svg"/>
+    <view class="footer-images">
+      <image class="peek" src="../../assets/images/footer-cat.svg"/>
+    </view>
     <view class="catMenu {{catOut ? 'showCatMenu' : 'hideCatMenu' }}">
         <view class="catMenu-thanks">
           <image class="footer-thanks" src="../../assets/images/footer-thanks-1.svg"/>

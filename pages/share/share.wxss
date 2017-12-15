@@ -303,14 +303,30 @@ audio {
 }
 
 .peek {
-  height: 679rpx;
+  height: 400rpx;
   width: 100%;
   position: absolute;
   overflow: hidden;
-  bottom: -335rpx;
-  animation: shake .8s cubic-bezier(.36,.07,.19,.97) 15s both infinite;
-  transform: translate3d(0, 0, 0); 
+  bottom: -170rpx;
+  /* animation: shake .8s cubic-bezier(.36,.07,.19,.97) 15s both infinite;
+  transform: translate3d(0, 0, 0);   */
+  animation: footerBounce 1s ease-in-out 4s both infinite; 
+  transform: translate3d(0,0,0);
 }
+
+
+
+ @keyframes footerBounce {
+  0%, 100% {
+    /* transform: translateY(0rpx);  */
+  }
+  50% {
+    transform: translateY(50rpx);
+  }
+} 
+
+
+
 
 @keyframes shake {
   0% {
@@ -347,7 +363,6 @@ audio {
 }
 
 .footer-shake, .footer-share {
-
   display: flex;
   flex-direction: column;
   color: #F5A623;
@@ -357,23 +372,34 @@ audio {
   padding: 20rpx;
 }
 
+.footer-shake {
+  animation: shake 1s cubic-bezier(.36,.07,.19,.97) 3s both infinite;
+}
+
 .icon-footer-shake, .icon-footer-share {
   margin: 0 auto;
   margin-bottom: 24rpx;
 }
 
+.catMenu-text {
+  margin-top: 350rpx;
+  width: 400rpx;
+}
 
 .catMenu-header {
   margin-bottom: 900rpx;
-
 }
 
-.footer-thanks {
+.catMenu-thanks-1, .catMenu-thanks-2 {
+  height: 450rpx
+}
+
+ .footer-thanks {
   width: 200rpx;
   height: 420rpx;
   padding: 30rpx;
   margin-top: 250rpx;
-}
+} 
 
 button.footer-share-text {
   background-image: linear-gradient(-180deg, #FF931E 23%, #F87821 67%, #F15A24 100%);
