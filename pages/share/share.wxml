@@ -14,28 +14,19 @@
             <view class = 'rating-span'>
               <image class="rating"src="../../assets/images/icons/svg/icon_five_star.svg"/>
             </view>
-        </view>
-
-        <view class="row">
             <view class="category span">
               <view class="icon-wrap">
                 <image class='icon-category icon' src='../../assets/images/icons/svg/icon_category.svg'/>
               </view>
               <text>{{category}}</text>
             </view>
-        </view>
-
-        <view class="row">
             <view class="price span">
               <view class="icon-wrap">
                 <image class="icon-price icon" src='../../assets/images/icons/svg/icon_price.svg'/>
               </view>
               <text>{{price}} 人均</text>
             </view>
-
-
         </view>
-
 
 
         <view class="row" bindtap='callRestaurant'>
