@@ -370,8 +370,7 @@ audio {
 
 .footer-thanks {
   width: 200rpx;
-  height: 300rpx;
-  display: inline-flex;
+  height: 420rpx;
   padding: 30rpx;
   margin-top: 250rpx;
 }

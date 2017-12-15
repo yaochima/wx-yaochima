@@ -4,7 +4,7 @@
     <image class="peek" src="https://yaochima.shanghaiwogeng.com/logo-cat.svg"/>
     <view class="catMenu {{catOut ? 'showCatMenu' : 'hideCatMenu' }}">
         <view class="catMenu-thanks">
-          <image class="footer-thanks-1" src="../../assets/images/footer-thanks-1.svg"/>
+          <image class="footer-thanks" src="../../assets/images/footer-thanks-1.svg"/>
         </view>
         <view class="catMenu-text">
 
@@ -19,7 +19,7 @@
             </view>
         </view>
         <view class="catMenu-thanks">
-          <image class="footer-thanks-2" src="../../assets/images/footer-thanks-2.svg"/>
+          <image class="footer-thanks" src="../../assets/images/footer-thanks-2.svg"/>
         </view>
     </view>
 
