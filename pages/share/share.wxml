@@ -62,7 +62,7 @@
     <!-- - - -- - - - - -- FOOTER -->
 
    <view bindtap="clickFooter" animation="{{animationData}}" class="footer {{catOut ? 'showCat' : 'cropCat' }}" style="height:{{footerHeight}}rpx">
-    <image class="peek" src="https://yaochima.shanghaiwogeng.com/logo-cat.svg"/>
+    <image class="peek" src="../../assets/images/footer-cat.svg"/>
     <view class="catMenu {{catOut ? 'showCatMenu' : 'hideCatMenu' }}">
         <view class="catMenu-thanks-1">
           <image class="footer-thanks" src="../../assets/images/footer-thanks-1.svg"/>

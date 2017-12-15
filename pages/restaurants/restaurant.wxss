@@ -283,7 +283,6 @@ background-image: linear-gradient(54deg, #3023AE 0%, #C86DD7 100%)!important;
   bottom: 0;
   width: 100%;
   z-index: 999;
- 
 }
 
 
@@ -303,22 +302,25 @@ background-image: linear-gradient(54deg, #3023AE 0%, #C86DD7 100%)!important;
 }
 
 .catMenu-text {
-  margin-top: 300rpx;
+  margin-top: 350rpx;
   width: 400rpx;
 }
 
+.footer-images {
+  
+}
+
 .peek {
-  height: 679rpx;
+  height: 400rpx;
   width: 100%;
   position: absolute;
   overflow: hidden;
-  bottom: -335rpx;
+  bottom: -170rpx;
   /* animation: shake .8s cubic-bezier(.36,.07,.19,.97) 15s both infinite;
   transform: translate3d(0, 0, 0);   */
-   animation: footerBounce 1s ease-in-out 4s both infinite; 
+  animation: footerBounce 1s ease-in-out 4s both infinite; 
   transform: translate3d(0,0,0);
 }
-
 
  @keyframes footerBounce {
   0%, 100% {
