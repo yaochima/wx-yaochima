@@ -20,12 +20,12 @@ App({
     wx.startAccelerometer();
     this.globalData.shakeManager = shake(this);
 
-  //   setTimeout(function() {
-  //     wx.navigateTo({
-  //       url: '/pages/restaurants/restaurant?id=69',
-  //     }, 1000)
-  //   })
-  // },
+    // setTimeout(function() {
+    //   wx.navigateTo({
+    //     url: '/pages/restaurants/restaurant?id=69',
+    //   }, 1000)
+    // })
+  },
 
   signInAsGuest: function () {
     console.log("HELLO!")
