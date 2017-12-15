@@ -398,7 +398,7 @@ deg2rad: function (deg) {
     // })
   
   return {
-    title: '摇来这儿吃嘛 😊',
+    title: '小伙伴分享了这家餐厅😊',
     path: 'pages/share/share?id=' + this.data.restaurantId
   }
   }
