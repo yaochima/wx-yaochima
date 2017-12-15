@@ -3,11 +3,18 @@
 const app = getApp()
 Page({
   data: {
+    shakeDir: false,
     motto: '饿了！受不了',
     hasUserInfo: false,
     canIUse: wx.canIUse('button.open-type.getUserInfo'), 
     gotLocation: app.globalData.gotLocation,
     shakeSoundUrl: "https://yaochima.shanghaiwogeng.com/yaochima" + (Math.floor(Math.random() * 8) + 1) + ".mp3"
+  },
+
+  clickCat: function () {
+    this.setData({
+      shakeDir: true
+    })
   },
 
   onLoad: function(options) {
